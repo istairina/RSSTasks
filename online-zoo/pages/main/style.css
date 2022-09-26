@@ -1,0 +1,278 @@
+html {
+font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto', 'Verdana', sans-serif;
+}
+
+ul {
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем верхнее и нижнее поле, равное 1em*/
+    padding-left: 0; /*убираем левый отступ, равный 40px*/
+  }
+
+a {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+}
+
+a:link {
+    color: white;
+}
+
+.navigation a:hover {
+    color: orange;
+}
+
+a:visited {
+    color: white;
+}
+
+a:active {
+    color: orange;
+}
+
+.wrapper {
+    display: flex;
+    
+}
+
+
+.header {
+    background-color: black;
+    width: 1600px;
+    height: 80px;
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+}
+
+.navigation {
+        list-style: none;
+        margin: 29px 365px 29px;
+        padding: 0px;
+        text-align: center;
+
+}
+
+.navigation li {
+    display: inline-block;
+    padding-left: 58px;
+    font-size: 1.6rem;
+}
+
+.logo-p {
+    background-color: black;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    width: 82px;
+    height: 52px;
+    top: 14px;
+    left: 220px;
+    border: 1px solid white;
+    border-radius: 1px;
+    font-size: 1.9rem;
+    color: white;
+    font-family: 400; 
+}
+
+.logo-a {
+    text-align: center;
+    color: white;
+    outline: none;
+    text-decoration: none;
+}
+
+.logo-bamboo {
+    display: block;
+
+    scale: 100%;
+    position: relative;
+    left: 232px;
+    top: 8px;
+}
+
+.promo-panda {
+    background-image: url(../../assets/images/promo/Giant_Panda.jpg);
+    width: 1600px;
+    height: 780px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+}
+
+.header__designedby {
+    display: inline-block;
+    position: absolute;
+    top: 29px;
+    left: 1275px;
+    z-index: 5;
+}
+
+.text__designedby {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.title1 {
+    display: block;
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    z-index: 6;
+    color: white;
+    left: 880px;
+    top: 166px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 106.496px;
+    line-height: 75%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.colored_text {
+    color: #FFEE2E;
+}
+
+.ellipse {
+    position: absolute;
+    width: 465px;
+    height: 465px;
+    left: 807px;
+    top: 92px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    z-index: 4;
+    border-radius: 50%;
+}
+
+.promo__button {
+    display: block;
+    position: absolute;
+    top: 626px;
+    left: 983px;
+    z-index: 4;
+    font-size: 1.6rem
+}
+
+.button__orange {
+    display: block;
+    position: absolute;
+    width: 298px;
+    height: 54px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    border-radius: 25px;
+    color: white;
+    text-transform: uppercase;
+    border-color: #F9804B;
+}
+
+.backstage {
+    position: absolute;
+    top: 880px;
+    left: 219px;
+    width: 1161px;
+
+}
+
+.backstage__picture {
+    display: block;
+    background-image: url(../../assets/images/backstage/bamboo-cap.jpg);
+    width: 609px;
+    height: 403px;
+    float: left;
+}
+
+.animals {
+    position: absolute;
+    top: 1503px;
+}
+
+.pickafriend {
+    position: absolute;
+    top: 2609px;
+}
+
+.title2 {
+    float: right;
+    position: absolute;
+    height: 116px;
+    left: 696px;
+    right: 0px;
+    top: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    color: #333B41;
+}
+
+.backstage__text {
+    position: absolute;
+    height: 42px;
+    left: 696px;
+    right: 0px;
+    top: 136px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    /* or 21px */
+
+
+    color: #333B41;
+}
+
+.title3 {
+    position: absolute;
+    width: 217px;
+    height: 29px;
+    left: calc(50% - 217px/2 + 224px);
+    top: 232px;
+
+    /* subtitle */
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    /* identical to box height, or 29px */
+
+
+    color: #333B41;
+}
+
+.plant-decor {
+    display: block;
+    position: absolute;
+    background-image: url(../../assets/images/plants_decor/flower_foto1.png);
+    position: absolute;
+    width: 293px;
+    height: 605px;
+    left: 1400px;
+    top: 792px;
+
+    background: url(flower_foto.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.testimonials {
+    position: absolute;
+    top: 3753px; 
+}
+
+.footer {
+    position: absolute;
+    top: 4532px; 
+}
