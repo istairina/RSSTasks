@@ -1,6 +1,9 @@
 html {
-font-size: 10px;
+    font-size: 10px;
+
 }
+
+
 
 body {
     font-size: 1.6rem;
@@ -35,7 +38,7 @@ a:active {
 
 .wrapper {
     display: flex;
-    
+
 }
 
 
@@ -193,7 +196,21 @@ a:active {
 .animals {
     position: absolute;
     top: 1503px;
+    left: 200px;
+    width: 1158px;
 }
+
+.layout-3-column {
+    display: table;
+    columns: 3;
+}
+
+.animals__picture {
+    width: 366px;
+    margin: 0px 15px;
+    
+}
+
 
 .pickafriend {
     position: absolute;
@@ -253,17 +270,35 @@ a:active {
     color: #333B41;
 }
 
-.plant-decor {
-    display: block;
+.plant-decor1 {
+    display:block;
     position: absolute;
-    background-image: url(../../assets/images/plants_decor/flower_foto1.png);
-    position: absolute;
-    width: 293px;
+    background: url(../../assets/images/plants_decor/flower_foto1.png);
+    width: 205px;
     height: 605px;
     left: 1400px;
     top: 792px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 
-    background: url(flower_foto.png);
+.plant-decor2 {
+    display:block;
+    position: absolute;
+    background: url(../../assets/images/plants_decor/palm_foto.png);
+    width: 880px;
+    height: 460px;
+    left: 2149px;
+    top: -588px;
+}
+
+.plant-decor3 {
+    display:block;
+    position: absolute;
+    background: url(../../assets/images/plants_decor/strelitzia.png);
+    width: 368px;
+    height: 275px;
+    left: 2334px;
+    top: 1600px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
