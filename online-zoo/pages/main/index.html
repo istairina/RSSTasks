@@ -12,23 +12,27 @@
 <body>
     <header class="header">
         <div class="wrapper">
-            
-                <p class="logo-p"><a href="#" class="logo-a">PetStory online</a>
-                    </p>
+            <div class="logodiv">
+                <a href="index.html" class="logo-a">
+                    <p class="logo-p">PetStory online</p>
                     <img src="../../assets/images/logo/bamboo.svg" alt="logo bamboo" class="logo-bamboo">
-                    
+                </a>
+            </div>       
             <nav class="header__navigation">
                 <ul class="navigation">
-                    <li><a href="#">About</a></li>
+                    <li><span style="color: #FE9013;">About</span></li>
                     <li><a href="#">Map</a></li>
                     <li><a href="#">Zoos</a></li>
-                    <li><a href="#">Donate</a></li>
+                    <li><a href="../donate/index.html">Donate</a></li>
                     <li><a href="#">Contact us</a></li>
                 </ul>
             </nav>
 
             <div class="header__designedby">
-                <span class="text__designedby">Designed by &copy;</span>
+                
+                <span class="text__designedby">
+                    <a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks">Designed by &copy;</a></span>
+                
             </div>
         </div>
     </header>
@@ -48,25 +52,27 @@
         </div>
     </section>
 
-    <span class="plant-decor1"></span>
+    
     <section class="backstage">
+        <span class="plant-decor1"></span>
         <div class="wrapper">
             <div class="layout-2-column">
-                <span class="backstage__picture"></span>
-                <h2><span class="title2">The Backstage of the Wilderness World.</span></h2>
-                <div class="backstsage__title">
-                    <p class="backstage__text">The site was founded on the basis of a volunteer movement to protect and care for animals.</p>
+                <div class="first_column_of_2">
+                    <span class="backstage__picture"></span>
                 </div>
-                <h3><span class="title3">How it works</span></h3>
-                <div class="backstsage__title">
-                    <p class="backstage__text" style="top: 280px;">The main goal is to help the animals, as well as the nature reserves and zoos where they are kept. We are currently working on video projects targeting pandas in China, eagles on an island near Los Angeles, alligators in Florida and gorillas in the Congo. These have a total of more than 1,500 mammals and reptiles.</p>
+                <div class="second_column_of_2">
+                    <h2><span class="title2">The Backstage of the Wilderness World.</span></h2>
+                    <div class="backstsage__title">
+                        <p class="backstage__text">The site was founded on the basis of a volunteer movement to protect and care for animals.</p>
+                    </div>
+                    <h3><span class="title3">How it works</span></h3>
+                    <div class="backstsage__title">
+                        <p class="backstage__text" style="top: 280px;">The main goal is to help the animals, as well as the nature reserves and zoos where they are kept. We are currently working on video projects targeting pandas in China, eagles on an island near Los Angeles, alligators in Florida and gorillas in the Congo. These have a total of more than 1,500 mammals and reptiles.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <span class="plant-decor2"></span>
-    <span class="plant-decor3"></span>
 
     <section class="animals">
         <div class="wrapper">
@@ -95,8 +101,7 @@
                     <span class="animals__description">Mesoamerica, South America</span>
                     <span class="animals__logo banana"></span>
                 </div>
-                
-                <div class="animals__card">
+                                <div class="animals__card">
                     <img src="../../assets/images/animals/cheetah.jpg" alt="cheetah"  class="animals__picture">
                     <h4><span class="animals__title">cheetahs</span></h4>
                     <span class="animals__description">Native to Africa</span>
@@ -109,15 +114,17 @@
                     <span class="animals__description">Native to Antarctica</span>
                     <span class="animals__logo meat"></span>
                 </div>
-                
             </div>
             <span class="navigation__arrow left"></span>
             <span class="navigation__arrow right"></span>
             <div class="animals__button">
-                <button class="button__orange choose-favourite">choose your favorite</button>
+                <form action="https://rolling-scopes-school.github.io/istairina-JSFE2022Q3/online-zoo/pages/map/">
+                    <button class="button__orange choose-favourite">choose your favorite</button>
+                </form>
             </div>
-            
         </div>
+    <span class="plant-decor2"></span>
+    <span class="plant-decor3"></span>
     </section>
 
     <section class="pickafriend">
@@ -125,7 +132,7 @@
             <span class="pickafriend__title">Pick and feed a friend</span>
             <p class="pickandfeed_lozung">We know the animals bring you joy, and in these extraordinary times, we&#8217re glad.</p>
             <p class="pickandfeed_accent">During a time when the COVID-19 epidemic is touching all of our lives, we&#8217re proud and glad that people around the world find joy in PetStory.</p>
-            <p class="pickandfeed_text">Even though the zoo has reopened, we need you now more than ever to help us deal with these problems. Please consider a gift to our Emergency Support Fund .</p>
+            <p class="pickandfeed_text">Even though the zoo has reopened, we need you now more than ever to help us deal with these problems. Please consider a gift to our <span class="underlined-text"><a href="../donate/index.html" style="color:#333B41; text-decoration-color: #FE9013;">Emergency Support Fund</a></span>.</p>
             <h3><span class="pickafriends__how-works">How it works</span></h3>
             <div class="three-parts">
                 <div class="pickafriend_card">
@@ -150,7 +157,9 @@
             <span class="pickafriend__arrow first"></span>
             <span class="pickafriend__arrow second"></span>
             <div class="pickafriend__button">
-                <button class="button__orange">Feed a friend now</button>
+                <form action="../donate/index.html">
+                    <button class="button__orange">Feed a friend now</button>
+                </form>
             </div>
         </div>
     </section>
@@ -166,13 +175,25 @@
 
     <footer class="footer">
         <div class="wrapper">
-            <div class="layout-3-column">
-                <div>
-                    <span class="ico ico_facebook"></span> <a href="#"></a>
-                    <span class="ico ico_twitter"></span> <a href="#"></a>
-                    <span class="ico ico_instagram"></span> <a href="#"></a>
-                    <span class="ico ico_instagram"></span> <a href="#"></a>
+                  <div class="logodiv" style="top: 41px;">
+                        <a href="index.html" class="logo-a">
+                            <p class="logo-p">PetStory online</p>
+                            <img src="../../assets/images/logo/bamboo.svg" alt="logo bamboo" class="logo-bamboo">
+                        </a>
+                    </div> 
+                    <div class="button_donate">
+                        <form action="../donate/index.html">
+                            <button class="footer__button-donate">donate for volunteers</button>
+                        </form>
+                    </div>
+                    <div class="socialmedia">
+                        <span class="ico ico_facebook"></span> <a href="#">Facebook</a>
+                        <span class="ico ico_twitter"></span> <a href="#">Twitter</a>
+                        <span class="ico ico_instagram"></span> <a href="#">Instagram</a>
+                        <span class="ico ico_instagram"></span> <a href="#">YouTube</a>
+                    </div>
                 </div>
+                
 
                 <div class="footer__form">
                     <form action method="POST">
