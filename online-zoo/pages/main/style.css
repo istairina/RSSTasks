@@ -10,6 +10,7 @@ body {
     font-family: 'Roboto', 'Verdana', sans-serif;
 }
 
+
 ul {
     list-style: none; /*убираем маркеры списка*/
     margin: 0; /*убираем верхнее и нижнее поле, равное 1em*/
@@ -28,6 +29,11 @@ a:link {
     color: orange;
 }
 
+a:hover {
+    color: orange;
+}
+
+
 a:visited {
     color: white;
 }
@@ -37,8 +43,9 @@ a:active {
 }
 
 .wrapper {
-    display: flex;
-
+    display: relative;
+    width: 1160px;
+    margin: auto;
 }
 
 
@@ -48,36 +55,53 @@ a:active {
     height: 80px;
     position: absolute;
     top: 0px;
+    left: 0px;
     z-index: 2;
+}
+
+.header__navigation {
+    position:absolute;
+    top: 29px;
+    left: 308px;
+
 }
 
 .navigation {
         list-style: none;
-        margin: 29px 365px 29px;
-        padding: 0px;
         text-align: center;
-
 }
 
 .navigation li {
     display: inline-block;
     padding-left: 58px;
     font-size: 1.6rem;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.logodiv {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 82px;
+    height: 52px;
+    left: 0px;
+    top: 14px;
+    border: 1px solid white;
+    border-radius: 1px;
+    background-color: black;
 }
 
 .logo-p {
-    background-color: black;
+    position: absolute;
     text-align: center;
     vertical-align: middle;
     position: absolute;
-    margin: 0px;
+    left: 0px;
+    top: 3px;
+    margin: auto;
     padding: 0px;
-    width: 82px;
-    height: 52px;
-    top: 14px;
-    left: 220px;
-    border: 1px solid white;
-    border-radius: 1px;
     font-size: 1.9rem;
     color: white;
     font-family: 400; 
@@ -92,11 +116,10 @@ a:active {
 
 .logo-bamboo {
     display: block;
-
+    position: absolute;
     scale: 100%;
-    position: relative;
-    left: 232px;
-    top: 8px;
+    left: 10px;
+    top: 23px;
 }
 
 .promo-panda {
@@ -106,6 +129,7 @@ a:active {
     display: block;
     position: absolute;
     top: 0px;
+    left: 0px;
     z-index: 1;
 }
 
@@ -175,23 +199,29 @@ a:active {
     color: white;
     text-transform: uppercase;
     border-color: #F9804B;
-}
-
-
-
-.animals__button {
-    position: absolute;
-    left: 651px;
-    top: 975px;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
 }
 
 .backstage {
     position: absolute;
-    top: 880px;
-    left: 219px;
-    width: 1161px;
-
+    top: 920px;
+    left: 0px;
+    width: 1600px;
 }
+
+.plant-decor1 {
+    display: block;
+    position: absolute;
+    background: url(../../assets/images/plants_decor/flower_foto1.png);
+    width: 205px;
+    height: 605px;
+    right: 0px;
+    top: -128px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
 
 .backstage__picture {
     display: block;
@@ -199,11 +229,72 @@ a:active {
     width: 609px;
     height: 403px;
     float: left;
+    top: 0px;
+}
+
+.layout-2-column {
+    position: relative;
+    top:0px;
+    left:0px;
+}
+
+.first_column_of_2 {
+    position: absolute;
+    left: 0px;
+    width: 609px;
+    align-items: left;
+}
+
+.second_column_of_2 {
+    position: absolute;
+    right: 0px;
+    width: 465px;
+    align-items: right;
+}
+
+.title2 {
+    float: right;
+    position: absolute;
+    height: 116px;
+    right: 0px;
+    top: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    color: #333B41;
+}
+
+.title3 {
+    position: absolute;
+    width: 217px;
+    height: 29px;
+    align-content: center;
+    top: 232px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: #333B41;
+}
+
+.backstage__text {
+    position: absolute;
+    height: 42px;
+    top: 121px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 135%;
+    color: #333B41;
 }
 
 .animals {
     position: absolute;
-    top: 1503px;
+    top: 1500px;
     left: 0px;
     width: 1600px;
 }
@@ -213,8 +304,8 @@ a:active {
     flex-wrap: wrap;
     position: absolute;
     width: 1158px;
-    padding: 15px;
-    left: 220px;
+    padding: 0px 15px 15px 0px;
+    left: 217px;
     justify-content: space-between;
 }
 
@@ -269,24 +360,25 @@ a:active {
 
 .animals__logo {
     position: absolute;
-    width: 33px;
-    height: 37px;
-    left: 321px;
+    right: 13px;
     top: 376px;
-
 }
 
 .banana {
     background-image: url(../../assets/images/animals/banana-bamboo_icon.png);
+    width: 33px;
+    height: 37px;
 }
 
 .meat {
+    width: 48px;
+    height: 38px;
     background-image: url(../../assets/images/animals/meet-fish_icon.png);
 }
 
 .navigation__arrow {
     position: absolute;
-    top: 430px;
+    top: 402px;
     width: 62px;
     height: 62px;
 }
@@ -301,6 +393,33 @@ a:active {
     background-image: url("../../assets/images/navigation/arrow_elips_1.png");
 }
 
+.animals__button {
+    position: absolute;
+    left: 651px;
+    top: 955px;
+    border: none;
+}
+
+.plant-decor2 {
+    position: absolute;
+    background: url(../../assets/images/plants_decor/palm_foto.png);
+    position: absolute;
+    width: 868px;
+    height: 460px;
+    left: -586px;
+    top: 649px;
+}
+
+.plant-decor3 {
+    position: absolute;
+    background: url(../../assets/images/plants_decor/strelitzia.png);
+    width: 368px;
+    height: 275px;
+    right: 0px;
+    top: 833px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
 .pickafriend {
     position: absolute;
     height: 1004px;
@@ -311,7 +430,7 @@ a:active {
     margin: 0px;
     padding: 0px;
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
-opacity: 0.9;
+    opacity: 0.9;
 }
 
 .pickafriend__inside-block{
@@ -319,7 +438,7 @@ opacity: 0.9;
     height: 835px;
     width: 1160px;
     left: 220px;
-    top: 69px;
+    top: 50px;
     background: rgba(253, 253, 255, 0.52);
     backdrop-filter: blur(2px);
     border-radius: 20px;
@@ -345,7 +464,7 @@ opacity: 0.9;
     width: 844px;
     height: 29px;
     left: calc(50% - 844px/2 - 59px);
-    top: 100px;
+    top: 108px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -359,7 +478,7 @@ opacity: 0.9;
     width: 1061px;
     height: 21px;
     left: calc(50% - 1061px/2 + 49.5px);
-    top: 180px;
+    top: 184px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -373,7 +492,7 @@ opacity: 0.9;
     width: 863px;
     height: 42px;
     left: calc(50% - 863px/2 - 49.5px);
-    top: 207px;
+    top: 215px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -387,7 +506,7 @@ opacity: 0.9;
     width: 209px;
     height: 47px;
     left: calc(50% - 209px/2 - 0.5px);
-    top: 300px;
+    top: 332px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -395,6 +514,12 @@ opacity: 0.9;
     line-height: 130%;
     color: #333B41;
 }
+
+.underlined-text {
+    text-decoration: none;
+    border-bottom: 1px #FE9013 solid;
+}
+
 
 .three-parts {
     display: flex;
@@ -437,7 +562,7 @@ opacity: 0.9;
     width: 168px;
     height: 46px;
     left: 0px;
-    top: 190px;
+    top: 182px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -446,114 +571,36 @@ opacity: 0.9;
     color: #333B41;
 }
 
-.pickafriend__button {
-    position: absolute;
-    width: 298px;
-    height: 54px;
-    left: calc(50% - 298px/2);
-    top: 736px;
-}
-
 .pickafriend__arrow {
     position:absolute;
     background-image: url(../../assets/images/pickafriend/Vector.png);
-    top: 485px;
+    top: 479px;
     width: 69px;
     height: 35px;
 }
 
 .first {
-    left: 400px;
+    left: 396px;
 
 }
 
 .second {
-    left: 700px;
+    left: 693px;
 }
 
-.title2 {
-    float: right;
+.pickafriend__button {
     position: absolute;
-    height: 116px;
-    left: 696px;
-    right: 0px;
-    top: 0px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 120%;
-    color: #333B41;
+    width: 298px;
+    height: 54px;
+    left: calc(50% - 298px/2);
+    top: 721px;
 }
 
-.backstage__text {
-    position: absolute;
-    height: 42px;
-    left: 696px;
-    right: 0px;
-    top: 136px;
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 130%;
-    /* or 21px */
 
 
-    color: #333B41;
-}
-
-.title3 {
-    position: absolute;
-    width: 217px;
-    height: 29px;
-    left: calc(50% - 217px/2 + 224px);
-    top: 232px;
-
-    /* subtitle */
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 120%;
-    /* identical to box height, or 29px */
 
 
-    color: #333B41;
-}
 
-.plant-decor1 {
-    display:block;
-    position: absolute;
-    background: url(../../assets/images/plants_decor/flower_foto1.png);
-    width: 205px;
-    height: 605px;
-    left: 1400px;
-    top: 792px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.plant-decor2 {
-    position: absolute;
-    background: url(../../assets/images/plants_decor/palm_foto.png);
-    position: absolute;
-    width: 868px;
-    height: 460px;
-    left: -588px;
-    top: 2149px;
-}
-
-.plant-decor3 {
-    position: absolute;
-    background: url(../../assets/images/plants_decor/strelitzia.png);
-    width: 368px;
-    height: 275px;
-    left: 1230px;
-    top: 2331px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
 
 
 
@@ -564,5 +611,57 @@ opacity: 0.9;
 
 .footer {
     position: absolute;
-    top: 4532px; 
+    top: 4532px;
+    width: 1600px;
+    height: 443px;
+    left: 0px;
+    bottom: 0px;
+    background-color: #111115;
+}
+
+.footer__first-column {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 443px;
+    /*background-color: #FFEE2E;*/
+}
+
+.button_donate {
+    position: absolute;
+    top: 161px;
+    left: 220px;
+}
+
+.footer__button-donate {
+    width: 298px;
+    height: 54px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: 1px solid;
+    border-color: #F9804B;
+}
+
+.socialmedia {
+    position: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    width:111px;
+    left:0px;
+    top: 264px;
+
+}
+
+.ico {
+    position: absolute;
+    background-image: url(../../assets/images/footer/Ellipse\ 18.png);
+    width: 26px;
+    height: 26px;
+    z-index: 1;
 }
