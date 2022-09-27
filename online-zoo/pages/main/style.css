@@ -177,6 +177,14 @@ a:active {
     border-color: #F9804B;
 }
 
+
+
+.animals__button {
+    position: absolute;
+    left: 651px;
+    top: 975px;
+}
+
 .backstage {
     position: absolute;
     top: 880px;
@@ -196,25 +204,112 @@ a:active {
 .animals {
     position: absolute;
     top: 1503px;
-    left: 200px;
-    width: 1158px;
+    left: 0px;
+    width: 1600px;
 }
 
 .layout-3-column {
-    display: table;
-    columns: 3;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 1158px;
+    padding: 15px;
+    left: 220px;
+    justify-content: space-between;
 }
 
-.animals__picture {
+.animals__card {
     width: 366px;
-    margin: 0px 15px;
+    height: 426px;
+    border:  1px solid;
+    border-color: #FA6F32; 
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 20px;
     
 }
 
+.animals__picture {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 366px;
+    margin: 0px;
+    
+}
+
+.animals__title {
+    position: absolute;
+    width: 294px;
+    height: 22px;
+    left: 16px;
+    top: 374px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.animals__description {
+    position: absolute;
+    width: 294px;
+    height: 18px;
+    left: 16px;
+    top: 394px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.animals__logo {
+    position: absolute;
+    width: 33px;
+    height: 37px;
+    left: 321px;
+    top: 376px;
+
+}
+
+.banana {
+    background-image: url(../../assets/images/animals/banana-bamboo_icon.png);
+}
+
+.meat {
+    background-image: url(../../assets/images/animals/meet-fish_icon.png);
+}
+
+.navigation__arrow {
+    position: absolute;
+    top: 430px;
+    width: 62px;
+    height: 62px;
+}
+
+.left {
+    left: 140px;
+    background-image: url("../../assets/images/navigation/arrow_elips_2.png");
+}
+
+.right {
+    right: 140px;
+    background-image: url("../../assets/images/navigation/arrow_elips_1.png");
+}
 
 .pickafriend {
     position: absolute;
+    height: 1004px;
+    width:  1600px;
+    left: 0px;
+    right: 0px;
     top: 2609px;
+    background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+opacity: 0.9;
 }
 
 .title2 {
@@ -282,25 +377,26 @@ a:active {
 }
 
 .plant-decor2 {
-    display:block;
     position: absolute;
     background: url(../../assets/images/plants_decor/palm_foto.png);
-    width: 880px;
+    position: absolute;
+    width: 868px;
     height: 460px;
-    left: 2149px;
-    top: -588px;
+    left: -588px;
+    top: 2149px;
 }
 
 .plant-decor3 {
-    display:block;
     position: absolute;
     background: url(../../assets/images/plants_decor/strelitzia.png);
     width: 368px;
     height: 275px;
-    left: 2334px;
-    top: 1600px;
+    left: 1230px;
+    top: 2331px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
+
 
 .testimonials {
     position: absolute;
