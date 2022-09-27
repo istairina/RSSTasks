@@ -308,8 +308,167 @@ a:active {
     left: 0px;
     right: 0px;
     top: 2609px;
+    margin: 0px;
+    padding: 0px;
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 opacity: 0.9;
+}
+
+.pickafriend__inside-block{
+    position: relative;
+    height: 835px;
+    width: 1160px;
+    left: 220px;
+    top: 69px;
+    background: rgba(253, 253, 255, 0.52);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+}
+
+.pickafriend__title {
+    position: absolute;
+    width: 463px;
+    height: 58px;
+    left: calc(50% - 463px/2 + 1.5px);
+    top: 41px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+    color: #FE9013;
+}
+
+.pickandfeed_lozung {
+    position: absolute;
+    width: 844px;
+    height: 29px;
+    left: calc(50% - 844px/2 - 59px);
+    top: 100px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: #333B41;
+}
+
+.pickandfeed_accent {
+    position: absolute;
+    width: 1061px;
+    height: 21px;
+    left: calc(50% - 1061px/2 + 49.5px);
+    top: 180px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #333B41;
+}
+
+.pickandfeed_text {
+    position: absolute;
+    width: 863px;
+    height: 42px;
+    left: calc(50% - 863px/2 - 49.5px);
+    top: 207px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #333B41;
+}
+
+.pickafriends__how-works {
+    position: absolute;
+    width: 209px;
+    height: 47px;
+    left: calc(50% - 209px/2 - 0.5px);
+    top: 300px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: #333B41;
+}
+
+.three-parts {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 418px;
+    left: 198px;
+    right: 198px;
+    justify-content: space-between;
+}
+
+.pickafriend_card {
+    position: relative;
+    width: 168px;
+    height: 244px;
+    top: 0px;
+}
+
+.pickafriend_image {
+    display: flex;
+    width: 168px;
+    height: 168px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    border: 1px solid;
+    border-color: #F9804B;
+    border-radius: 5px;
+}
+
+.pickafriend_logo {
+    display: flex;
+    margin:auto;
+    align-content: center;
+    
+}
+
+.pickandfeed_card-text {
+    position: absolute;
+    width: 168px;
+    height: 46px;
+    left: 0px;
+    top: 190px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #333B41;
+}
+
+.pickafriend__button {
+    position: absolute;
+    width: 298px;
+    height: 54px;
+    left: calc(50% - 298px/2);
+    top: 736px;
+}
+
+.pickafriend__arrow {
+    position:absolute;
+    background-image: url(../../assets/images/pickafriend/Vector.png);
+    top: 485px;
+    width: 69px;
+    height: 35px;
+}
+
+.first {
+    left: 400px;
+
+}
+
+.second {
+    left: 700px;
 }
 
 .title2 {
