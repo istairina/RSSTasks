@@ -3,8 +3,6 @@ html {
 
 }
 
-
-
 body {
     font-size: 1.6rem;
     font-family: 'Roboto', 'Verdana', sans-serif;
@@ -29,12 +27,17 @@ a:link {
     color: orange;
 }
 
+a:hover {
+    color: orange;
+}
+
+
 a:visited {
     color: white;
 }
 
 a:active {
-    color: orange;
+    color: #4B9200;
 }
 
 .wrapper {
@@ -58,7 +61,6 @@ a:active {
     position:absolute;
     top: 29px;
     left: 308px;
-
 }
 
 .navigation {
@@ -86,6 +88,14 @@ a:active {
     border: 1px solid white;
     border-radius: 1px;
     background-color: black;
+}
+
+.logodiv:hover {
+    border-color: orange;
+}
+
+.logodiv:active {
+    border-color: #4B9200;
 }
 
 .logo-p {
@@ -117,15 +127,22 @@ a:active {
     top: 23px;
 }
 
-.promo-panda {
-    background-image: url(../../assets/images/promo/Giant_Panda.jpg);
+.promo__content {
+    position: relative;
     width: 1600px;
-    height: 780px;
+    height: 390px;
     display: block;
     position: absolute;
-    top: 0px;
+    top: 76px;
     left: 0px;
-    z-index: 1;
+}
+
+.promo-panda {
+    position: absolute;
+    background-image: url(../../assets/images/promo/Giant_Panda.jpg);
+    width: 1600px;
+    height: 577px;
+    top: -181px;
 }
 
 .header__designedby {
@@ -140,4 +157,238 @@ a:active {
     color: white;
     font-size: 1.6rem;
     font-weight: 500;
+}
+
+.button__colored {
+    display: block;
+    position: absolute;
+    width: 298px;
+    height: 54px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    color: white;
+    text-transform: uppercase;
+    border-color: #F9804B;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+}
+
+.button-radius-25 {
+    border-radius: 25px;
+}
+
+.button-radius-5 {
+    border-radius: 5px;
+}
+
+.button__colored:hover {
+    background: #E47209;
+    border-color: #E47209;
+}
+
+.button__colored:active {
+    background: #4B9200;
+    border-color:#4B9200;
+}
+
+.mainpart {
+    position: absolute;
+    height: 1482px;
+    width: 1600px;
+    left: 0px;
+    right: 0px;
+    top: 466px;
+    background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+}
+
+
+.footer {
+    position: absolute;
+    top: 1505px;
+    width: 1600px;
+    height: 443px;
+    left: 0px;
+    bottom: 0px;
+    background-color: #111115;
+}
+
+.footer__first-column {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 443px;
+    /*background-color: #FFEE2E;*/
+}
+
+.button_donate {
+    position: absolute;
+    top: 161px;
+    left: 220px;
+}
+
+.footer__button-donate {
+    display: block;
+    position: absolute;
+    width: 298px;
+    height: 54px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+    border-color: #F9804B;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+
+}
+
+
+
+.socialmedia {
+    position: relative;
+    width:111px;
+    height:auto;
+    left:0px;
+    top: 206px;
+    
+
+}
+
+.socialmedia_elem {
+    position: relative;
+    left:220px;
+    width: 111px;
+    height: 200px;
+    top: 30px;
+    line-height: 50px;
+}
+
+.ico {
+    position: absolute;
+    background-image: url(../../assets/images/footer/Ellipse18.svg);
+    width: 26px;
+    height: 26px;
+    z-index: 1;
+    left: 0px;
+    
+}
+
+.socialmedia__logoimg {
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+}
+
+
+.socialmedia__text {
+    position: absolute;
+    left: 38px;
+    width: 73px;
+    height: 21px;
+    font-weight: 400;
+    font-size: 16px;
+    
+    color: #FFFFFF;
+    top: 0px;
+}
+
+.socialmedia__text:hover {
+    color: #4B9200;
+}
+
+
+circle:hover {
+    fill: #4B9200;
+    fill-opacity: 1;
+}
+
+.footer__navigation {
+        position:absolute;
+        bottom: 50px;
+        left: 553px;
+}
+
+.footer__text-designedby {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 1.55rem;
+    line-height: 130%;
+    color: #FFFFFF;
+    padding: 0px;
+    text-indent: 0px;
+    line-height: 200%;
+}
+
+.footer__designedby {
+    position: absolute;
+    bottom: 29px;
+    right: 220px;
+    padding: 0px;
+}
+
+.footer-form_title {
+    position: absolute;
+    width: 237px;
+    height: 29px;
+    right: 350px;
+    top: 40px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+.input-email {
+    position: absolute;
+    top: 82px;
+    left: 1013px;
+    width: 206px;
+    background-color: #111115;
+    border: 1px solid #F9804B;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #BDBDBD;
+    padding: 10px;
+}
+
+.input-email:focus {
+    border-color: #4B9200;
+    outline: none;
+}
+
+.input-email:invalid {
+    border-color: #D31414;
+    outline: none;
+}
+
+.sumbit_div {
+    position: absolute;
+    width: 129px;
+    height: 42px;
+}
+
+.sumbit_button {
+    position: absolute;
+    width: 129px;
+    height: 42px;
+    right: 220px;
+    top: 83px;
+    border: 1px solid #111115;
+    border-radius: 5px;
+    background-color: #F1F3F2;
+    color: #111115;
+}
+
+.sumbit_button:active {
+    border-color:#4B9200;
+    color: #4B9200;
+}
+
+.sumbit_button:hover {
+    border-color: orange;
+    color: orange;
 }
