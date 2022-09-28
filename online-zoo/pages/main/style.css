@@ -3,8 +3,6 @@ html {
 
 }
 
-
-
 body {
     font-size: 1.6rem;
     font-family: 'Roboto', 'Verdana', sans-serif;
@@ -39,7 +37,7 @@ a:visited {
 }
 
 a:active {
-    color: orange;
+    color: #4B9200;
 }
 
 .wrapper {
@@ -63,7 +61,6 @@ a:active {
     position:absolute;
     top: 29px;
     left: 308px;
-
 }
 
 .navigation {
@@ -91,6 +88,14 @@ a:active {
     border: 1px solid white;
     border-radius: 1px;
     background-color: black;
+}
+
+.logodiv:hover {
+    border-color: orange;
+}
+
+.logodiv:active {
+    border-color: #4B9200;
 }
 
 .logo-p {
@@ -189,13 +194,12 @@ a:active {
     font-size: 1.6rem
 }
 
-.button__orange {
+.button__colored {
     display: block;
     position: absolute;
     width: 298px;
     height: 54px;
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
-    border-radius: 25px;
     color: white;
     text-transform: uppercase;
     border-color: #F9804B;
@@ -203,6 +207,25 @@ a:active {
     font-size: 1.6rem;
     line-height: 140%;
 }
+
+.button-radius-25 {
+    border-radius: 25px;
+}
+
+.button-radius-5 {
+    border-radius: 5px;
+}
+
+.button__colored:hover {
+    background: #E47209;
+    border-color: #E47209;
+}
+
+.button__colored:active {
+    background: #4B9200;
+    border-color:#4B9200;
+}
+
 
 .backstage {
     position: absolute;
@@ -215,7 +238,7 @@ a:active {
     display: block;
     position: absolute;
     background: url(../../assets/images/plants_decor/flower_foto1.png);
-    width: 205px;
+    width: 204px;
     height: 605px;
     right: 0px;
     top: -128px;
@@ -317,7 +340,23 @@ a:active {
     border-radius: 5px;
     position: relative;
     margin-bottom: 20px;
-    
+}
+
+.animals__card:hover > .animals__picture {
+    transform: scale(1.1);
+    filter:brightness(50%);
+    transition: all 0.1s ease;
+}
+
+.animals__card:hover > .animals__title-box {
+    transform: translate(120px, -250px);
+    filter: invert();
+    transition: all 0.2s ease;
+}
+
+.animals__card:hover > .animals__title {
+    font-size: 200px;
+    transition: all 0.2s ease;
 }
 
 .animals__picture {
@@ -326,10 +365,13 @@ a:active {
     left: 0px;
     width: 366px;
     margin: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     
 }
 
 .animals__title {
+    display: block;
     position: absolute;
     width: 294px;
     height: 22px;
@@ -381,6 +423,10 @@ a:active {
     top: 402px;
     width: 62px;
     height: 62px;
+}
+
+.navigation__arrow:active {
+    scale: 110%;
 }
 
 .left {
@@ -596,17 +642,37 @@ a:active {
     top: 721px;
 }
 
-
-
-
-
-
-
-
-
 .testimonials {
     position: absolute;
-    top: 3753px; 
+    width: 1600px;
+    top: 3734px; 
+}
+
+.testimonials__main {
+    position: relative;
+    width: 1160px;
+    height: 575px;
+}
+
+.testimonials__h3 {
+    top: 0px;
+}
+
+.testimonials__button {
+    position: absolute;
+    top: 565px;
+    left: 212px;
+    width: 300px;
+}
+
+.plant-decor4 {
+    position: absolute;
+    background: url(../../assets/images/plants_decor/leav_foto.jpg);
+    position: absolute;
+    width: 247px;
+    height: 408px;
+    right:7px;
+    top: 523px;
 }
 
 .footer {
@@ -634,34 +700,172 @@ a:active {
 }
 
 .footer__button-donate {
+    display: block;
+    position: absolute;
     width: 298px;
     height: 54px;
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
     border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+    border-color: #F9804B;
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 140%;
-    text-align: center;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    border: 1px solid;
-    border-color: #F9804B;
+
 }
 
-.socialmedia {
-    position: flex;
-    position: absolute;
-    flex-wrap: wrap;
-    width:111px;
-    left:0px;
-    top: 264px;
 
+
+.socialmedia {
+    position: relative;
+    width:111px;
+    height:auto;
+    left:0px;
+    top: 206px;
+    
+
+}
+
+.socialmedia_elem {
+    position: relative;
+    left:220px;
+    width: 111px;
+    height: 200px;
+    top: 30px;
+    line-height: 50px;
 }
 
 .ico {
     position: absolute;
-    background-image: url(../../assets/images/footer/Ellipse\ 18.png);
+    background-image: url(../../assets/images/footer/Ellipse18.svg);
     width: 26px;
     height: 26px;
     z-index: 1;
+    left: 0px;
+    
 }
+
+.socialmedia__logoimg {
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+}
+
+
+.socialmedia__text {
+    position: absolute;
+    left: 38px;
+    width: 73px;
+    height: 21px;
+    font-weight: 400;
+    font-size: 16px;
+    
+    color: #FFFFFF;
+    top: 0px;
+}
+
+.socialmedia__text:hover {
+    color: #4B9200;
+}
+
+
+circle:hover {
+    fill: #4B9200;
+    fill-opacity: 1;
+}
+
+.footer__navigation {
+        position:absolute;
+        bottom: 50px;
+        left: 553px;
+}
+
+.footer__text-designedby {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 1.55rem;
+    line-height: 130%;
+    color: #FFFFFF;
+    padding: 0px;
+    text-indent: 0px;
+    line-height: 200%;
+}
+
+.footer__designedby {
+    position: absolute;
+    bottom: 29px;
+    right: 220px;
+    padding: 0px;
+}
+
+.footer-form_title {
+    position: absolute;
+    width: 237px;
+    height: 29px;
+    right: 350px;
+    top: 40px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+.input-email {
+    position: absolute;
+    top: 82px;
+    left: 1013px;
+    width: 206px;
+    background-color: #111115;
+    border: 1px solid #F9804B;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #BDBDBD;
+    padding: 10px;
+}
+
+.input-email:focus {
+    border-color: #4B9200;
+    outline: none;
+}
+
+.input-email:invalid {
+    border-color: #D31414;
+    outline: none;
+}
+
+.sumbit_div {
+    position: absolute;
+    width: 129px;
+    height: 42px;
+}
+
+.sumbit_button {
+    position: absolute;
+    width: 129px;
+    height: 42px;
+    right: 220px;
+    top: 83px;
+    border: 1px solid #111115;
+    border-radius: 5px;
+    background-color: #F1F3F2;
+    color: #111115;
+}
+
+.sumbit_button:active {
+    border-color:#4B9200;
+    color: #4B9200;
+}
+
+.sumbit_button:hover {
+    border-color: orange;
+    color: orange;
+}
+
+
+
+
