@@ -109,7 +109,7 @@ a:active {
     padding: 0px;
     font-size: 1.9rem;
     color: white;
-    font-family: 400; 
+    weight: 400; 
 }
 
 .logo-a {
@@ -652,10 +652,54 @@ a:active {
     position: relative;
     width: 1160px;
     height: 575px;
+    left: -9px;
 }
 
 .testimonials__h3 {
     top: 0px;
+}
+
+.layout-4-column {
+    display: flex;
+    position: relative;
+    width:1160px;
+    height: 575px;
+    justify-content: space-between;
+    top: 94px;
+}
+
+.testimonials__textblock {
+    display: inline-flex;
+    align-items: center;
+    width: 268px;
+    height: 391px;
+    border: 2px solid #E47209;
+    border-radius: 20px;
+    background-color: #F1F3F2;
+    top: 94px;
+}
+
+.slidebar_box {
+    display: block;
+    position: relative;
+    width: 599px;
+    height: 8px;
+    
+}
+
+.slidebar {
+    position: absolute;
+    width: 599px;
+    height: 8px;
+    top: 505px;
+    left: 277px;
+    border-color: #E47209;
+    outline: none;
+    border: 1px solid #4B9200;
+}
+
+.slidebar {
+    background-color: #4B9200;
 }
 
 .testimonials__button {
