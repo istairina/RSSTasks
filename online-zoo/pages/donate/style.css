@@ -70,7 +70,7 @@ a:active {
 
 .navigation li {
     display: inline-block;
-    padding-left: 58px;
+    padding-left: 55px;
     font-size: 1.6rem;
     font-weight: 500;
     font-size: 16px;
@@ -201,10 +201,138 @@ a:active {
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 }
 
+.text__zoo-reopened {
+    position: absolute;
+    height: 47px;
+    left: 220px;
+    top: 40px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: #FFFFFF;
+}
+
+.donate_main-text {
+    position: absolute;
+    height: 94px;
+    left: 220px;
+    right: 220px;
+    top: 97px;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+    color: #FFFFFF;
+}
+
+.donate_text-don-info {
+    position: absolute;
+    width: 341px;
+    height: 47px;
+    left: 220px;
+    top: 231px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: #FE9013;
+}
+
+.donate__inner-block {
+    position: absolute;
+    height: 964px;
+    left: 220px;
+    right: 220px;
+    top: 338px;
+    background: rgba(255, 255, 255, 0.52);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+}
+
+.donation__items-inner-block {
+    position: relative;
+    width: 976px;
+    height: 862px;
+    left: calc(50% - 976px/2);
+    top: 40px;
+    background-color: #BDBDBD;
+}
+
+.inner__title {
+    position: absolute;
+    width: 463px;
+    height: 58px;
+    left: 250px;
+    top: 0px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    text-align: center;
+    color: #FE9013;
+}
+
+.inner__text {
+    position: absolute;
+    width: 1095px;
+    height: 29px;
+    left: 0px;
+    top: 78px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: #333B41;
+}
+
+.inner__number {
+    position: absolute;
+    width: 41px;
+    height: 58px;
+    left: 274px;
+    top: 272px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 80%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.inner__number-description {
+    position: absolute;
+    width: 159px;
+    height: 22px;
+    left: 215px;
+    top: 341px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: #333B41; 
+}
+
+.donate__multiply {
+    position: absolute;
+    top: 297px;
+    left: 385px;
+}
+
+.donate__animal-widget {
+    position: absolute;
+    top: 167px;
+    left: 463px;
+}
 
 .footer {
     position: absolute;
-    top: 1505px;
+    top: 1948px;
     width: 1600px;
     height: 443px;
     left: 0px;
@@ -305,7 +433,7 @@ circle:hover {
 .footer__navigation {
         position:absolute;
         bottom: 50px;
-        left: 553px;
+        left: 564px;
 }
 
 .footer__text-designedby {
