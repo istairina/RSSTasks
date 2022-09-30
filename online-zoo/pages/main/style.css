@@ -109,7 +109,7 @@ a:active {
     padding: 0px;
     font-size: 1.9rem;
     color: white;
-    weight: 400; 
+    
 }
 
 .logo-a {
@@ -340,6 +340,7 @@ a:active {
     border-radius: 5px;
     position: relative;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .animals__card:hover > .animals__picture {

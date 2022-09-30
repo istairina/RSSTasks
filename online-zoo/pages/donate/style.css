@@ -1,6 +1,5 @@
 html {
     font-size: 10px;
-
 }
 
 body {
@@ -8,11 +7,19 @@ body {
     font-family: 'Roboto', 'Verdana', sans-serif;
 }
 
+.almost-black {
+    color: #333B41;
+}
+
+.font-24-px {
+    font-size: 2.4rem;
+}
 
 ul {
     list-style: none; /*убираем маркеры списка*/
     margin: 0; /*убираем верхнее и нижнее поле, равное 1em*/
     padding-left: 0; /*убираем левый отступ, равный 40px*/
+    position: absolute;
   }
 
 a {
@@ -41,7 +48,7 @@ a:active {
 }
 
 .wrapper {
-    display: relative;
+    position: relative;
     width: 1160px;
     margin: auto;
 }
@@ -49,18 +56,18 @@ a:active {
 
 .header {
     background-color: black;
-    width: 1600px;
+    width: 100%;
     height: 80px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    position: relative;
+    top: -8px;
     z-index: 2;
+    margin: auto;
 }
 
 .header__navigation {
-    position:absolute;
-    top: 29px;
-    left: 308px;
+    position:relative;
+    top: -25px;
+    left: 89px;
 }
 
 .navigation {
@@ -127,29 +134,22 @@ a:active {
     top: 23px;
 }
 
-.promo__content {
+.promo {
     position: relative;
-    width: 1600px;
-    height: 390px;
-    display: block;
-    position: absolute;
-    top: 76px;
-    left: 0px;
+    margin: auto;
+    top: -8px;
+    height: 386px;
+    background-image: url(../../assets/images/promo/Giant_Panda.jpg);
+    background-position-y: center;
+    background-size:cover;
 }
 
-.promo-panda {
-    position: absolute;
-    background-image: url(../../assets/images/promo/Giant_Panda.jpg);
-    width: 1600px;
-    height: 577px;
-    top: -181px;
-}
 
 .header__designedby {
     display: inline-block;
     position: absolute;
     top: 29px;
-    left: 1275px;
+    right: 0px;
     z-index: 5;
 }
 
@@ -192,19 +192,17 @@ a:active {
 }
 
 .mainpart {
-    position: absolute;
+    position: relative;
     height: 1482px;
-    width: 1600px;
-    left: 0px;
-    right: 0px;
-    top: 466px;
+    margin: auto;
+    top: -8px;
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 }
 
 .text__zoo-reopened {
     position: absolute;
     height: 47px;
-    left: 220px;
+    left: 0px;
     top: 40px;
     font-family: 'Roboto';
     font-style: normal;
@@ -217,8 +215,7 @@ a:active {
 .donate_main-text {
     position: absolute;
     height: 94px;
-    left: 220px;
-    right: 220px;
+    left: 0px;
     top: 97px;
     font-weight: 500;
     font-size: 1.6rem;
@@ -230,7 +227,7 @@ a:active {
     position: absolute;
     width: 341px;
     height: 47px;
-    left: 220px;
+    left: 0px;
     top: 231px;
     font-style: normal;
     font-weight: 400;
@@ -242,8 +239,8 @@ a:active {
 .donate__inner-block {
     position: absolute;
     height: 964px;
-    left: 220px;
-    right: 220px;
+    left: 0px;
+    right: 0px;
     top: 338px;
     background: rgba(255, 255, 255, 0.52);
     backdrop-filter: blur(2px);
@@ -256,7 +253,6 @@ a:active {
     height: 862px;
     left: calc(50% - 976px/2);
     top: 40px;
-    background-color: #BDBDBD;
 }
 
 .inner__title {
@@ -330,14 +326,101 @@ a:active {
     left: 463px;
 }
 
-.footer {
-    position: absolute;
-    top: 1948px;
-    width: 1600px;
-    height: 443px;
+.donation__form {
+    position: relative;
+    top: 625px;
+    left: 354px;
+    width:300px;
+    background-color: red;
+}
+
+.input-amount {
+    width: 247px;
+    height: 52px;
     left: 0px;
+    top: 0px;
+    position: absolute;
+    border: 1px solid #929699;
+    border-radius: 2px;
+    color: #929699;
+    padding: 0px 9px;
+    content: "$";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    background-image: url("../../assets/images/donate/dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 248px, 10px;
+}
+
+.donation__radio-buttons {
+    position: relative;
+    top: 78px;
+    left: 11px;
+}
+
+.montly_radio-button {
+    position: absolute;
+    left: 12px;
+}
+
+.once_radio-button {
+    position: absolute;
+    right: 154px;
+}
+
+.input-period {
+    position: absolute;
+    left: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #FE9013;
+    transition: 0.1s all linear;
+    outline: none;
+}
+
+input:checked {
+    background-color: #FE9013;
+}
+
+.input__text-radio {
+    position: absolute;
+    left: 30px;
+    top: 0px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #333B41;
+}
+
+.donate__feed-button {
+    position: relative;
+    top: 131px;
+    left: -12px;
+}
+
+.donate__bottom-text-inner-box {
+    position:absolute;
+    bottom: 2px;
+    left: 340px;
+}
+
+.footer {
+    position: relative;
+    top: -8px;
+    width: 100%;
+    height: 443px;
+    margin: auto;
     bottom: 0px;
     background-color: #111115;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 140%;
+    color: #929699;
 }
 
 .footer__first-column {
@@ -351,26 +434,8 @@ a:active {
 .button_donate {
     position: absolute;
     top: 161px;
-    left: 220px;
+    left: 0px;
 }
-
-.footer__button-donate {
-    display: block;
-    position: absolute;
-    width: 298px;
-    height: 54px;
-    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
-    border-radius: 5px;
-    color: white;
-    text-transform: uppercase;
-    border-color: #F9804B;
-    font-weight: 500;
-    font-size: 1.6rem;
-    line-height: 140%;
-
-}
-
-
 
 .socialmedia {
     position: relative;
@@ -391,6 +456,28 @@ a:active {
     line-height: 50px;
 }
 
+.logo_box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 26px;
+    height: 26px;
+    left: 0px;
+}
+
+.logo-logo {
+    position: absolute;
+    top:0px;
+    left:50%;
+    width: 26px;
+    height: 26px;
+}
+
+.logo-circle {
+    position: relative;
+    left: 0px;
+}
+
 .ico {
     position: absolute;
     background-image: url(../../assets/images/footer/Ellipse18.svg);
@@ -398,13 +485,21 @@ a:active {
     height: 26px;
     z-index: 1;
     left: 0px;
-    
+    margin: auto;
+    align-self: baseline;
 }
 
 .socialmedia__logoimg {
+    /*display: block;*/
     position: absolute;
     z-index: 2;
-    left: 0px;
+    margin:auto;
+    vertical-align: middle;
+    /*top:50%;
+    left:50%;
+    /*margin: auto;
+    vertical-align: center;*/
+    
 }
 
 
@@ -431,15 +526,15 @@ circle:hover {
 }
 
 .footer__navigation {
-        position:absolute;
-        bottom: 50px;
-        left: 564px;
+        position:relative;
+        bottom: -173px;
+        left: 344px;
 }
 
 .footer__text-designedby {
     font-style: normal;
     font-weight: 100;
-    font-size: 1.55rem;
+    font-size: 1.6rem;
     line-height: 130%;
     color: #FFFFFF;
     padding: 0px;
@@ -449,17 +544,24 @@ circle:hover {
 
 .footer__designedby {
     position: absolute;
-    bottom: 29px;
-    right: 220px;
+    bottom: -218px;
+    right: -10px;
     padding: 0px;
 }
 
-.footer-form_title {
+.footer__form {
     position: absolute;
+    top: 42px;
+    right: 0px;
+    width: 366px;
+}
+
+.footer-form_title {
+    position: relative;
     width: 237px;
     height: 29px;
-    right: 350px;
-    top: 40px;
+    left: 0px;
+    top: 0px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -470,8 +572,8 @@ circle:hover {
 
 .input-email {
     position: absolute;
-    top: 82px;
-    left: 1013px;
+    top: 40px;
+    left: 0px;
     width: 206px;
     background-color: #111115;
     border: 1px solid #F9804B;
@@ -493,18 +595,12 @@ circle:hover {
     outline: none;
 }
 
-.sumbit_div {
-    position: absolute;
-    width: 129px;
-    height: 42px;
-}
-
 .sumbit_button {
     position: absolute;
     width: 129px;
     height: 42px;
-    right: 220px;
-    top: 83px;
+    right: 0px;
+    top: 40px;
     border: 1px solid #111115;
     border-radius: 5px;
     background-color: #F1F3F2;

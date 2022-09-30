@@ -6,7 +6,7 @@
     <title>Online zoo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -72,6 +72,25 @@
                         </clipPath>
                         </defs>
                     </svg>
+                    <form action method="POST" class="donation__form">
+                        <input type="number" name="donation__amount" placeholder="Another amount" class="input-amount" min="0" max="9999">                                     
+                        <div class="donation__radio-buttons">
+                            <div class="montly_radio-button">
+                                <input type="radio" id="monthly" name="period" class="input-period">
+                                <label for="monthly" class="input__text-radio">Monthly</label>
+                            </div>
+                            <div class="once_radio-button">
+                                <input type="radio" id="once" name="period" class="input-period" checked>
+                                <label for="once" class="input__text-radio">Once</label>
+                            </div>
+                        </div>
+                        <div class="donate__feed-button">
+                            <button class="button__colored button-radius-25">Feed a friend now</button>
+                        </div>
+                    </form>
+                    <div class="donate__bottom-text-inner-box">
+                        <span class="almost-black">Share with your friends on social networks</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,7 +118,7 @@
                             <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="13" cy="13" r="13" fill="#C4C4C4" fill-opacity="0.5"/>
                             </svg>
-                            <span class="ico_facebook"></span>
+
                             <span class="socialmedia__text">Facebook</span>
                             </a>
                         </div>
@@ -109,7 +128,7 @@
                                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="13" cy="13" r="13" fill="#C4C4C4" fill-opacity="0.5"/>
                                 </svg>
-                                <span class="ico_twitter"></span>
+
                                 <span class="socialmedia__text" style="top: 35px;">Twitter</span>
                             </a>
                         </div>
@@ -119,7 +138,7 @@
                                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="13" cy="13" r="13" fill="#C4C4C4" fill-opacity="0.5"/>
                                 </svg>
-                                <span class="ico_instagram"></span>
+
                                 <span class="socialmedia__text" style="top: 70px;">Instagram</span>
                             </a>
                         </div>
@@ -129,8 +148,8 @@
                                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="13" cy="13" r="13" fill="#C4C4C4" fill-opacity="0.5"/>
                                 </svg>
-                                <span class="ico_instagram"></span> 
-                                <span class="socialmedia__text" style="top: 107px;">YouTube
+
+                                <span class="socialmedia__text" style="top: 107px;">YouTube</span>
                             </a>
                         </div>
                     </div>
@@ -142,21 +161,20 @@
                             <li><a href="#">Contact us</a></li>
                         </ul>
                     </div>
+                    <div class="footer__designedby">
+                        <p class="footer__text-designedby">Designed by &copy; Alisa Samborskaya<br>
+                            &copy;RSSchool &#38; &copy;Yem Digital 2021
+                        </span>
+                    </div>
+                    <div class="footer__form">
+                        <span class="footer-form_title">Subscribe to our news</span>
+                        <form action method="POST">
+                            <input type="email" required name="email" placeholder="Enter your email" class="input-email">                                     
+                               <button type="sumbit" class="sumbit_button">Submit</button>
+                            </form>
+                    </div>
                 </div>
-                <div class="footer__designedby">
-                    <p class="footer__text-designedby">Designed by &copy; Alisa Samborskaya<br>
-                        &copy;RSSchool &#38; &copy;Yem Digital 2021
-                    </span>
-                </div>
-                <div class="footer__form">
-                    <span class="footer-form_title">Subscribe to our news</span>
-                    <form action method="POST">
-                        <input type="email" required name="email" placeholder="Enter your email" class="input-email">                                     
-                        <div class="submit_div">
-                            <button type="sumbit" class="sumbit_button">Submit</button>
-                        </div>
-                    </form>
-                </div>
+                
             </div>
         </div>
     </footer>
