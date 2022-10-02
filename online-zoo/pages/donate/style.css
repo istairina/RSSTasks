@@ -5,6 +5,7 @@ html {
 body {
     font-size: 1.6rem;
     font-family: 'Roboto', 'Verdana', sans-serif;
+    margin: 0;
 }
 
 .almost-black {
@@ -15,12 +16,7 @@ body {
     font-size: 2.4rem;
 }
 
-ul {
-    list-style: none; /*убираем маркеры списка*/
-    margin: 0; /*убираем верхнее и нижнее поле, равное 1em*/
-    padding-left: 0; /*убираем левый отступ, равный 40px*/
-    position: absolute;
-  }
+
 
 a {
     text-decoration: none; /*убираем подчеркивание текста ссылок*/
@@ -56,17 +52,17 @@ a:active {
 
 .header {
     background-color: black;
-    width: 100%;
+    width: 1600px;
     height: 80px;
     position: relative;
-    top: -8px;
+    top: 0px;
     z-index: 2;
     margin: auto;
 }
 
 .header__navigation {
     position:relative;
-    top: -25px;
+    top: -22px;
     left: 89px;
 }
 
@@ -75,9 +71,20 @@ a:active {
         text-align: center;
 }
 
+ul {
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем верхнее и нижнее поле, равное 1em*/
+    padding-left: 0; /*убираем левый отступ, равный 40px*/
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 472px;
+    left: 56px;    
+  }
+
 .navigation li {
     display: inline-block;
-    padding-left: 55px;
+    padding-left: 0px;
     font-size: 1.6rem;
     font-weight: 500;
     font-size: 16px;
@@ -88,8 +95,8 @@ a:active {
     display: flex;
     align-items: center;
     position: relative;
-    width: 82px;
-    height: 52px;
+    width: 80px;
+    height: 50px;
     left: 0px;
     top: 14px;
     border: 1px solid white;
@@ -134,21 +141,10 @@ a:active {
     top: 23px;
 }
 
-.promo {
-    position: relative;
-    margin: auto;
-    top: -8px;
-    height: 386px;
-    background-image: url(../../assets/images/promo/Giant_Panda.jpg);
-    background-position-y: center;
-    background-size:cover;
-}
-
-
 .header__designedby {
     display: inline-block;
     position: absolute;
-    top: 29px;
+    top: 31px;
     right: 0px;
     z-index: 5;
 }
@@ -158,6 +154,22 @@ a:active {
     font-size: 1.6rem;
     font-weight: 500;
 }
+
+
+.promo {
+    position: relative;
+    margin: auto;
+    top: 0px;
+    height: 390px;
+    background-image: url(../../assets/images/promo/Giant_Panda.jpg);
+    background-position-y: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 1600px;
+}
+
+
+
 
 .button__colored {
     display: block;
@@ -171,6 +183,7 @@ a:active {
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 140%;
+    letter-spacing: -1px;
 }
 
 .button-radius-25 {
@@ -194,8 +207,9 @@ a:active {
 .mainpart {
     position: relative;
     height: 1482px;
+    width: 1600px;
     margin: auto;
-    top: -8px;
+    top: -3px;
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 }
 
@@ -207,7 +221,7 @@ a:active {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 3.6rem;
     line-height: 130%;
     color: #FFFFFF;
 }
@@ -231,7 +245,7 @@ a:active {
     top: 231px;
     font-style: normal;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 3.6rem;
     line-height: 130%;
     color: #FE9013;
 }
@@ -278,7 +292,7 @@ a:active {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 120%;
     color: #333B41;
 }
@@ -308,7 +322,7 @@ a:active {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 140%;
     text-align: center;
     color: #333B41; 
@@ -326,9 +340,25 @@ a:active {
     left: 463px;
 }
 
+.inner__text-amount {
+    position: absolute;
+    top: 462px;
+    left: 5px;
+}
+
+.progress-bar {
+    position: absolute;
+    width: 976px;
+    height: 27px;
+    z-index: -1px;
+    top: 500px;
+    left: 0px;
+    background-image: url("../../assets/images/donate/progress_bar.svg");
+}
+
 .donation__form {
     position: relative;
-    top: 625px;
+    top: 585px;
     left: 354px;
     width:300px;
     background-color: red;
@@ -346,7 +376,7 @@ a:active {
     padding: 0px 9px;
     content: "$";
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 140%;
     background-image: url("../../assets/images/donate/dollar.svg");
     background-repeat: no-repeat;
@@ -369,6 +399,90 @@ a:active {
     right: 154px;
 }
 
+.donate__line-amount {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    top: 490px;
+    left: -16px;
+    width: 962px;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.input-line-dots {
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: none;
+    transition: 0.1s all linear;
+    outline: none;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+
+.input-line-dots:checked {
+    border: 2px double #FE9013;
+    background: none;
+    background-image: url("../../assets/images/donate/little-circle.svg");
+    background-repeat:no-repeat;
+    background-position: center;
+    transition: 0.1s all linear;
+    font-size: 3rem;
+}
+
+.donate_line-amount-label {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content:space-between;
+    top: 537px;
+    left: -2px;
+    width: 448px;
+    height: 40px;
+}
+
+.donate_line-amount-label2 {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content:space-between;
+    top: 537px;
+    left: 517px;
+    width: 189px;
+    height: 40px;
+}
+
+.donate_line-amount-label3 {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content:space-between;
+    top: 537px;
+    left: 777px;
+    width: 174px;
+    height: 40px;
+}
+
+.line-amount-label {
+    display: inline-block;
+    left: 12px;
+    top: 0px;
+    font-weight: 500;
+    font-size: 2.6rem;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #333B41;
+}
+
+
 .input-period {
     position: absolute;
     left: 0px;
@@ -387,12 +501,18 @@ input:checked {
     background-color: #FE9013;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .input__text-radio {
     position: absolute;
     left: 30px;
     top: 0px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 140%;
     color: #333B41;
 }
@@ -411,8 +531,8 @@ input:checked {
 
 .footer {
     position: relative;
-    top: -8px;
-    width: 100%;
+    top: -4px;
+    width: 1600px;
     height: 443px;
     margin: auto;
     bottom: 0px;
@@ -442,9 +562,10 @@ input:checked {
     width:111px;
     height:auto;
     left:0px;
-    top: 206px;
-    
-
+    top: 208px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
 }
 
 .socialmedia_elem {
@@ -454,6 +575,25 @@ input:checked {
     height: 200px;
     top: 30px;
     line-height: 50px;
+}
+
+.socialmedia_logo-facebook {
+    top:4px;
+    left: 9px;
+}
+.socialmedia_logo-twitter {
+    top:41px;
+    left: 5px;
+}
+
+.socialmedia_logo-instagram {
+    top:76px;
+    left: 5px;
+}
+
+.socialmedia_logo-youtube {
+    top:113px;
+    left: 4px;
 }
 
 .logo_box {
@@ -509,10 +649,10 @@ input:checked {
     width: 73px;
     height: 21px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     
     color: #FFFFFF;
-    top: 0px;
+    top: 4px;
 }
 
 .socialmedia__text:hover {
@@ -527,8 +667,17 @@ circle:hover {
 
 .footer__navigation {
         position:relative;
-        bottom: -173px;
+        bottom: -179px;
         left: 344px;
+}
+
+.logo-footer {
+    top: 40px;
+}
+
+
+.navigation-footer-ul {
+    width:  362px;
 }
 
 .footer__text-designedby {
@@ -544,8 +693,8 @@ circle:hover {
 
 .footer__designedby {
     position: absolute;
-    bottom: -218px;
-    right: -10px;
+    bottom: -223px;
+    right: 0px;
     padding: 0px;
 }
 
@@ -565,7 +714,7 @@ circle:hover {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 120%;
     color: #FFFFFF;
 }
@@ -579,7 +728,7 @@ circle:hover {
     border: 1px solid #F9804B;
     border-radius: 5px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 140%;
     color: #BDBDBD;
     padding: 10px;
@@ -605,6 +754,7 @@ circle:hover {
     border-radius: 5px;
     background-color: #F1F3F2;
     color: #111115;
+    font-size: 1.6rem;
 }
 
 .sumbit_button:active {
@@ -615,4 +765,440 @@ circle:hover {
 .sumbit_button:hover {
     border-color: orange;
     color: orange;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        position: relative;
+        width: 940px;
+        margin: auto;
+    }
+
+    .header {
+        width:1000px;
+    }
+
+    .header__navigation {
+        position:relative;
+        top: -23px;
+        left: 90px;
+    }
+
+    .logodiv {
+        left: -1px;
+        top: 14px;
+    }
+
+    ul {
+        list-style: none; /*убираем маркеры списка*/
+        margin: 0; /*убираем верхнее и нижнее поле, равное 1em*/
+        padding-left: 0; /*убираем левый отступ, равный 40px*/
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 430px;
+        left: 56px;    
+      }
+
+    .header__designedby {
+        top: 31px;
+        right: 1px;
+        white-space: no-wrap;
+    }
+
+    .promo {
+        position: relative;
+        margin: auto;
+        top: 0px;
+        height: 390px;
+        background-image: url(../../assets/images/promo/Giant_Panda.jpg);
+        background-position-y: center;
+        background-position-x: -172px;
+        background-size:100%;
+    }
+
+    .mainpart {
+        width:1000px;
+        top: 0px;
+    }
+
+    .text__zoo-reopened {
+        position: absolute;
+        width:778px;
+        height: 47px;
+        left: 0px;
+        top: 40px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3.6rem;
+        line-height: 130%;
+        color: #FFFFFF;
+    }
+
+    .donate_main-text {
+        top:165px;
+        width: 935px;
+    }
+
+    .donate_text-don-info {
+        top: 298px;
+    }
+
+    .donate__inner-block {
+        top: 385px;
+        width: 940px;
+        height: 918px;
+    }
+
+    .donation__items-inner-block {
+        top: 19px;
+        height: 853px;
+    }
+
+    .inner__text {
+        left: 65px;
+        top: 69px;
+    }
+
+    .inner__text-amount {
+        top:0px;
+        left: 11px;
+    }
+
+    .inner_image {
+        position: absolute;
+        top: -9px;
+    }
+
+    .choose-amount-box {
+        position: absolute;
+        width: 842px;
+        height: 118px;
+        top: 453px;
+        left: 73px;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        background-image: url("../../assets/images/donate/progress_bar_1000.svg");
+        width:810px;
+        height: 40px;
+        left: 11px;
+        top: 31px;
+
+    }
+
+    .donate__line-amount {
+        top: 29px;
+        left: -150px;
+        
+    }
+
+    .donate_line-amount-label {
+        top:75px;
+        left: -120px;
+    }
+
+    .donate_line-amount-label2 {
+        top:75px;
+        left: 396px;
+    }
+
+    .donate_line-amount-label3 {
+        top:75px;
+        left: 657px;
+    }
+    
+
+    .donation__form {
+        top: 616px;
+    }
+
+    .input__text-radio {
+        top: 2px;
+    }
+
+    .footer {
+        width:1000px;
+        top: -148px;
+    }
+
+    .logo-footer {
+        left: 0px;
+        top:39px;
+    }
+
+    .footer__navigation {
+        left: 248px;
+    }
+
+    .navigation-footer-ul {
+        width: 333px;
+    }
+
+    .footer__form {
+        top: 41px;
+        right: 33px;
+    }
+
+    .footer__designedby {
+        right: 2px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    /*html {
+        font-size: 6.47px;
+    }*/
+
+    .wrapper {
+        position: relative;
+        width: 600px;
+        margin: auto;
+    }
+
+    .header {
+        width: 640px;
+        height: 34px;
+    }
+
+    .logodiv {
+        border: none;
+        width: 47px;
+        height: 29px;
+        top: 0px;
+        left:0px;
+    }
+
+    .logo-p {
+        font-weight: 400;
+        line-height: 120%;
+        font-size: 12.29px;
+        
+    }
+
+    .logo-bamboo {
+        scale: 64.7%;
+        left: 1px;
+        top: 12px;
+    }
+
+    .header__navigation, .header__designedby  {
+        display: none;
+    }
+
+    .promo__div {
+        width: 640px;
+        overflow: hidden;
+    }
+
+    .promo {
+        height: 335px;
+        background-position-x: -268px;
+        background-position-y: center;
+        background-size: 85%;
+    }
+
+    .mainpart {
+        width: 640px;
+    }
+
+    .text__zoo-reopened {
+        top: 31px;
+        width: 590px;
+        font-size: 24px;
+        line-height: 120%;
+
+    }
+
+    .donate_main-text {
+        top:108px;
+        width: 600px;
+        font-size: 16px;
+    }
+
+    .donate_text-don-info {
+        font-size: 36px;
+        top: 294px;
+    }
+
+    .donate__inner-block {
+        top: 370px;
+        width: 600px;
+        height: 917px;
+    }
+
+    .donation__items-inner-block {
+        top: 29px;
+        height: 853px;
+        left: -182px;
+    }
+
+    .inner__text {
+        font-size: 24px;
+        text-align: center;
+        top: 79px;
+        left: 182px;
+        width: 600px;
+    }
+
+    .inner_image {
+        position:absolute;
+        top:20px;
+        left: -6px;
+    }
+
+    .inner__number-description {
+        font-size: 16px;
+    }
+
+    .inner__text-amount {
+        font-size: 16px;
+        top: 21px;
+        left: 119px;
+    }
+
+    .progress-bar {
+        background-image: url("../../assets/images/donate/progreess_bar_640.svg");
+        width: 600px;
+        height:58px;
+        left: 109px;
+        top: 24px;
+    }
+
+    .donate__line-amount {
+        top: 40px;
+        left: -288px;
+    }
+
+    .donate_line-amount-label {
+        top: 87px;
+        left: -266px;
+    }
+
+    .donate_line-amount-label2 {
+        top: 87px;
+        left: 253px;
+    }
+
+    .donate_line-amount-label3 {
+        top: 87px;
+        left: 513px;
+    }
+
+    .line-amount-label {
+        font-size: 26px;
+    }
+
+    .input-amount {
+        align-items: center;
+        width: 166px;
+        height: 42px;
+        font-size: 16px;
+        left: 38px;
+        top: 10px;
+        padding: 0px 6px;
+        background-position: 159px 10px;
+    }
+
+    .input__text-radio {
+        font-size: 16px;
+        left: 31px;
+        top: 2px;
+    }
+
+    .montly_radio-button {
+        left: 4px;
+        top: 5px;
+    }
+
+    .once_radio-button {
+        right: 162px;
+        top: 5px;
+    }
+
+    .donate__feed-button {
+        top: 135px;
+        left: -21px;
+    }
+
+    .donate__bottom-text-inner-box {
+        bottom: -2px;
+        left: 332px;
+    }
+
+    .footer {
+        width: 640px;
+        height: 282px;
+    }
+
+    .logo-footer {
+        border: 0.5px solid white;
+        border-radius: 2px;
+        top: 12px;
+        width: 82px;
+        height: 51px;
+        
+    }
+
+    .logo-p-footer {
+        font-weight: 400;
+        font-size: 1.9rem;
+        line-height: 140%;
+        vertical-align: top;
+        top: 0px;
+        line-height: 120%;
+    }
+
+    .logo-bamboo-footer {
+        scale: 100%;
+        left: 10px;
+        top: 19px;
+    }
+
+    .button_donate {
+        top: 96px;
+    }
+
+    .footer__navigation {
+        left: -55px;
+        bottom: -50px;
+    }
+
+    .navigation-footer-ul {
+        width: 295px;
+    }
+
+    .footer__form, .socialmedia__text {
+        display: none;
+    }
+
+    .footer__designedby {
+        bottom: -96px;
+        right: 0px;
+    }
+
+    .socialmedia {
+        left: 574px;
+        top: -42px;
+        height: 144px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 13px;
+    }
+
+    .socialmedia_logo-twitter {
+        top: 51px;
+    }
+
+    .socialmedia_logo-instagram {
+        top: 95px;
+    }
+
+    .socialmedia_logo-youtube {
+        top: 143px;
+    }
 }
