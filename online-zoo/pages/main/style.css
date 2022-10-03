@@ -1,19 +1,25 @@
+/** { border: 1px solid red;}*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+
 html {
     font-size: 10px;
-
 }
 
 body {
     font-size: 1.6rem;
     font-family: 'Roboto', 'Verdana', sans-serif;
+    margin: 0;
 }
 
+.almost-black {
+    color: #333B41;
+}
 
-ul {
-    list-style: none; /*убираем маркеры списка*/
-    margin: 0; /*убираем верхнее и нижнее поле, равное 1em*/
-    padding-left: 0; /*убираем левый отступ, равный 40px*/
-  }
+.font-24-px {
+    font-size: 2.4rem;
+}
 
 a {
     text-decoration: none; /*убираем подчеркивание текста ссылок*/
@@ -41,7 +47,7 @@ a:active {
 }
 
 .wrapper {
-    display: relative;
+    position: relative;
     width: 1160px;
     margin: auto;
 }
@@ -51,16 +57,17 @@ a:active {
     background-color: black;
     width: 1600px;
     height: 80px;
-    position: absolute;
+    position: relative;
     top: 0px;
-    left: 0px;
     z-index: 2;
+    margin: auto;
 }
 
 .header__navigation {
-    position:absolute;
-    top: 29px;
-    left: 308px;
+    position:relative;
+    width:50px;
+    top: -22px;
+    left: 89px;
 }
 
 .navigation {
@@ -68,11 +75,37 @@ a:active {
         text-align: center;
 }
 
+.burger-menu {
+    display: none;
+    position: absolute;
+    top:7px;
+    right: 0px;
+    width:18px;
+    height:10px;
+}
+
+.burger-menu:hover {
+    scale: 110%;
+    cursor: pointer;
+}
+
+
+ul {
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем верхнее и нижнее поле, равное 1em*/
+    padding-left: 0; /*убираем левый отступ, равный 40px*/
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 472px;
+    left: 56px;    
+  }
+
 .navigation li {
     display: inline-block;
-    padding-left: 55px;
+    padding-left: 0px;
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     line-height: 140%;
 }
@@ -81,8 +114,8 @@ a:active {
     display: flex;
     align-items: center;
     position: relative;
-    width: 82px;
-    height: 52px;
+    width: 80px;
+    height: 50px;
     left: 0px;
     top: 14px;
     border: 1px solid white;
@@ -109,7 +142,7 @@ a:active {
     padding: 0px;
     font-size: 1.9rem;
     color: white;
-    
+    font-weight: 400; 
 }
 
 .logo-a {
@@ -127,6 +160,28 @@ a:active {
     top: 23px;
 }
 
+.header__designedby {
+    display: inline-block;
+    position: absolute;
+    top: 31px;
+    right: 0px;
+    z-index: 5;
+}
+
+.text__designedby {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.promo {
+    position: relative;
+    width: 1600px;
+    height: auto;
+    margin:auto;
+    top: -80px;
+}
+
 .promo-panda {
     background-image: url(../../assets/images/promo/Giant_Panda.jpg);
     width: 1600px;
@@ -136,20 +191,6 @@ a:active {
     top: 0px;
     left: 0px;
     z-index: 1;
-}
-
-.header__designedby {
-    display: inline-block;
-    position: absolute;
-    top: 29px;
-    left: 1275px;
-    z-index: 5;
-}
-
-.text__designedby {
-    color: white;
-    font-size: 1.6rem;
-    font-weight: 500;
 }
 
 .title1 {
@@ -194,6 +235,7 @@ a:active {
     font-size: 1.6rem
 }
 
+
 .button__colored {
     display: block;
     position: absolute;
@@ -228,16 +270,19 @@ a:active {
 
 
 .backstage {
-    position: absolute;
-    top: 920px;
+    position: relative;
+    top: 840px;
     left: 0px;
     width: 1600px;
+    margin: auto;
+   
 }
 
 .plant-decor1 {
     display: block;
     position: absolute;
     background: url(../../assets/images/plants_decor/flower_foto1.png);
+    background-repeat: no-repeat;
     width: 204px;
     height: 605px;
     right: 0px;
@@ -315,11 +360,16 @@ a:active {
     color: #333B41;
 }
 
+.bottom-BS-text {
+    top: 280px;
+}
+
 .animals {
-    position: absolute;
-    top: 1500px;
+    position: relative;
+    top: 1421px;
     left: 0px;
     width: 1600px;
+    margin: auto;
 }
 
 .layout-3-column {
@@ -328,7 +378,7 @@ a:active {
     position: absolute;
     width: 1158px;
     padding: 0px 15px 15px 0px;
-    left: 217px;
+    left: 0px;
     justify-content: space-between;
 }
 
@@ -403,7 +453,6 @@ a:active {
 
 .animals__logo {
     position: absolute;
-    right: 13px;
     top: 376px;
 }
 
@@ -411,9 +460,11 @@ a:active {
     background-image: url(../../assets/images/animals/banana-bamboo_icon.png);
     width: 33px;
     height: 37px;
+    right: 13px;
 }
 
 .meat {
+    right: 8px;
     width: 48px;
     height: 38px;
     background-image: url(../../assets/images/animals/meet-fish_icon.png);
@@ -421,7 +472,7 @@ a:active {
 
 .navigation__arrow {
     position: absolute;
-    top: 402px;
+    top: 406px;
     width: 62px;
     height: 62px;
 }
@@ -431,18 +482,18 @@ a:active {
 }
 
 .left {
-    left: 140px;
+    left: -83px;
     background-image: url("../../assets/images/navigation/arrow_elips_2.png");
 }
 
 .right {
-    right: 140px;
+    right: -81px;
     background-image: url("../../assets/images/navigation/arrow_elips_1.png");
 }
 
 .animals__button {
     position: absolute;
-    left: 651px;
+    left: 432px;
     top: 955px;
     border: none;
 }
@@ -450,16 +501,18 @@ a:active {
 .plant-decor2 {
     position: absolute;
     background: url(../../assets/images/plants_decor/palm_foto.png);
+    background-repeat: no-repeat;
     position: absolute;
     width: 868px;
     height: 460px;
-    left: -586px;
+    left: 0px;
     top: 649px;
 }
 
 .plant-decor3 {
     position: absolute;
     background: url(../../assets/images/plants_decor/strelitzia.png);
+    background-repeat: no-repeat;
     width: 368px;
     height: 275px;
     right: 0px;
@@ -474,7 +527,7 @@ a:active {
     left: 0px;
     right: 0px;
     top: 2609px;
-    margin: 0px;
+    margin: auto;
     padding: 0px;
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
     opacity: 0.9;
@@ -644,16 +697,17 @@ a:active {
 }
 
 .testimonials {
-    position: absolute;
+    position: relative;
     width: 1600px;
-    top: 3734px; 
+    top: 3655px; 
+    margin: auto;
 }
 
 .testimonials__main {
     position: relative;
     width: 1160px;
     height: 575px;
-    left: -9px;
+    left: 0px;
 }
 
 .testimonials__h3 {
@@ -672,8 +726,8 @@ a:active {
 .testimonials__textblock {
     display: inline-flex;
     align-items: center;
-    width: 268px;
-    height: 391px;
+    width: 263px;
+    height: 386px;
     border: 2px solid #E47209;
     border-radius: 20px;
     background-color: #F1F3F2;
@@ -689,24 +743,35 @@ a:active {
 }
 
 .slidebar {
+    -webkit-appearance: none;
     position: absolute;
     width: 599px;
     height: 8px;
     top: 505px;
     left: 277px;
-    border-color: #E47209;
     outline: none;
-    border: 1px solid #4B9200;
+    border: 0.5px solid #FE9013;
+    background: #F5F7F6;
+    border-radius: 5px;
 }
 
-.slidebar {
+.slidebar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width:150px;
+    height:8px;
+    background:#FE9013;;
+    border-radius:5px;
+    transition:.1s;
+  }
+
+/*.slidebar {
     background-color: #4B9200;
 }
-
+*/
 .testimonials__button {
     position: absolute;
-    top: 565px;
-    left: 212px;
+    top: 544px;
+    left: 0px;
     width: 300px;
 }
 
@@ -716,18 +781,22 @@ a:active {
     position: absolute;
     width: 247px;
     height: 408px;
-    right:7px;
-    top: 523px;
+    right:0px;
+    top: 504px;
 }
 
 .footer {
-    position: absolute;
-    top: 4532px;
+    position: relative;
+    top: 3858px;
     width: 1600px;
     height: 443px;
-    left: 0px;
+    margin: auto;
     bottom: 0px;
     background-color: #111115;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 140%;
+    color: #929699;
 }
 
 .footer__first-column {
@@ -741,35 +810,18 @@ a:active {
 .button_donate {
     position: absolute;
     top: 161px;
-    left: 220px;
+    left: 0px;
 }
-
-.footer__button-donate {
-    display: block;
-    position: absolute;
-    width: 298px;
-    height: 54px;
-    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
-    border-radius: 5px;
-    color: white;
-    text-transform: uppercase;
-    border-color: #F9804B;
-    font-weight: 500;
-    font-size: 1.6rem;
-    line-height: 140%;
-
-}
-
-
 
 .socialmedia {
     position: relative;
     width:111px;
     height:auto;
     left:0px;
-    top: 206px;
-    
-
+    top: 208px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
 }
 
 .socialmedia_elem {
@@ -781,6 +833,47 @@ a:active {
     line-height: 50px;
 }
 
+.socialmedia_logo-facebook {
+    top:4px;
+    left: 9px;
+}
+.socialmedia_logo-twitter {
+    top:41px;
+    left: 5px;
+}
+
+.socialmedia_logo-instagram {
+    top:76px;
+    left: 5px;
+}
+
+.socialmedia_logo-youtube {
+    top:113px;
+    left: 4px;
+}
+
+.logo_box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 26px;
+    height: 26px;
+    left: 0px;
+}
+
+.logo-logo {
+    position: absolute;
+    top:0px;
+    left:50%;
+    width: 26px;
+    height: 26px;
+}
+
+.logo-circle {
+    position: relative;
+    left: 0px;
+}
+
 .ico {
     position: absolute;
     background-image: url(../../assets/images/footer/Ellipse18.svg);
@@ -788,13 +881,21 @@ a:active {
     height: 26px;
     z-index: 1;
     left: 0px;
-    
+    margin: auto;
+    align-self: baseline;
 }
 
 .socialmedia__logoimg {
+    /*display: block;*/
     position: absolute;
     z-index: 2;
-    left: 0px;
+    margin:auto;
+    vertical-align: middle;
+    /*top:50%;
+    left:50%;
+    /*margin: auto;
+    vertical-align: center;*/
+    
 }
 
 
@@ -804,10 +905,10 @@ a:active {
     width: 73px;
     height: 21px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     
     color: #FFFFFF;
-    top: 0px;
+    top: 4px;
 }
 
 .socialmedia__text:hover {
@@ -821,15 +922,25 @@ circle:hover {
 }
 
 .footer__navigation {
-        position:absolute;
-        bottom: 50px;
-        left: 564px;
+        position:relative;
+        bottom: -181px;
+        left: 344px;
+        width:50px;
+}
+
+.logo-footer {
+    top: 40px;
+}
+
+
+.navigation-footer-ul {
+    width:  362px;
 }
 
 .footer__text-designedby {
     font-style: normal;
     font-weight: 100;
-    font-size: 1.55rem;
+    font-size: 1.6rem;
     line-height: 130%;
     color: #FFFFFF;
     padding: 0px;
@@ -839,35 +950,42 @@ circle:hover {
 
 .footer__designedby {
     position: absolute;
-    bottom: 29px;
-    right: 220px;
+    bottom: -223px;
+    right: 0px;
     padding: 0px;
 }
 
-.footer-form_title {
+.footer__form {
     position: absolute;
+    top: 42px;
+    right: 0px;
+    width: 366px;
+}
+
+.footer-form_title {
+    position: relative;
     width: 237px;
     height: 29px;
-    right: 350px;
-    top: 40px;
+    left: 0px;
+    top: 0px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 120%;
     color: #FFFFFF;
 }
 
 .input-email {
     position: absolute;
-    top: 82px;
-    left: 1013px;
+    top: 40px;
+    left: 0px;
     width: 206px;
     background-color: #111115;
     border: 1px solid #F9804B;
     border-radius: 5px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 140%;
     color: #BDBDBD;
     padding: 10px;
@@ -883,22 +1001,17 @@ circle:hover {
     outline: none;
 }
 
-.sumbit_div {
-    position: absolute;
-    width: 129px;
-    height: 42px;
-}
-
 .sumbit_button {
     position: absolute;
     width: 129px;
     height: 42px;
-    right: 220px;
-    top: 83px;
+    right: 0px;
+    top: 40px;
     border: 1px solid #111115;
     border-radius: 5px;
     background-color: #F1F3F2;
     color: #111115;
+    font-size: 1.6rem;
 }
 
 .sumbit_button:active {
@@ -911,6 +1024,304 @@ circle:hover {
     color: orange;
 }
 
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        position: relative;
+        width: 940px;
+        margin: auto;
+    }
 
+    .header, .promo, .backstage, .animals, .pickafriend, .testimonials, .footer {
+        width:1000px;
+    }
 
+    .header {
+        z-index: 3;
+    }
 
+    .header__navigation {
+        position:relative;
+        top: -23px;
+        left: 90px;
+    }
+
+    .logodiv {
+        left: -1px;
+        top: 14px;
+    }
+
+    ul {
+        list-style: none; /*убираем маркеры списка*/
+        margin: 0; /*убираем верхнее и нижнее поле, равное 1em*/
+        padding-left: 0; /*убираем левый отступ, равный 40px*/
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 430px;
+        left: 56px;    
+      }
+
+    .header__designedby {
+        top: 31px;
+        right: 1px;
+        white-space: no-wrap;
+    }
+
+    .promo-panda {
+        height: 584px;
+        width: 1198px;
+        background-repeat: no-repeat;
+        left: -99px;
+        background-size: 100%;
+    }
+
+    .ellipse {
+        width: 367px;
+        height: 367px;
+        left: 456px;
+        top: 70px;
+        z-index: 2;
+    }
+
+    .title1 {
+        font-size: 85.2px;
+        top: 122px;
+        left: 464px;
+    }
+
+    .promo__button {
+        top: 484px;
+        left: 565px;
+    }
+
+    .backstage {
+        top: 612px;
+    }
+
+    .plant-decor1-box {
+        display: none;
+    }
+
+    .first_column_of_2 {
+        width: 455px;
+        height: 408px;
+        overflow: hidden;
+    }
+
+    .backstage__picture {
+        width: 455px;
+        height: 408px;
+        background-repeat: no-repeat;
+        background-image: url("../../assets/images/backstage/bamboo-cap_small.jpg");
+
+    }
+
+    .second_column_of_2 {
+        right: 0px;
+        width: 454px;
+    }
+    
+    .title2 {
+        top: -8px;
+    }
+
+    .backstage__text {
+        top: 111px;
+    }
+
+    .title3 {
+        top: 224px;
+    }
+
+    .bottom-BS-text {
+        top: 271px;
+    }
+
+    .animals {
+        top: 1174px;
+    }
+
+    .animals__card {
+        width: 292px;
+        height: 351px;
+        margin-bottom: 92px;
+    }
+    
+    .layout-3-column {
+        width: 940px;
+    }
+    
+    .animals__picture {
+        width: 294px;
+    }
+
+    .animals__title {
+        top: 301px;
+    }
+
+    .animals__description {
+        top: 320px;
+    }
+
+    .animals__logo {
+        top: 300px;
+    }
+
+    .navigation__arrow {
+        top: 368px;
+    }
+
+    .left {
+        left: 323px;
+    }
+
+    .right {
+        right: 322px;
+    }
+
+    .animals__button {
+        left: 321px;
+        top: 880px;
+    }
+
+    .plant-decor2 {
+        left: 0px;
+        top: 872px;
+        background-image: url("../../assets/images/plants_decor/palm_foto_small.png");
+
+    }
+
+    .plant-decor3 {
+        right: -127px;
+        top: 893px;
+        background-image: url("../../assets/images/plants_decor/strelitzia_small.png");
+    }
+
+    .pickafriend {
+        top: 2328px;
+        height: 875px;
+    }
+
+    .pickafriend__inside-block {
+        width: 940px;
+        height: 796px;
+        left: 30px;
+        top: 11px;
+    }
+
+    .pickafriend__title {
+        top:29px;
+    }
+
+    .pickafriend__inside-block {
+        top:10px;
+        left: 30px;
+    }
+
+    .pickandfeed_lozung {
+        left: 50px;
+        top: 86px;
+        width: 845px;
+
+    }
+
+    .pickandfeed_accent {
+        width: 811px;
+        left: 50px;
+        top: 144px;
+    }
+
+    .pickandfeed_text {
+        left: 50px;
+        top:195px;
+        width: 811px;
+    }
+
+    .pickafriends__how-works {
+        top: 294px;
+    }
+
+    .three-parts {
+        left: 87px;
+        right: 87px;
+        top: 379px;
+    }
+
+    .pickafriend__arrow {
+        top:440px;
+    }
+
+    .first {
+        left: 286px;
+    }
+
+    .second {
+        left: 582px;
+    }
+
+    .pickafriend__button {
+        top: 694px;
+    }
+
+    .testimonials {
+        top: 3189px;
+        overflow: hidden;
+        height: 777px;
+    }
+
+    .layout-4-column {
+        width: 1265px;
+    }
+
+    .testimonials__textblock {
+        width: 290px;
+    }
+
+    .testimonials__button {
+        top:564px;
+    }
+
+    .slidebar {
+        width: 390px;
+        top: 501px;
+        left: 265px;
+    }
+
+    .testimonials__h3 {
+        top: 17px;
+        left: 368px;
+    }
+
+    .plant-decor4 {
+        background-image: url("../../assets/images/plants_decor/leav_foto_small.png");
+        top: 540px;
+        right: -52px;
+    }
+
+    .footer {
+        top: 3190px;
+    }
+
+    .logo-footer {
+        left: 0px;
+        top:39px;
+    }
+
+    .footer__navigation {
+        left: 234px;
+        bottom: -179px;
+    }
+
+    .navigation-footer-ul {
+        width: 333px;
+    }
+
+    .footer__form {
+        top: 41px;
+        right: 33px;
+    }
+
+    .footer__designedby {
+        right: 2px;
+    }
+}
