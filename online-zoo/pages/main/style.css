@@ -365,7 +365,7 @@ ul {
 }
 
 .box-slider-animals {
-    display: none;
+    /*display: none;*/
     position: absolute;
 }
 
