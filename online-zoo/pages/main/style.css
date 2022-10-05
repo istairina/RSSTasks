@@ -50,6 +50,7 @@ a:active {
     position: relative;
     width: 1160px;
     margin: auto;
+    
 }
 
 
@@ -75,13 +76,38 @@ a:active {
         text-align: center;
 }
 
+
+
 .burger-menu {
     display: none;
-    position: absolute;
-    top:7px;
-    right: 0px;
+    position: relative;
+    top:-19px;
+    right: -584px;
     width:18px;
     height:10px;
+}
+
+.burger__line {
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background-color: white;
+    left: 0px;
+
+}
+
+.burger__line_first {
+    top:0px;
+}
+
+.burger__line_second {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger__line_third {
+    bottom: 0px;
 }
 
 .burger-menu:hover {
@@ -608,7 +634,7 @@ ul {
 
 .pickafriends__how-works {
     position: absolute;
-    width: 209px;
+    width: 215px;
     height: 47px;
     left: calc(50% - 209px/2 - 0.5px);
     top: 332px;
@@ -951,11 +977,12 @@ circle:hover {
     padding: 0px;
     text-indent: 0px;
     line-height: 200%;
+    margin-bottom: 0;
 }
 
 .footer__designedby {
     position: absolute;
-    bottom: -223px;
+    bottom: -209px;
     right: 0px;
     padding: 0px;
 }
@@ -1072,6 +1099,12 @@ circle:hover {
         white-space: no-wrap;
     }
 
+    .promo {
+        height:583px;
+        overflow: hidden;
+
+    }
+
     .promo-panda {
         height: 584px;
         width: 1198px;
@@ -1100,7 +1133,7 @@ circle:hover {
     }
 
     .backstage {
-        top: 612px;
+        top: 30px;
     }
 
     .plant-decor1-box {
@@ -1123,7 +1156,7 @@ circle:hover {
 
     .second_column_of_2 {
         right: 0px;
-        width: 454px;
+        width: 456px;
     }
     
     .title2 {
@@ -1143,7 +1176,7 @@ circle:hover {
     }
 
     .animals {
-        top: 1174px;
+        top: 590px;
     }
 
     .animals__card {
@@ -1193,13 +1226,15 @@ circle:hover {
         left: 0px;
         top: 872px;
         background-image: url("../../assets/images/plants_decor/palm_foto_small.png");
-
+        width: 205px;
     }
 
     .plant-decor3 {
-        right: -127px;
+        right: 0px;
         top: 893px;
         background-image: url("../../assets/images/plants_decor/strelitzia_small.png");
+        width: 241px;
+        height: 180px;
     }
 
     .pickafriend {
@@ -1269,7 +1304,7 @@ circle:hover {
     }
 
     .testimonials {
-        top: 3189px;
+        top: 2606px;
         overflow: hidden;
         height: 777px;
     }
@@ -1304,7 +1339,7 @@ circle:hover {
     }
 
     .footer {
-        top: 3190px;
+        top: 2607px;
     }
 
     .logo-footer {
@@ -1328,6 +1363,7 @@ circle:hover {
 
     .footer__designedby {
         right: 2px;
+        bottom: -208px;
     }
 }
 
@@ -1351,7 +1387,7 @@ circle:hover {
         width: 47px;
         height: 29px;
         top: 0px;
-        left:-5px;
+        left: 0px;
     }
 
     .logo-p {
@@ -1367,19 +1403,91 @@ circle:hover {
         top: 12px;
     }
 
-    .header__navigation, .header__designedby  {
+    .header__designedby  {
         display: none;
     }
 
     .burger-menu {
         display: block;
-        right: 5px;
+
+    }
+
+    .header_menu {
+        display:block;
+        position: fixed;
+        width:100%;
+        height: 329px;
+        top: 0px;
+        left: 0px;
+        background-color: rgba(255,255,255,0.95);
+        z-index:10;
+        padding: 10px;
+        transform: translateX(100%);
+        transition: 0.2 all linear;
+    }
+
+    .header_menu_active {
+        transform: translateX(0);
+    }
+
+    .header_ul {
+        justify-content: unset;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 150px;
+        text-align: left;
+        padding: 10px;
+        left: 0px;
+        top: 38px;
+}
+
+    .header_li {
+        width: 100%;
+        height: 15px;
+        display: block;
+    }
+
+    .header_li a:visited {
+        color: #333B41;
+    }
+
+    .header_li a {
+        color: #333B41;
+    }
+
+    .header__nav-close {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 20px;
+        right: 60px;
+        z-index:11;
+    }
+
+    .header__nav-close-line {
+        display:block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: #333B41;
+        top: 50%;
+
+    }
+
+    .header__nav-close-line:first-child {
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .header__nav-close-line:last-child {
+        transform: translateY(-50%) rotate(-45deg);
     }
 
     .promo {
         width: 640px;
-        height: 450px;
+        height: 455px;
+        overflow: hidden;
     }
+
 
     .promo-panda {
         width: 850px;
@@ -1410,7 +1518,8 @@ circle:hover {
 
     .backstage {
         width: 640px;
-        top: -9px;
+        height: 425px;
+        top: -13px;
     }
 
     .first_column_of_2 {
@@ -1438,8 +1547,10 @@ circle:hover {
     .plant-decor1 {
         background: url("../../assets/images/plants_decor/flower_foto1_smaller.png");
         background-repeat: no-repeat;
-        right: -72px;
-        top: -72px;
+        right: 0px;
+        top: -75px;
+        width: 132px;
+        height: 484px;
     }
 
     .title3 {
@@ -1448,7 +1559,7 @@ circle:hover {
 
     .animals {
         width: 640px;
-        top: 431px;
+        top: 0px;
     }
 
     .layout-3-column {
@@ -1510,12 +1621,16 @@ circle:hover {
         background-image: url("../../assets/images/plants_decor/palm_foto_smaller.png");
         top: 768px;
         left: 0px;
+        width: 130px;
+        height: 200px;
     }
 
     .plant-decor3 {
         background-image: url("../../assets/images/plants_decor/strelitzia1_smaller.png");
         top: 839px;
-        right: -193px;
+        right: 0px;
+        width:175px;
+        height:131px;
     }
 
     .box-slider-animals {
@@ -1595,7 +1710,7 @@ circle:hover {
 
     .testimonials {
         width: 640px;
-        top: 1442px;
+        top: 1012px;
         height: 777px;
     }
 
@@ -1648,7 +1763,7 @@ circle:hover {
     .footer {
         width: 640px;
         height: 282px;
-        top: 1310px;
+        top: 880px;
     }
 
     .logo-footer {
@@ -1693,8 +1808,13 @@ circle:hover {
         display: none;
     }
 
+    .socialmedia__elem {
+        width:26px;
+
+    }
+
     .footer__designedby {
-        bottom: -96px;
+        bottom: -79px;
         right: 0px;
     }
 
@@ -1702,6 +1822,7 @@ circle:hover {
         left: 574px;
         top: -42px;
         height: 144px;
+        width: 30px;
         display: flex;
         flex-direction: column;
         row-gap: 13px;
