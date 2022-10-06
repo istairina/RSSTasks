@@ -1407,23 +1407,66 @@ circle:hover {
         display: none;
     }
 
+
+    /*start css for burger menu 640 */
+    .logodiv-burger {
+        border: 1px solid #FE9013;
+        border-radius: 2px;
+        top: 10px;
+        left: -10px;
+        z-index: 12;
+        width: 63.6px;
+        height: 38.6px;
+        background-color: white;
+        
+    }
+
+    .logo-p-burger {
+        color: #FE9013;
+        font-size: 15.21px;
+    }
+
+    .logo-bamboo-burger {
+        left: 6px;
+        top: 18px;
+    }
+
     .burger-menu {
         display: block;
 
     }
 
+    .header__designedby-burger {
+        display: block;
+        position: absolute;
+        top: 268px;
+        left: -10px;
+        z-index: 14; 
+    }
+
+    .text__designedby {
+        color: #333B41;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .text__designedby a:visited {
+        color: #333B41;
+    }
+
+
     .header_menu {
-        display:block;
+        display:none;
         position: fixed;
         width:100%;
         height: 329px;
         top: 0px;
         left: 0px;
-        background-color: rgba(255,255,255,0.95);
+        background-color: rgba(255,255,255,1);
         z-index:10;
         padding: 10px;
         transform: translateX(100%);
-        transition: 0.2 all linear;
+        transition: 1 all linear;
     }
 
     .header_menu_active {
@@ -1434,11 +1477,11 @@ circle:hover {
         justify-content: unset;
         flex-wrap: wrap;
         width: 100%;
-        height: 150px;
+        height: 185px;
         text-align: left;
         padding: 10px;
         left: 0px;
-        top: 38px;
+        top: 73px;
 }
 
     .header_li {
@@ -1456,11 +1499,11 @@ circle:hover {
     }
 
     .header__nav-close {
-        width: 20px;
-        height: 20px;
+        width: 14px;
+        height: 14px;
         position: absolute;
-        top: 20px;
-        right: 60px;
+        top: 15px;
+        right: 40px;
         z-index:11;
     }
 
@@ -1469,9 +1512,8 @@ circle:hover {
         position: absolute;
         height: 2px;
         width: 100%;
-        background-color: #333B41;
+        background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
         top: 50%;
-
     }
 
     .header__nav-close-line:first-child {
@@ -1481,6 +1523,18 @@ circle:hover {
     .header__nav-close-line:last-child {
         transform: translateY(-50%) rotate(-45deg);
     }
+
+    .burger-shadow {
+        display: none;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color: rgba(0, 0, 0, 0.75);
+        width: 100%;
+        height: 100%;
+
+    }
+    /*end burger menu css 640*/
 
     .promo {
         width: 640px;
@@ -1803,6 +1857,7 @@ circle:hover {
     .navigation-footer-ul {
         width: 299px;
     }
+
 
     .footer__form, .socialmedia__text {
         display: none;
