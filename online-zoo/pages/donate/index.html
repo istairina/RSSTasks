@@ -90,56 +90,55 @@
                             </defs>
                         </svg>
                     </div>
-                    <div class="choose-amount-box">
-                        <span class="inner__text-amount">Amount</span>
-                        <span class="progress-bar"></span>
-
-                        <form action="" method="POST">
-                            <div class="donate__line-amount">
-                                <input type="radio" id="1" name="choose-amount" class="input-line-dots">
-                                <input type="radio" id="2" name="choose-amount" class="input-line-dots">
-                                <input type="radio" id="3" name="choose-amount" class="input-line-dots">
-                                <input type="radio" id="4" name="choose-amount" class="input-line-dots">
-                                <input type="radio" id="5" name="choose-amount" class="input-line-dots">
-                                <input type="radio" id="6" name="choose-amount" class="input-line-dots">
-                                <input type="radio" id="7" name="choose-amount" class="input-line-dots">
-                                <input type="radio" id="8" name="choose-amount" class="input-line-dots">
-                            </div>
-                            <div class="donate_line-amount-label">
-                                <label for="1" class="line-amount-label">$5000</label>
-                                <label for="2" class="line-amount-label">$2000</label>
-                                <label for="3" class="line-amount-label">$1000</label>
-                                <label for="4" class="line-amount-label">$500</label>
-                            </div>
-                            <div class="donate_line-amount-label2">
-                                <label for="5" class="line-amount-label">$250</label>
-                                <label for="6" class="line-amount-label">$100</label>
-                            </div>
-                            <div class="donate_line-amount-label3">
-                                <label for="7" class="line-amount-label">$50</label>
-                                <label for="8" class="line-amount-label">$25</label>
-                            </div>
-                        </form>
-                    </div>
-                    <form action="" method="POST" class="donation__form">
-                        
-                        <input type="number" name="donation__amount" placeholder="Another amount" class="input-amount" min="0" max="9999">                                     
-                       
-                        
-                        <div class="donation__radio-buttons">
-                            <div class="montly_radio-button">
-                                <input type="radio" id="monthly" name="period" class="input-period">
-                                <label for="monthly" class="input__text-radio">Monthly</label>
-                            </div>
-                            <div class="once_radio-button">
-                                <input type="radio" id="once" name="period" class="input-period" checked>
-                                <label for="once" class="input__text-radio">Once</label>
-                            </div>
+                    <form action="" method="POST">
+                        <div class="choose-amount-box">
+                            <span class="inner__text-amount">Amount</span>
+                            <span class="progress-bar"></span>
+                                <div class="donate__line-amount">
+                                    <input type="radio" id="1" name="choose-amount" class="input-line-dots" value="5000" onclick="putNumberInInputText()">
+                                    <input type="radio" id="2" name="choose-amount" class="input-line-dots" value="2000" onclick="putNumberInInputText()">
+                                    <input type="radio" id="3" name="choose-amount" class="input-line-dots" value="1000" onclick="putNumberInInputText()">
+                                    <input type="radio" id="4" name="choose-amount" class="input-line-dots" value="500" onclick="putNumberInInputText()">
+                                    <input type="radio" id="5" name="choose-amount" class="input-line-dots" value="250" onclick="putNumberInInputText()">
+                                    <input type="radio" id="6" name="choose-amount" class="input-line-dots" value="100" onclick="putNumberInInputText()" checked>
+                                    <input type="radio" id="7" name="choose-amount" class="input-line-dots" value="50" onclick="putNumberInInputText()">
+                                    <input type="radio" id="8" name="choose-amount" class="input-line-dots" value="25" onclick="putNumberInInputText()">
+                                </div>
+                                <div class="donate_line-amount-label">
+                                    <label for="1" class="line-amount-label">$5000</label>
+                                    <label for="2" class="line-amount-label">$2000</label>
+                                    <label for="3" class="line-amount-label">$1000</label>
+                                    <label for="4" class="line-amount-label">$500</label>
+                                </div>
+                                <div class="donate_line-amount-label2">
+                                    <label for="5" class="line-amount-label">$250</label>
+                                    <label for="6" class="line-amount-label">$100</label>
+                                </div>
+                                <div class="donate_line-amount-label3">
+                                    <label for="7" class="line-amount-label">$50</label>
+                                    <label for="8" class="line-amount-label">$25</label>
+                                </div>
                         </div>
-                        <div class="donate__feed-button">
-                            <button class="button__colored button-radius-25">Feed a friend now</button>
+                        <div class="donation__form">
+                            <input type="number" name="donation__amount" placeholder="100" class="input-amount" min="0" max="9999" onkeypress="this.value=this.value.substring(0,3)" onchange="selectNumber()">                                     
+                            <div class="donation__radio-buttons">
+                                <div class="montly_radio-button">
+                                    <input type="radio" id="monthly" name="period" class="input-period">
+                                    <label for="monthly" class="input__text-radio">Monthly</label>
+                                </div>
+                                <div class="once_radio-button">
+                                    <input type="radio" id="once" name="period" class="input-period" checked>
+                                    <label for="once" class="input__text-radio">Once</label>
+                                </div>
+                            </div>
+                            <div class="donate__feed-button">
+                                <button class="button__colored button-radius-25">Feed a friend now</button>
+                            </div>
                         </div>
                     </form>
+                    <script src="donation.js">
+
+                    </script>
                     <div class="donate__bottom-text-inner-box">
                         <span class="almost-black">Share with your friends on social networks</span>
                     </div>
