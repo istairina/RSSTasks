@@ -39,7 +39,7 @@ let index4 = 0;
 
 
 CAROUSEL.addEventListener("animationstart", () => {
-    alert(window.innerWidth);
+
     index1 = Math.round(Math.random() * 3);
         do {
             index2 = Math.round(Math.random() * 3)
