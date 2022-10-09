@@ -391,8 +391,31 @@ ul {
 }
 
 .box-slider-animals {
-    /*display: none;*/
     position: absolute;
+    width: 1158px;
+    height: 884px;
+    overflow: hidden;
+    left: -2px;
+}
+
+@keyframes move-right {
+    from {left: -395px;}
+    to {left: 0px;}
+}
+
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 0.5s;
+}
+
+@keyframes move-left {
+    from {left: -395px;}
+    to {left: -790px;}
+}
+
+.transition-left {
+    animation-name: move-left;
+    animation-duration: 0.5s;
 }
 
 .animals {
@@ -407,9 +430,9 @@ ul {
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    width: 1158px;
+    width: 1948px;
     padding: 0px 15px 15px 0px;
-    left: 0px;
+    left: -395px;
     justify-content: space-between;
 }
 
@@ -1175,6 +1198,26 @@ circle:hover {
         top: 271px;
     }
 
+    .box-slider-animals {
+        position: absolute;
+        width: 945px;
+        height: 884px;
+        overflow: hidden;
+        left: 0px;
+    }
+    
+    @keyframes move-right {
+        from {left: -322px;}
+        to {left: 0px;}
+    }
+    
+    
+    @keyframes move-left {
+        from {left: -322px;}
+        to {left: -642px;}
+    }
+
+
     .animals {
         top: 590px;
     }
@@ -1186,7 +1229,8 @@ circle:hover {
     }
     
     .layout-3-column {
-        width: 940px;
+        width: 1583px;
+        left: -322px;
     }
     
     .animals__picture {
@@ -1616,9 +1660,29 @@ circle:hover {
         top: 0px;
     }
 
-    .layout-3-column {
+    .box-slider-animals {
+        position: absolute;
+        width: 602px;
+        height: 760px;
+        overflow: hidden;
         left: 0px;
-        width: 915px;
+    }
+    
+    @keyframes move-right {
+        from {left: -316px;}
+        to {left: 0px;}
+    }
+    
+    
+    @keyframes move-left {
+        from {left: -316px;}
+        to {left: -630px;}
+    }
+
+
+    .layout-3-column {
+        left: -316px;
+        width: 1544px;
     }
 
     .animals__card {
