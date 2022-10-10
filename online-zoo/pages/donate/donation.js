@@ -11,6 +11,7 @@ function putNumberInInputText() {
 }
 
 function selectNumber() {
+   
     for (const i of amountNumbers) {
         if (i.checked) {
             i.checked = false;
@@ -25,3 +26,5 @@ function selectNumber() {
         }
     }
 }
+
+
