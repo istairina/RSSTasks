@@ -27,4 +27,6 @@ function selectNumber() {
     }
 }
 
+inputText.addEventListener('input', selectNumber);
+
 
