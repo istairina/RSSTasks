@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../gem-puzzle/css/style.css" content="text/html">
+    <title>Gem Puzzle</title>
+    <style>
+        canvas { border:2px solid #003153; }
+    </style>
+    <script src="../gem-puzzle/js/drawgem.js"></script>
+    </head>
+</head>
+<body>
+    <div class="button-line">
+        <div class="form-style">
+            <button class = "btn_game shuffle">Shuffle and start</button>
+            <button class = "btn_game stop">Stop</button>
+            <button class = "btn_game save">Save</button>
+            <button class = "btn_game results">Results</button>
+        </div>
+    </div>
+    <div class = "output_line">
+        <div class = "output_line-elem moves">
+            Moves:
+            <span class="text" id = "moves_textfield">0</span>
+        </div>
+        <div class = "output_line-elem time">
+            Time:
+            <span class="text_time">00:00</span>
+        </div>
+    </div>
+    
+    <canvas id = "canvas"></canvas>
+
+    <div class = "output_line">
+        <div class = "output_line-elem framesize">
+            Current frame size:
+            <span class="text">4 x 4</span>
+        </div>
+    </div>
+    <div class = "output_line">
+        <div class = "output_line-elem sizes">
+            <button class="btn_game framesize size3" value = "3">3 x 3</span>
+            <button class="btn_game framesize size4" value = "4">4 x 4</span>
+            <button class="btn_game framesize size5" value = "5">5 x 5</span>
+            <button class="btn_game framesize size6" value = "6">6 x 6</span>
+            <button class="btn_game framesize size7" value = "7">7 x 7</span>
+            <button class="btn_game framesize size8" value = "8">8 x 8</span>
+        </div>
+    </div>
+    
+</body>
+</html>
