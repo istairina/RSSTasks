@@ -40,7 +40,7 @@ function draw() {
         return last;
       }
 
-      //mainState = generateMatrix(4);
+      
 
       function Game(context, cellSize, mainState){
         
@@ -54,10 +54,10 @@ function draw() {
         this.clicks = 0;
       }
 
-      Game.prototype.timer = function timer() {
+      /*Game.prototype.timer = function timer() {
         let timeout = setTimeout(timer, 1000);
         document.querySelector(".text-timer").innerHTML = timeout
-      }
+      }*/
       
       
       Game.prototype.getClicks = function() {
@@ -177,12 +177,58 @@ function draw() {
 
       window.onload = function(){
         let canvas = document.getElementById("canvas");
-        canvas.width  = 320;
-        canvas.height = 320;
+        let canvasWidth = 320;
+        
+        /*switch (window.innerWidth) {
+          case (window.innerWidth <= '320) : canvasWidth = window.innerWidth * 0.9; alert(canvasWidth); break;
+          case (window.innerWidth <= 768) : canvasWidth = window.innerWidth * 0.7; break;
+          case (window.innerWidth <= 1280) : canvasWidth = window.innerWidth * 0.5; break;
+          //default: canvasWidth = window.innerWidth * 0.3; break;
+        }*/
+        if (window.innerWidth <= 320) {
+          canvasWidth = window.innerWidth * 0.9;
+        } else if (window.innerWidth <= 768) {
+          canvasWidth = window.innerWidth * 0.7;
+        } else if (window.innerWidth <= 1280) {
+          canvasWidth = window.innerWidth * 0.5;
+        } else {
+          canvasWidth = window.innerWidth * 0.3;
+        }
+
+        //alert(canvasWidth);
+        canvasWidth = 320;
+        canvas.width = canvasWidth;
+        canvas.height = canvas.width;
       
         let context = canvas.getContext("2d");
         context.fillStyle = "#003153";
         context.fillRect(0, 0, canvas.width, canvas.height);
+
+        const timerSec = document.querySelector(".seconds");
+        const timerMin = document.querySelector(".minutes");
+      
+      let seconds = 1;
+      let minutes = 0;
+
+      function timer() {
+        function checkZero (timeget) {
+        if (timeget < 10) {
+          return ("0" + timeget);
+        } else {
+          return timeget;
+        }
+      }
+         
+        if (seconds == 60) {
+          seconds = 0;
+          console.log("test");
+          timerMin.innerHTML = checkZero(minutes++);
+         }
+         timerSec.innerHTML = checkZero(seconds);
+         seconds++;
+      }
+        
+      let timeInter = setInterval(timer, 1000);
         
         const mtrx_btn_3 = document.querySelector(".size3");
         const mtrx_btn_4 = document.querySelector(".size4");
@@ -206,46 +252,62 @@ function draw() {
         function newGame (matrixSize) {
           cellSize = canvas.width / matrixSize;
           mainMatrix = generateMatrix(matrixSize);
-          //alert(matrixSize);
           game = new Game(context, cellSize, mainMatrix);
           game.mix(300, matrixSize);
             context.fillRect(0, 0, canvas.width, canvas.height);
             game.draw(matrixSize);
             onEvent(x, y);
+            
         }
 
-        //alert(mainSize);
+        function stopTimeClear () {
+          clearInterval(timeInter);
+            seconds = 1;
+            minutes = 0;
+            timerMin.innerHTML = '00';
+            timerSec.innerHTML = '00';
+
+          timeInter = setInterval(timer, 1000);
+        }
+
         mtrx_btn_3.addEventListener('click', () => {
           matrixSize = mtrx_btn_3.value;
+          stopTimeClear();
           newGame(matrixSize);
+          
         });
 
         mtrx_btn_4.addEventListener('click', () => {
           matrixSize = mtrx_btn_4.value;
+          stopTimeClear();
           newGame(matrixSize);
         });
 
         mtrx_btn_5.addEventListener('click', () => {
           matrixSize = mtrx_btn_5.value;
+          stopTimeClear();
           newGame(matrixSize);
         });
 
         mtrx_btn_6.addEventListener('click', () => {
           matrixSize = mtrx_btn_6.value;
+          stopTimeClear();
           newGame(matrixSize);
         });
 
         mtrx_btn_7.addEventListener('click', () => {
           matrixSize = mtrx_btn_7.value;
+          stopTimeClear();
           newGame(matrixSize);
         });
 
         mtrx_btn_8.addEventListener('click', () => {
           matrixSize = mtrx_btn_8.value;
+          stopTimeClear();
           newGame(matrixSize);
         });
 
-        shuffle.addEventListener('click', () => {newGame(matrixSize)});
+        shuffle.addEventListener('click', () => {stopTimeClear(); newGame(matrixSize)});
       
         
       
@@ -263,6 +325,7 @@ function draw() {
         };  
         //alert(matrixSize);
         function onEvent(x, y) { 
+          //setInterval(timer, 1000);
           game.move(x, y, matrixSize);
           context.fillRect(0, 0, canvas.width, canvas.height);
           game.draw(matrixSize);
@@ -273,7 +336,10 @@ function draw() {
             
           context.fillRect(0, 0, canvas.width, canvas.height);
           game.draw(matrixSize);
-            alert("Hooray! You solved the puzzle in ##:## and " + game.getClicks() + " moves!"); 
+            alert(`Hooray! You solved the puzzle in ${minutes}:${seconds} and ${game.getClicks()} moves!`); 
+            clearInterval(timeInter);
+            seconds = 1;
+            minutes = 0;
             //game.mix(300, matrixSize);
             //context.fillRect(0, 0, canvas.width, canvas.height);
             //game.draw(context, cellSize, matrixSize);
