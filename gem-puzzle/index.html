@@ -15,10 +15,10 @@
 <body>
     <div class="button-line">
         <div class="form-style">
-            <button class = "btn_game shuffle">Shuffle and start</button>
-            <button class = "btn_game stop">Stop</button>
-            <button class = "btn_game save">Save</button>
-            <button class = "btn_game results">Results</button>
+            <button class = "btn_game up shuffle">Shuffle and start</button>
+            <button class = "btn_game up audio"><image src="src/mute.png" alt="Mute" class="audiopic"></image></button>
+            <button class = "btn_game up save">Save</button>
+            <button class = "btn_game up results">Results</button>
         </div>
     </div>
     <div class = "output_line">
@@ -28,16 +28,18 @@
         </div>
         <div class = "output_line-elem time">
             Time:
-            <span class="text_time">00:00</span>
+            <span class="minutes">00</span>
+            <span class="">:</span>
+            <span class="seconds">00</span>
         </div>
     </div>
     
-    <canvas id = "canvas"></canvas>
+    <canvas id = "canvas" width="100%"></canvas>
 
     <div class = "output_line">
         <div class = "output_line-elem framesize">
             Current frame size:
-            <span class="text">4 x 4</span>
+            <span class="text currentFrameSize">4 x 4</span>
         </div>
     </div>
     <div class = "output_line">
