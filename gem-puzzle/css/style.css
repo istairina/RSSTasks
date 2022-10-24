@@ -16,13 +16,16 @@ html, body {
     flex-direction: row;
     justify-content: center;
     margin: 10px auto;
-    width: 100%;
+    max-width: 800px;
+    min-width: fit-content;
     align-items: center;
 }
 
 #canvas {
     display: block;
     margin: 0 auto;
+    border:2px solid #003153;
+    border-radius: 2px;
 }
 
 .output_line {
@@ -47,6 +50,7 @@ html, body {
     text-align: center;
     justify-content: center;
     margin-left: 1%;
+    margin-top: 10px;
     background-color: white;
     /*background-color: #fffdd0;*/
     box-shadow: 3px 3px 8px grey;
@@ -69,7 +73,8 @@ html, body {
 .form-style {
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .inactive {
@@ -106,3 +111,51 @@ html, body {
 .up {
     height: 28px;
 }
+
+.topresults {
+    display: none;
+    width: 200px;
+    height: auto;
+    background-color: #fbec5d;
+    box-shadow: 3px 3px 8px grey;
+    border-radius: 2px;
+    margin: auto;
+    transition: all 0.5s ease-out;
+    padding: 10px 15px;
+}
+
+.titleTop {
+    position: absolute;
+    margin: auto;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+ol {
+    
+    margin-top: 30px;;
+}
+
+
+@media screen and (max-width: 1280px) {
+    .button-line {
+        max-width:  600px;
+        
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .button-line {
+        max-width: 310px;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .button-line {
+        max-width: 210px;
+    }
+}
+
+

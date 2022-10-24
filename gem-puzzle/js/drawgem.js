@@ -64,6 +64,7 @@
       
     Game.prototype.draw = function(size, thisState = this.state) {
       this.state = thisState;
+
       for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
           if (thisState[i][j] > 0) {
@@ -83,11 +84,11 @@
     };
       
     Game.prototype.getNullCell = function(matrixSize, thisState = this.state){
-      console.log("NullCell " + thisState);
+
       for (let i = 0; i < matrixSize; i++){
         for (let j = 0; j < matrixSize; j++){
           if(thisState[j][i] == 0){
-            console.log("ij " + i + " ", j);
+
             return {x: i, y: j};
           }
         }
@@ -191,8 +192,6 @@
       let matrixSize = 4;
 
     Game.prototype.saveGame = function (seconds, minutes) {
-      console.log("saved " + this.state[0]);
-      //let saveData = this.state.join(",");
       let tempArr = this.state;
       let tempStr = tempArr.join(",");
 
@@ -209,9 +208,9 @@
       let arrState = [];
       let m = 0;
 
-      for (let u = 0; u < 4; u++) {
+      for (let u = 0; u < matrixSize; u++) {
         arrState[u] = [];
-        for (let k = 0; k < 4; k++) {
+        for (let k = 0; k < matrixSize; k++) {
           arrState[u].push(stateStringArr[m]);
            m++;
         }
@@ -219,21 +218,22 @@
           
       this.state = arrState;
       context.fillRect(0, 0, canvas.width, canvas.height);
-      this.draw(4, arrState);
+      this.draw(matrixSize, arrState);
       onEvent(x, y);
     }
-
-      /*function getLocalStorage() {
-        if(localStorage.getItem('name')) {
-          
-        }
-      }
-      window.addEventListener('load', getLocalStorage);*/
-
 
       window.onload = function(){
         let canvas = document.getElementById("canvas");
         let canvasWidth = 310;
+        if (document.documentElement.scrollWidth <= 320) {
+          canvasWidth = 210;
+        } else if (document.documentElement.scrollWidth <= 768) {
+          canvasWidth = 310;
+        } else if (document.documentElement.scrollWidth <= 1280) {
+          canvasWidth = 600;
+        } else {
+          canvasWidth = 800;
+        }
                
         canvas.width = canvasWidth;
         canvas.height = canvas.width;
@@ -259,7 +259,6 @@
          
         if (seconds == 60) {
           seconds = 00;
-          //console.log("test");
           timerMin.innerHTML = checkZero(minutes++);
          }
          timerSec.innerHTML = checkZero(seconds);
@@ -284,6 +283,8 @@
         const audioPic = document.querySelector(".audiopic");
         const btnSave = document.querySelector(".save");
         const btnLoad = document.querySelector(".load");
+        const btnResults = document.querySelector(".results");
+        const topResDiv = document.querySelector(".topresults");
         
         let cellSize = canvas.width / matrixSize;
 
@@ -316,6 +317,45 @@
 
           timeInter = setInterval(timer, 1000);
         }
+
+
+        function fillInResults() {
+          let topMoves = [];
+          let listStr = "<span class = 'titleTop'>Top 10 results by moves:</span><ol style='olClass'>";
+          //localStorage.removeItem("topMoves");
+          if (localStorage.getItem("topMoves") !== null) {
+            topMoves = JSON.parse(localStorage.getItem("topMoves"));     
+          let lastItem = (topMoves.length > 10) ? 10 : topMoves.length;
+          for (let i = 0; i < lastItem; i++) {
+            listStr += `<li>${topMoves[i]} moves</li>`;
+          }
+          listStr += "</ol>";
+        } else {
+          listStr = "Try to win once to see results";
+        }
+             
+       
+          topResDiv.innerHTML = listStr;
+        }
+
+        function topResults(moves) {
+          let topMoves = [];
+          //localStorage.removeItem("topMoves");
+          if (localStorage.getItem("topMoves") !== null) {
+            topMoves = JSON.parse(localStorage.getItem("topMoves"));
+
+          }
+          
+          topMoves.push(moves);
+          topMoves.sort((a, b) => a - b);
+          localStorage.setItem("topMoves", JSON.stringify(topMoves));
+          fillInResults();
+          
+                  
+      }
+
+      
+
 
         mtrx_btn_3.addEventListener('click', () => {
           matrixSize = mtrx_btn_3.value;
@@ -360,6 +400,25 @@
           newGame(matrixSize);
         });
 
+        btnResults.addEventListener('click', () => {
+          
+          
+          fillInResults();
+          
+          
+          if (topResDiv.style.display == "flex") {
+            
+            topResDiv.style.display = "none";
+          } else {
+             topResDiv.style.display = "flex";
+          }
+          
+        });
+
+        topResDiv.addEventListener('click', () => {
+          topResDiv.style.display = "none";
+        });
+
 
         
 
@@ -369,7 +428,7 @@
         sounds.addEventListener('click', () => {
           
           let tempSound = game.getSound();
-          //console.log(tempSound.src);
+
           if (audioPic.alt == "Mute") {
             tempSound.pause();
             tempSound.currentTime = 0;
@@ -415,6 +474,9 @@
           game.draw(matrixSize);
           
             alert(`Hooray! You solved the puzzle in ${minutes}:${seconds} and ${game.getClicks()} moves!`); 
+            let gameClicks = game.clicks;
+
+            topResults(gameClicks);
             //timerMin.innerHTML = minutes;
             timerSec.innerHTML = seconds;
             clearInterval(timeInter);
@@ -426,6 +488,7 @@
           game.saveGame(seconds, minutes);
           localStorage.setItem("savedSec", seconds);
           localStorage.setItem("savedMin", minutes);
+          localStorage.setItem("savedMatrixSize", matrixSize);
         });
 
 
@@ -443,16 +506,20 @@
             
         }
 
+        
+
         btnLoad.addEventListener('click', () => {
           let stateString = localStorage.getItem("savedGame");
       let stateStringArr = stateString.split(",");
       let arrState = [];
       let m = 0;
+      matrixSize = localStorage.getItem("savedMatrixSize");
+      
 
-      for (let u = 0; u < 4; u++) {
+      for (let u = 0; u < matrixSize; u++) {
         arrState[u] = [];
-        for (let k = 0; k < 4; k++) {
-          console.log("push " + stateStringArr[m]);
+        for (let k = 0; k < matrixSize; k++) {
+
           arrState[u].push(stateStringArr[m]);
            m++;
         }
@@ -471,6 +538,8 @@
 
 
       cellSize = canvas.width / matrixSize;
+      game.cellSize = cellSize;
+
           mainMatrix = arrState;
           game.state = arrState;
           game.mixLoad(matrixSize, arrState);
