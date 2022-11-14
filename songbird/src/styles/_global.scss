@@ -1,0 +1,37 @@
+
+html {
+    font-family: generalFont;
+    background-color: #222222;
+    color: white;
+
+}
+
+
+.wrap {
+    //border: 1px solid red;
+    width: 95%;
+    max-width: 1600px;
+    margin: auto;
+    padding: 15px;
+
+}
+
+header, footer {
+    display: flex;
+}
+
+.logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.menu__item {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    //border: 1px solid green;
+    position: relative;
+
+}
