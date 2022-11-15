@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="index.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -13,15 +14,50 @@
             <ul class="menu">
                 <li class="menu__item menu__item-header active">Main</li>
                 <li class="menu__item menu__item-header">Game</li>
-                <li class="menu__item menu__item-header">Score</li>
+                <li class="menu__item menu__item-header">Score:&nbsp;<span class="score"> 0</span></li>
             </ul>
 
         </header>
 
-        <body>
+        <main>
+            <div class="levels">
+                <ul class="levels__menu">
+                    <li class="levels__item active">Разминка</li>
+                    <li class="levels__item">Воробьиные</li>
+                    <li class="levels__item">Лесные птицы</li>
+                    <li class="levels__item">Певчие птицы</li>
+                    <li class="levels__item">Хищные птицы</li>
+                    <li class="levels__item">Морские птицы</li>
+                </ul>
+            </div>
+            <div class="bird">
+                <div class="bird__pic"></div>
+                <div class="bird__text">
+                    <div class="bird__name"></div>
+                    <div class="bird__player"></div>
+                    <div class="bird__description"></div>
+                </div>
+            </div>
+            <div class="answers-wrap">
+                <div class="answers">
+                    <ul class="answers__list">
+                        <div class="answers__column">
+                            <li class="answers__item"></li>
+                            <li class="answers__item"></li>
+                            <li class="answers__item"></li>
+                        </div>
+                        <div class="answers__column">
+                            <li class="answers__item"></li>
+                            <li class="answers__item"></li>
+                            <li class="answers__item"></li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
 
-        </body>
+        </main>
         <footer>
+
             <ul class="menu menu__footer">
                 <li class="menu__item menu__item-footer">
                     <div class="linkGit">

@@ -4,6 +4,7 @@
     background-image: url(../images/rs_school_js.svg);
     width: 95px;
     height: 35px;
+    filter: invert(1);
 }
 
 .git-logo {
@@ -14,4 +15,10 @@
 
 .menu__footer {
     padding-left: 0px;
+}
+
+footer {
+    border-top: 0.5px solid white;
+    margin-top: 20px;
+    padding-top: 10px;
 }

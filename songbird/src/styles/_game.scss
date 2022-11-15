@@ -1,0 +1,168 @@
+@import "_color.scss";
+
+
+.levels {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.levels__menu {
+    display: flex;
+    //flex: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    //justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+    background-color: $mainColor;
+    border: 0.5px solid white;
+    border-radius: $border-radius;
+}
+
+
+
+.levels__item {
+    display: list-item;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 16.667%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    //background-color: $mainColor;
+    color: white;
+    text-shadow: 0.5px 0.5px 1px black;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    outline: 0.1px solid white;
+}
+
+.levels__item:hover {
+    cursor: pointer;
+}
+
+.answers__item:hover {
+    cursor: pointer;
+}
+
+.levels__active {
+    background-color: $activeColor;
+}
+
+
+.levels__item:last-child {
+    padding-right: 2px;
+}
+.levels__item:first-child {
+    padding-left: 2px;
+}
+
+
+
+.bird {
+    //width: 100%;
+    padding: 10px;
+    position: relative;
+    display: flex;
+}
+
+.bird__pic {
+    width: 30%;
+    margin: auto;
+}
+
+.bird__text {
+    display: flex;
+    position: relative;
+    //padding: 10px;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.bird__name {
+
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 30px;
+    font-weight: semibold;
+    height: fit-content;
+
+}
+
+.bird__description {
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
+
+.answers-wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.answers {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    min-width: 50%;
+    max-width: fit-content;
+
+}
+
+.answers__list {
+    display: inline-flex;
+    position: relative;
+    padding-inline-start: 0px;
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    margin: 0px;
+    background-color: grey;
+    font-size: 18px;
+    //width: 100%;
+    /*min-width: fit-content;
+    max-width: 25%;*/
+
+}
+
+.answers__column {
+   width: 50%;
+}
+
+.answers__item {
+    list-style-type: none;
+    min-width: 140px;
+    //vertical-align: middle;
+
+
+}
+
+.answers__item::before {
+    content: "●";
+    padding-right: 15px;
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+.right::before {
+    color: $rightColor;
+}
+
+.wrong::before {
+    color: $wrongColor;
+}
