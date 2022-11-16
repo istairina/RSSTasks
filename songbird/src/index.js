@@ -2,18 +2,25 @@ import './styles/index.scss';
 import { birdsData } from './birds-data.js';
 
 const birdsPic = document.querySelector('.bird__pic');
-const birdsDesc = document.querySelector('.bird__description');
+const birdsPicInfo = document.querySelector('.bird__pic-info');
+const birdsDesc = document.querySelector('.bird__description-info');
 const birdsName = document.querySelector('.bird__name');
+const birdsNameInfo = document.querySelector('.bird__name-info');
 const levelsMenu = document.querySelector('.levels__menu');
 const textAnswers = document.querySelectorAll('.answers__item');
 const textAnswersBlock = document.querySelector('.answers__list');
 const scoreField = document.querySelector('.score');
+const btnNext = document.querySelector(".btn-next");
+const gameInfo = document.querySelector(".game-info");
+
+let wrongSound = new Audio("../src/audio/wrong_answer.mp3");
 
 
 let birdsDataAnswers = [[],[],[],[],[],[]];
 let score = 0;
-let scorePlus = 10;
-let scoreMinus = 2;
+let scorePlus = 5;
+let finishRound = false;
+let resultBoolean = [];
 
 for (let i = 0; i < 6; i++) {
     for (let k = 0; k < 6; k++) {
@@ -40,39 +47,61 @@ for (let i = 0; i < 6; i++) {
     shuffle(birdsDataAnswers[i]);
 }
 
-let currentLevel = birdsData[0];
+for (let i = 0; i < 6; i++) {
+    resultBoolean.push([]);
+    for (let k = 0; k < 6; k++) {
+        resultBoolean[i].push(false);
+    }
+}
+
+//console.log(resultBoolean);
+
+
+let currentBlock = 0;
+let currentLevel = birdsData[currentBlock];
 let currentLevelId = 0;
-let currentBird = currentLevel[0];
+let currentStage = 0;
+let currentBird = currentLevel[currentStage];
 
 
 function drawStage () {
     //shuffle(currentLevel);
-    currentBird = currentLevel[0];
+    currentBird = currentLevel[currentStage];
     birdsPic.innerHTML = `<img src="${currentBird['image']}" alt="">`;
     birdsName.innerHTML = `${currentBird['name']} | ${currentBird['species']}`;
-    birdsDesc.innerHTML = `${currentBird['description']}`;
+    btnNext.classList.add("inactive");
+    //birdsDesc.innerHTML = `${currentBird['description']}`;
+    //console.log(birdsDataAnswers[currentLevelId][0]);
     for (let i = 0; i < 6; i++) {
+        //console.log(birdsDataAnswers[currentLevelId][i]);
         textAnswers[i].innerHTML = birdsDataAnswers[currentLevelId][i];
         textAnswers[i].classList.remove("wrong");
         textAnswers[i].classList.remove("right");
     }
+    finishRound = false;
+    birdsName.classList.add("blur");
+    birdsPic.classList.add("blur");
 }
-
-function scoreLevels () {
-    console.log("test " + currentLevelId);
-    switch (currentLevelId) {
-        case 0: scorePlus = 10; scoreMinus = 2; break;
-        case 1: scorePlus = 20; scoreMinus = 6; break;
-        case 2: scorePlus = 30; scoreMinus = 10; break;
-        case 3: scorePlus = 40; scoreMinus = 15; break;
-        case 4: scorePlus = 50; scoreMinus = 20; break;
-        case 5: scorePlus = 60; scoreMinus = 30; break;
-    }
-    console.log("scorePlus " + scorePlus);
-}
-
 
 drawStage();
+
+//console.log("test " + currentLevel[0]['name']);
+
+function drawInfo (nameBird) {
+    let currentBirdInfo;
+    for (let i = 0; i < 6; i++) {
+        if (currentLevel[i]['name'] == nameBird) {
+            currentBirdInfo = currentLevel[i];
+        }
+    }
+
+    birdsPicInfo.innerHTML = `<img src="${currentBirdInfo['image']}" alt="">`;
+    birdsNameInfo.innerHTML = `${currentBirdInfo['name']} | ${currentBirdInfo['species']}`;
+    birdsDesc.innerHTML = `${currentBirdInfo['description']}`;
+}
+
+//drawInfo('Козодой');
+
 
 
 levelsMenu.addEventListener('click', (elem) => {
@@ -82,7 +111,9 @@ levelsMenu.addEventListener('click', (elem) => {
         if (levelsMenu.children[i] == elem.target) {
             currentLevel = birdsData[i];
             currentLevelId = i;
-            scoreLevels();
+            currentBlock = i;
+            currentStage = 0;
+            //scoreLevels();
             drawStage();
         }
     }
@@ -94,18 +125,65 @@ levelsMenu.addEventListener('click', (elem) => {
 
 textAnswersBlock.addEventListener('click', (elem) => {
     //console.log(elem.target.innerHTML);
-    if (!(elem.target.classList.contains("right") || elem.target.classList.contains("wrong"))) {
+    gameInfo.style = "display: none";
+    drawInfo(elem.target.innerHTML);
+    if (!(elem.target.classList.contains("right") || elem.target.classList.contains("wrong")) && finishRound == false) {
         if (elem.target.innerHTML == currentBird['name']) {
-            //console.log("yes!");
+
             elem.target.classList.add("right");
-            score += scorePlus;
-            birdsDesc.style = "display: block";
+            if (resultBoolean[currentBlock][currentStage] != true) {
+                score += scorePlus;
+                scorePlus = 5;
+            }
+            resultBoolean[currentBlock][currentStage] = true;
+            console.log(resultBoolean);
+            //birdsDesc.style = "display: block";
             birdsName.innerHTML = `${currentBird['name']} | ${currentBird['species']}`;
+            birdsName.classList.remove("blur");
+            birdsPic.classList.remove("blur");
+            finishRound = true;
+            btnNext.classList.remove("inactive");
+            if (currentStage == 5) {
+                btnNext.innerHTML = "Next Block";
+            }
+            //console.log(finishRound);
         } else {
             elem.target.classList.add("wrong");
-            score -= scoreMinus;
+            wrongSound.play();
+            if (resultBoolean[currentBlock][currentStage] != true) {
+                scorePlus--;
+            }
         }
         scoreField.innerHTML = score;
+    }
+})
+
+btnNext.addEventListener("click", () => {
+    if (finishRound == true) {
+        if (currentStage == 5) {
+            levelsMenu.children[currentBlock].classList.remove("active");
+            console.log((currentBlock == 5));
+            if (currentBlock == 5) {
+                currentBlock = 0;
+            } else {
+                currentBlock++;
+            }
+
+            console.log(currentBlock);
+            levelsMenu.children[currentBlock].classList.add("active");
+            currentLevel = birdsData[currentBlock];
+            currentLevelId = currentBlock;
+            currentStage = 0;
+            currentBird = currentLevel[currentStage];
+            btnNext.innerHTML = "Next Level";
+        } else {
+            currentStage++;
+
+        }
+        drawStage();
+
+    } else {
+        alert("Для перехода к следующему раунду необходимо завершить текущий");
     }
 })
 

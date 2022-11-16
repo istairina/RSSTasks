@@ -15,7 +15,7 @@
     margin: 0;
     padding: 0;
     //justify-content: space-between;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     margin-top: 10px;
     margin-bottom: 0px;
     width: 100%;
@@ -30,7 +30,7 @@
 
 .levels__item {
     display: list-item;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     box-sizing: border-box;
     width: 16.667%;
     padding-top: 10px;
@@ -76,8 +76,16 @@
 }
 
 .bird__pic {
-    width: 30%;
+    width: 400px;
+    height: 235px;
+    overflow: hidden;
+    border-radius: $border-radius;
+    //width: 30%;
     margin: auto;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+    display: flex;
 }
 
 .bird__text {
@@ -86,6 +94,7 @@
     //padding: 10px;
     flex-wrap: wrap;
     width: 70%;
+    flex-direction: column;
 }
 
 .bird__name {
@@ -106,13 +115,19 @@
 }
 
 img {
+    display: block;
+    position: absolute;
+
     width: 100%;
 }
 
 .answers-wrap {
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    /*align-items: center;
+    flex-direction: column;*/
+    padding: 10px;
+    padding-bottom: 0px;
+    line-height: 1.5;
 }
 
 .answers {
@@ -120,7 +135,7 @@ img {
     position: relative;
     align-items: center;
     flex-direction: column;
-    min-width: 50%;
+    //min-width: 50%;
     max-width: fit-content;
 
 }
@@ -132,16 +147,16 @@ img {
     padding: 10px 20px;
     border-radius: $border-radius;
     margin: 0px;
-    background-color: grey;
+    background-color: #333333;
     font-size: 18px;
     //width: 100%;
-    /*min-width: fit-content;
-    max-width: 25%;*/
+    min-width: 350px;
+    //max-width: 25%;
 
 }
 
 .answers__column {
-   width: 50%;
+   width: 100%;
 }
 
 .answers__item {
@@ -165,4 +180,24 @@ img {
 
 .wrong::before {
     color: $wrongColor;
+}
+
+.btn-next {
+    border-radius: $border-radius;
+    background-color: $mainColor;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.btn-next:hover {
+    cursor: pointer;
+}
+
+.inactive {
+    opacity: 0.5;
+}
+
+.blur {
+    filter: blur(4px);
 }
