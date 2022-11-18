@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
 
 
 let mode = 'development';
@@ -9,7 +10,11 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
     mode: mode,
+    context: path.resolve(__dirname, 'src'),
+    entry: './index.js',
     output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
         assetModuleFilename: "assets/[hash][ext][query]",
         clean: true,
     },
@@ -18,7 +23,7 @@ module.exports = {
            filename: '[name].[contenthash].css'
         }),
         new HtmlWebpackPlugin({
-            template: "./src/index.html"
+            template: "./index.html"
         })],
     module: {
         rules: [
@@ -35,7 +40,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif|mp3)$/i,
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
             {
@@ -43,6 +48,10 @@ module.exports = {
                 type:'asset/resource',
 
             },
+            {
+                test: /\.mp3$/,
+                type: 'asset/resource',
+            }
             /*{
                 test: /\.pug$/,
                 //loader: 'pug-loader',//

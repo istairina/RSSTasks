@@ -1,0 +1,38 @@
+@import "_color.scss";
+
+
+.congratulation__btn {
+    border-radius: $border-radius;
+    background-color: $mainColor;
+    padding: 10px;
+    margin-top: 2rem;
+    margin-left: 0px;
+    margin-top: 10px;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 1px black;
+    font-size: 1.5rem;
+
+}
+
+.congratulation__congratulate {
+    display: block;
+    font-size: 2.0rem;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.congratulation__result {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1rem 0px;
+    line-height: 2rem;
+}
+
+.congratulation {
+    margin-top: 1.5rem;
+}
+
+congratulation {
+    display: none;
+}

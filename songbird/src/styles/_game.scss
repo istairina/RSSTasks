@@ -1,5 +1,12 @@
 @import "_color.scss";
 
+.help {
+    color: yellow;
+}
+
+.helpme:hover {
+    cursor: pointer;
+}
 
 .levels {
     display: flex;
@@ -30,9 +37,10 @@
 
 .levels__item {
     display: list-item;
-    //flex-wrap: wrap;
+    flex-wrap: wrap;
     box-sizing: border-box;
     width: 16.667%;
+    height: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 0px;
@@ -43,14 +51,22 @@
     font-size: 20px;
     margin: 0;
     text-align: center;
+    vertical-align: middle;
     outline: 0.1px solid white;
+    overflow: hidden;
 }
 
 .levels__item:hover {
     cursor: pointer;
+
 }
 
-.answers__item:hover {
+.btn {
+    transition: $transition;
+}
+
+.btn:hover {
+    background-color: $btnHover;
     cursor: pointer;
 }
 
@@ -73,6 +89,8 @@
     padding: 10px;
     position: relative;
     display: flex;
+    background-color: $block-bg-color;
+    border-radius: $border-radius;
 }
 
 .bird__pic {
@@ -118,14 +136,14 @@ img {
     display: block;
     position: absolute;
 
-    width: 100%;
+    width: 102%;
 }
 
 .answers-wrap {
     display: flex;
     /*align-items: center;
     flex-direction: column;*/
-    padding: 10px;
+    padding-top: 10px;
     padding-bottom: 0px;
     line-height: 1.5;
 }
@@ -144,14 +162,15 @@ img {
     display: inline-flex;
     position: relative;
     padding-inline-start: 0px;
-    padding: 10px 20px;
+    //padding: 10px 20px;
     border-radius: $border-radius;
     margin: 0px;
-    background-color: #333333;
+    background-color: $block-bg-color;
     font-size: 18px;
     //width: 100%;
-    min-width: 350px;
+    min-width: 15em;
     //max-width: 25%;
+
 
 }
 
@@ -163,13 +182,25 @@ img {
     list-style-type: none;
     min-width: 140px;
     //vertical-align: middle;
+    border-bottom: 0.1px solid #444444;
+    cursor: pointer;
+    padding: 10px;
+    padding-left: 20px;
+    transition: $transition;
+}
 
+.answers__item:last-child {
+    border: none;
+}
+
+.answers__item:hover {
+    background-color: #223333;
 
 }
 
 .answers__item::before {
     content: "●";
-    padding-right: 15px;
+    padding-right: 20px;
     font-size: 30px;
     vertical-align: middle;
 }
@@ -186,18 +217,62 @@ img {
     border-radius: $border-radius;
     background-color: $mainColor;
     padding: 10px;
-    margin-left: 10px;
-    margin-top: 15px;
+    margin-left: 0px;
+    margin-top: 10px;
 }
 
-.btn-next:hover {
-    cursor: pointer;
-}
 
 .inactive {
     opacity: 0.5;
 }
 
+.inactive:hover {
+    cursor: default;
+}
+
 .blur {
     filter: blur(4px);
+}
+
+.bird__pic-info
+.bird__text-info {
+    display:none;
+}
+
+.birds__info {
+    padding-left: 10px;
+    position: relative;
+    display: flex;
+    background-color: $block-bg-color;
+    border-radius: $border-radius;
+    margin-left: 10px;
+}
+
+.game-info {
+    padding: 15px;
+
+}
+
+.block {
+    border: $block-border;
+    background-color: $block-bg-color;
+    border-radius: $border-radius;
+}
+
+.gallery {
+    display: none;
+}
+
+.birds__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.birds_name-pic-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.bird__player-info {
+    padding-top: 0.5rem;
 }
