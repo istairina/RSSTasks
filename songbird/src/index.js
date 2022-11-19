@@ -153,7 +153,7 @@ function playAudio(audio, pic, QI) {
   audioI.addEventListener(
     "loadeddata",
     () => {
-        console.log(audioI.duration);
+        //console.log(audioI.duration);
       totalDurationI.textContent = getTimeCodeFromNum(
          audioI.duration
       );
@@ -224,12 +224,12 @@ volumeI.addEventListener("click", () => {
 
   birdPlay.addEventListener('click', () => {
     playAudio(audioQ, birdPlay, "Q");
-    console.log("booleanQ  " + isPlayQ + " " + isPlayI);
+   // console.log("booleanQ  " + isPlayQ + " " + isPlayI);
   })
 
   birdPlayInfo.addEventListener('click', () => {
     playAudio(audioI, birdPlayInfo, "I");
-    console.log("booleanI  " + isPlayQ + " " + isPlayI);
+    //console.log("booleanI  " + isPlayQ + " " + isPlayI);
   })
 
 
@@ -286,7 +286,7 @@ function drawStage () {
     //shuffle(currentLevel);
     currentBird = currentLevel[currentStage];
     //birdsPic.innerHTML = `<img src="${currentBird['image']}" alt="">`;
-    birdsPic.innerHTML = "<img  src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEXRYIHJ9d1g7RHYEynt1ZSoWwkbP6np4mbA&usqp=CAU' alt='unknown'>";
+    birdsPic.innerHTML = "<img  src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEXRYIHJ9d1g7RHYEynt1ZSoWwkbP6np4mbA&usqp=CAU' class='imgQ' alt='unknown'>";
     //birdsName.innerHTML = `${currentBird['name']}`;
     birdsName.innerHTML = "***";
     audioQ.src = currentBird['audio'];
@@ -327,7 +327,7 @@ function drawInfo (nameBird) {
     }
     //birdsPicInfo.style = "display: flex";
     //birdTextInfo.style = "display: flex";
-    birdsPicInfo.innerHTML = `<img src="${currentBirdInfo['image']}" alt="">`;
+    birdsPicInfo.innerHTML = `<img src="${currentBirdInfo['image']}" class="img-info" alt="">`;
     birdsNameInfo.innerHTML = `${currentBirdInfo['name']} | ${currentBirdInfo['species']}`;
     birdsDesc.innerHTML = `${currentBirdInfo['description']}`;
     gameInfo.style = "display: none";
@@ -363,7 +363,7 @@ levelsMenu.addEventListener('click', (elem) => {
         }
 
         elem['path'][0].classList.add("active");
-        console.log(elem.target);
+        //console.log(elem.target);
     }
 });
 
@@ -390,7 +390,7 @@ textAnswersBlock.addEventListener('click', (elem) => {
             stopAllSounds();
             elem.target.classList.remove("help");
             rightSound.play();
-            birdsPic.innerHTML = `<img src="${currentBird['image']}" alt="">`;
+            birdsPic.innerHTML = `<img src="${currentBird['image']}" class="imgQ" alt="">`;
             elem.target.classList.add("right");
             if (resultBoolean[currentBlock][currentStage] != true) {
                 score += scorePlus;
@@ -406,25 +406,34 @@ textAnswersBlock.addEventListener('click', (elem) => {
             btnNext.classList.remove("inactive");
             btnNext.classList.add("btn");
             if (currentStage == 5) {
-                btnNext.innerHTML = "Следующий блок";
+                if (currentBlock == 5) {
+                    btnNext.innerHTML = "Завершить игру";
+                    scoreField.innerHTML = score;
+                } else {
+                    btnNext.innerHTML = "Следующий блок";
+                }
+
                 levelsMenu.children[currentBlock + 1].classList.remove("inactive");
                 btnNext.classList.add("btn");
+
             }
+
             //console.log(finishRound);
         } else {
             elem.target.classList.add("wrong");
             //errorSound.src = errSound;
             stopAllSounds();
             if (isPlayQ) {
-            audioQ.play();
+                audioQ.play();
             }
             errorSound.play();
             if (resultBoolean[currentBlock][currentStage] != true) {
                 scorePlus--;
             }
         }
-        scoreField.innerHTML = score;
+
     }
+    scoreField.innerHTML = score;
 })
 
 
@@ -433,7 +442,7 @@ btnNext.addEventListener("click", () => {
     if (finishRound == true) {
         if (currentStage == 5) {
             levelsMenu.children[currentBlock].classList.remove("active");
-            console.log((currentBlock == 5));
+            //console.log((currentBlock == 5));
             if (currentBlock == 5) {
                 mainBlock.style = "display: none";
                 congratBlock.style = "display: block";
@@ -441,6 +450,7 @@ btnNext.addEventListener("click", () => {
                     resultOut.innerHTML = `Вы прошли викторину и набрали ${score} из 180 возможных баллов`;
 
                 } else {
+                   // console.log("finish score " + score);
                     resultOut.innerHTML = `Вы прошли викторину и набрали максимальное число баллов.<br>Вы наверное орнитолог?`;
                     btnCongratulate.style = "display: none";
                     congratSound.play();
@@ -450,7 +460,7 @@ btnNext.addEventListener("click", () => {
                 currentBlock++;
             }
 
-            console.log(currentBlock);
+            //console.log(currentBlock);
             levelsMenu.children[currentBlock].classList.add("active");
             currentLevel = birdsData[currentBlock];
             currentLevelId = currentBlock;

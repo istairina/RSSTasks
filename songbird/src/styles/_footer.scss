@@ -22,3 +22,19 @@ footer {
     margin-top: 20px;
     padding-top: 10px;
 }
+
+
+@media screen and (max-width: 500px) {
+
+    footer {
+        margin-top: 0;
+        border-top: none;
+    }
+
+    .git-logo {
+        width: 43px;
+        height: 43px;
+    }
+
+
+}

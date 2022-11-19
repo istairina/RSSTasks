@@ -48,7 +48,7 @@
     //background-color: $mainColor;
     color: white;
     text-shadow: 0.5px 0.5px 1px black;
-    font-size: 20px;
+    font-size: 1.25rem;
     margin: 0;
     text-align: center;
     vertical-align: middle;
@@ -99,12 +99,14 @@
     overflow: hidden;
     border-radius: $border-radius;
     //width: 30%;
-    margin: auto;
+    margin-left: 0;
     position: relative;
     align-items: center;
     justify-items: center;
     display: flex;
+    justify-content: center;
 }
+
 
 .bird__text {
     display: flex;
@@ -119,7 +121,7 @@
 
     padding: 10px;
     padding-left: 20px;
-    font-size: 30px;
+    font-size: 1.85rem;
     font-weight: semibold;
     height: fit-content;
 
@@ -132,11 +134,17 @@
     line-height: 1.5;
 }
 
-img {
+.imgQ {
     display: block;
     position: absolute;
 
     width: 102%;
+}
+
+.img-info {
+    display: block;
+    position: absolute;
+    height: 102%;
 }
 
 .answers-wrap {
@@ -166,7 +174,7 @@ img {
     border-radius: $border-radius;
     margin: 0px;
     background-color: $block-bg-color;
-    font-size: 18px;
+    font-size: 1.12rem;
     //width: 100%;
     min-width: 15em;
     //max-width: 25%;
@@ -201,7 +209,7 @@ img {
 .answers__item::before {
     content: "●";
     padding-right: 20px;
-    font-size: 30px;
+    font-size: 1.85rem;
     vertical-align: middle;
 }
 
@@ -239,6 +247,10 @@ img {
     display:none;
 }
 
+.bird__pic-info {
+    height: 315px;
+}
+
 .birds__info {
     padding-left: 10px;
     position: relative;
@@ -271,8 +283,173 @@ img {
 .birds_name-pic-info {
     display: flex;
     flex-direction: row;
+    padding-bottom: 10px;
 }
 
 .bird__player-info {
     padding-top: 0.5rem;
+}
+
+.btn_middle {
+    display: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .bird__pic {
+        width: 350px;
+        height: 200px;
+    }
+
+    .bird__pic-info {
+        height: 290px;
+    }
+
+    .answers__list {
+        min-width: 10em;
+    }
+
+    .levels__item {
+        padding-left: 3px;
+        padding-right: 3px;
+        font-size: 1rem;
+    }
+
+}
+
+
+@media screen and (max-width: 750px) {
+    html {
+        overflow-x: hidden;
+    }
+
+   .bird__name {
+        //font-size: 1.25rem;
+        padding-left: 5px;
+    }
+
+    .bird__name:first-child {
+        padding-left: 15px;
+    }
+
+    .bird__pic {
+        height: 150px;
+    }
+
+    .bird__pic-info {
+        height: initial;
+    }
+
+    .answers-wrap {
+        flex-direction: column;
+    }
+
+    .birds__info {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .answers {
+        max-width: none;
+    }
+
+    .answers__column {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .answers__list {
+        width: 100%;
+    }
+
+    .answers__item {
+        min-width: 31.55%;
+        max-width: fit-content;
+        border: none;
+        //border-left: 0.1px solid #444444;
+        //border-inline: 0.1px solid #444444;
+        padding: 0px;
+        padding-left: 10px;
+    }
+
+    .btn_bottom {
+        display: none;
+    }
+
+    .btn_middle {
+        display: flex;
+    }
+
+    .levels__item {
+        word-wrap: break-word;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+
+
+    .levels__menu {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .levels__item {
+        box-sizing: content-box;
+        width: 100%;
+    }
+
+    .bird__name {
+        font-size: 1.15rem;
+    }
+
+    .bird__pic  {
+        width: 50%;
+        height: 130px;
+    }
+
+    .bird__pic-info {
+        width: 270px;
+        height: 205px;
+    }
+
+    .birds_name-pic-info {
+        flex-direction: column;
+        //justify-content: flex-start;
+    }
+
+    .bird__text-info {
+        width: 100%;
+        //padding-right: 5px;
+    }
+
+    .bird__description {
+        padding: 2px;
+    }
+
+    .birds__info {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .bird__player {
+        padding: 0;
+    }
+
+    .answers__item {
+        min-width: 40%;
+    }
+
+    .answers__item::before {
+        padding: 10px;
+    }
+
+    .imgQ {
+        width: 195px;
+    }
+
+
 }

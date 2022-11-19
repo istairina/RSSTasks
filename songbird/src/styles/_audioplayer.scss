@@ -10,6 +10,7 @@
 
 .bird__player {
     padding: 1rem;
+    padding-top: 5px;
     display: inline-flex;
     position: relative;
     align-items: center;
@@ -23,7 +24,7 @@
 .timeline {
     background: white;
     width: 100%;
-    height: 10%;
+    height: 5px;
     position: relative;
     top: -5px;
     cursor: pointer;
@@ -63,7 +64,7 @@
 
 .player__range {
   background: linear-gradient(to right, $mainColor 0%, $mainColor 50%, #fff 50%, #fff 100%);
-  border-radius: 8px;
+  border-radius: 0px;
   height: 7px;
   width: 25%;
   outline: none;
@@ -80,3 +81,40 @@
     -webkit-appearance: none;
 }
 
+
+@media screen and (max-width: 500px) {
+
+    .player__range {
+        width: 50%;
+        height: 5px;
+    }
+
+    .player__range::-webkit-slider-thumb {
+        background: white;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 10px;
+        height: 10px;
+        -webkit-appearance: none;
+    }
+
+    .volume-info {
+        padding-left: 5px;
+    }
+
+    .bird__player {
+        padding: 5px;
+    }
+
+    .timeline {
+        margin-left: 5px;
+    }
+
+    .volume-icon {
+        padding-left: 7px;
+    }
+
+    .bird__player-info {
+        padding-top: 0.5rem;
+    }
+}

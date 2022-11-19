@@ -45,7 +45,7 @@ const birdsData = [
         name: 'Синица',
         species: 'Parus major',
         description: 'В щебетании синиц различают более 40 различных звуковых сочетаний. Поют они практически круглый год, немного затихая только зимой. Синицы настоящие санитары леса. Одна пара синиц в период гнездования оберегает от вредителей десятки деревьев.',
-        image: 'https://live.staticflickr.com//65535//49366042493_c48c81d58d.jpg',
+        image: 'http://pravda-chto.ru/wp-content/uploads/sinitsa-foto-ptitsa_009.jpg',
         audio: 'https://www.xeno-canto.org/sounds/uploaded/RFGQDPLDEC/XC518417-Kj%C3%B8ttmeis%20XC%20Helg%C3%B8ya%20Elias%20A.%20Ryberg20200108133922_079.mp3'
       }
     ],
@@ -71,7 +71,7 @@ const birdsData = [
         name: 'Галка',
         species: 'Coloeus monedula',
         description: 'Слово «галка» произошло из старославянского языка и переводится как «чёрный». Этим словом часто называют воронов или других черных птиц. Латинское название галки «monedula» связывают со словами монета за любовь птицы к блестящим и ярким вещам.',
-        image: 'https://live.staticflickr.com//65535//49237149586_993cf685c5.jpg',
+        image: 'https://givnost.ru/wp-content/uploads/2019/02/galka-ptica-opisanie-osobennosti-vidy-obraz-zhizni-i-sreda-obitaniya-galki-3.jpg',
         audio: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC510498-Coloeus%20monedula_2019.11.13_11.55_01.mp3'
       },
       {

@@ -7,3 +7,9 @@ $wrongColor: #e51a4c;
 $block-bg-color: #333333;
 $block-border: 1px solid #555555;
 $transition: background-color 0.2s linear;
+
+
+@media screen and (max-width: 500px) {
+
+    $border-radius: 30px;
+}

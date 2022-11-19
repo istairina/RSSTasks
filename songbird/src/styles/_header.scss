@@ -29,10 +29,30 @@
     background-color: $mainColor;
     color: white;
     text-shadow: 1px 1px 2px black;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .active {
     background-color: $activeColor;
+
+}
+
+@media screen and (max-width: 1000px) {
+
+    .menu__item-header {
+        margin-inline: 0.5%;
+    }
+
+    .menu {
+        padding-left: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .menu__item-header {
+        margin: 5px;
+    }
+
 
 }

@@ -3,13 +3,14 @@ html {
     font-family: generalFont;
     background-color: #222222;
     color: white;
+    font-size: 16px;
 
 }
 
 /*div {
     border: 1px solid red;
-}
-*/
+}*/
+
 
 .wrap {
     //border: 1px solid red;
@@ -38,4 +39,22 @@ header, footer {
     //border: 1px solid green;
     position: relative;
 
+}
+
+
+@media screen and (max-width: 1000px) {
+    html {
+        font-size: 14px;
+    }
+
+    .wrap {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .wrap {
+        padding: 0;
+    }
 }
