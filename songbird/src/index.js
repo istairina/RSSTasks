@@ -76,7 +76,7 @@ const welcomeBlock = document.querySelector(".welcome");
 const mainBtn = document.querySelector(".menu-main");
 const gameBtn = document.querySelector(".menu-game");
 
-
+let bestResult = false;
 
 startNewGame.addEventListener("click", ()=> {
     //let newURL = document.location.href
@@ -101,16 +101,24 @@ contGame.addEventListener("click", () => {
 mainBtn.addEventListener("click", () => {
     welcomeBlock.style = "display: flex";
     mainBlock.style = "display: none";
+    congratBlock.style = "display: none";
     mainBtn.classList.add("active");
     gameBtn.classList.remove("active");
     mainBlock.style = "display: none";
 });
 
 gameBtn.addEventListener("click", () => {
+    if (bestResult) {
+        congratBlock.style = "display: block";
+        mainBlock.style = "display: none";
+        welcomeBlock.style = "display: none";
+    } else {
+        mainBlock.style = "display: block";
+        welcomeBlock.style = "display: none";
+    }
     gameBtn.classList.add("active");
     mainBtn.classList.remove("active");
-    mainBlock.style = "display: block";
-    welcomeBlock.style = "display: none";
+
 });
 
 
@@ -349,13 +357,14 @@ let scorePlus = 5;
 let finishRound = false;
 let resultBoolean = [];
 
+
 for (let i = 0; i < 6; i++) {
     for (let k = 0; k < 6; k++) {
-
         birdsDataAnswers[i].push(birdsData[i][k]['name']);
     }
 }
 
+//console.log(birdsDataAnswers);
 //console.log(textAnswers[0]);
 
 
@@ -375,10 +384,11 @@ for (let i = 0; i < 6; i++) {
 }
 
 for (let i = 0; i < 6; i++) {
-    resultBoolean.push([]);
-    for (let k = 0; k < 6; k++) {
-        resultBoolean[i].push(false);
-    }
+    //resultBoolean.push([]);
+    resultBoolean.push(false);
+    //for (let k = 0; k < 6; k++) {
+       // resultBoolean[i].push(false);
+    //}
 }
 
 //console.log(resultBoolean);
@@ -454,7 +464,7 @@ function drawInfo (nameBird) {
 
 
 
-levelsMenu.addEventListener('click', (elem) => {
+/*levelsMenu.addEventListener('click', (elem) => {
 
     if (!elem.target.classList.contains("inactive")) {
         gameInfo.style = "display: block";
@@ -463,6 +473,7 @@ levelsMenu.addEventListener('click', (elem) => {
         //console.log(allLevelsItems.children[0]);
         for (let i = 0; i < levelsMenu.childElementCount; i++) {
             levelsMenu.children[i].classList.remove("active");
+
             if (levelsMenu.children[i] == elem.target) {
                 currentLevel = birdsData[i];
                 currentLevelId = i;
@@ -475,9 +486,9 @@ levelsMenu.addEventListener('click', (elem) => {
         }
 
         elem['path'][0].classList.add("active");
-        //console.log(elem.target);
+        console.log(elem['path'][0]);
     }
-});
+});*/
 
 function stopAllSounds () {
     let pausePic = '<i class="material-icons">play_circle_outline</i>'
@@ -504,11 +515,11 @@ textAnswersBlock.addEventListener('click', (elem) => {
             rightSound.play();
             birdsPic.innerHTML = `<img src="${currentBird['image']}" class="imgQ" alt="">`;
             elem.target.classList.add("right");
-            if (resultBoolean[currentBlock][currentStage] != true) {
+            if (resultBoolean[currentBlock] != true) {
                 score += scorePlus;
                 scorePlus = 5;
             }
-            resultBoolean[currentBlock][currentStage] = true;
+            resultBoolean[currentBlock] = true;
             //console.log(resultBoolean);
             //birdsDesc.style = "display: block";
             birdsName.innerHTML = `${currentBird['name']}`;
@@ -517,18 +528,15 @@ textAnswersBlock.addEventListener('click', (elem) => {
             finishRound = true;
             btnNext.classList.remove("inactive");
             btnNext.classList.add("btn");
-            if (currentStage == 5) {
-                if (currentBlock == 5) {
-                    btnNext.innerHTML = "Завершить игру";
-                    scoreField.innerHTML = score;
-                } else {
-                    btnNext.innerHTML = "Следующий блок";
-                    levelsMenu.children[currentBlock + 1].classList.remove("inactive");
-                    btnNext.classList.add("btn");
-                }
+            //console.log("there ");
+            if (currentBlock == 5) {
+                btnNext.innerHTML = "Завершить игру";
+                scoreField.innerHTML = score;
+            } else {
+                //btnNext.innerHTML = "Следующее задание";
 
-
-
+                levelsMenu.children[currentBlock + 1].classList.remove("inactive");
+                btnNext.classList.add("btn");
             }
 
             //console.log(finishRound);
@@ -540,7 +548,7 @@ textAnswersBlock.addEventListener('click', (elem) => {
                 audioQ.play();
             }
             errorSound.play();
-            if (resultBoolean[currentBlock][currentStage] != true) {
+            if (resultBoolean[currentBlock] != true) {
                 scorePlus--;
             }
         }
@@ -553,20 +561,24 @@ textAnswersBlock.addEventListener('click', (elem) => {
 
 function btnNextFunc () {
     if (finishRound == true) {
-        if (currentStage == 5) {
+
             levelsMenu.children[currentBlock].classList.remove("active");
-            //console.log((currentBlock == 5));
+
             if (currentBlock == 5) {
                 mainBlock.style = "display: none";
                 congratBlock.style = "display: block";
-                if (score < 180) {
-                    resultOut.innerHTML = `Вы прошли викторину и набрали ${score} из 180 возможных баллов`;
+                bestResult = true;
+                contGame.style = "display: none";
+                if (score < 30) {
+                    resultOut.innerHTML = `Вы прошли викторину и набрали ${score} из 30 возможных баллов`;
 
                 } else {
                    // console.log("finish score " + score);
                     resultOut.innerHTML = `Вы прошли викторину и набрали максимальное число баллов.<br>Вы наверное орнитолог?`;
                     btnCongratulate.style = "display: none";
+
                     congratSound.play();
+
 
                 }
             } else {
@@ -580,10 +592,7 @@ function btnNextFunc () {
             currentStage = 0;
             currentBird = currentLevel[currentStage];
             btnNext.innerHTML = "Следующее задание";
-        } else {
-            currentStage++;
 
-        }
         drawStage();
 
     } else {
@@ -601,10 +610,10 @@ btnNextAll[1].addEventListener("click", () => {
 })
 
 btnCongratulate.addEventListener("click", () => {
-    location.reload();
+    document.location.assign(`${document.location.href}?newgame`);
 })
 
 
 //console.log(birdsData[0][0]['name']);
 
-
+console.log('Самооценка: 255 баллов.\nВыполенны все пункты кроме Extra scopе (нет локализации и нет галереи всех птиц).\n+5 баллов добавила за кнопку Help в футере - подсвечивает правильные ответы.');

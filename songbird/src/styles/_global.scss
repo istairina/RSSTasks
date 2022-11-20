@@ -51,10 +51,12 @@ header, footer {
 
 .btn {
     transition: $transition;
+    user-select: none;
 }
 
 .btn:hover {
     background-color: $btnHover;
+    color:#333333;
     cursor: pointer;
 }
 

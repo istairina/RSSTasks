@@ -46,25 +46,27 @@
     padding-left: 0px;
     padding-right: 0px;
     //background-color: $mainColor;
-    color: white;
-    text-shadow: 0.5px 0.5px 1px black;
+    color: #333333;
+    //text-shadow: 0.5px 0.5px 1px black;
     font-size: 1.25rem;
     margin: 0;
     text-align: center;
     vertical-align: middle;
     outline: 0.1px solid white;
     overflow: hidden;
+    user-select: none;
 }
 
-.levels__item:hover {
+/*.levels__item:hover {
     cursor: pointer;
 
-}
+}*/
 
 
 
 .levels__active {
     background-color: $activeColor;
+    //text-shadow: none;
 }
 
 
@@ -224,7 +226,8 @@
 
 
 .inactive {
-    opacity: 0.5;
+    opacity: 0.3;
+    user-select: none;
 }
 
 .inactive:hover {
@@ -391,7 +394,7 @@ main {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 575px) {
 
 
 
