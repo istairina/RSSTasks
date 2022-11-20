@@ -29,7 +29,10 @@ footer {
     footer {
         margin-top: 0;
         border-top: none;
+        position: absolute;
+        display: flex;
+        top: 690px;
+        width: 95%;
     }
-
 
 }

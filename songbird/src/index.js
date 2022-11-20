@@ -32,7 +32,7 @@ helpME.addEventListener('click', () => {
 function helpMeClean () {
     if (helpMode) {
         for (let i = 0; i < 6; i++) {
-            console.log(currentBird['name']);
+            //console.log(currentBird['name']);
             if (textAnswers[i].innerHTML == currentBird['name']) {
                 textAnswers[i].classList.add("help");
             } else {
@@ -79,7 +79,8 @@ const gameBtn = document.querySelector(".menu-game");
 
 
 startNewGame.addEventListener("click", ()=> {
-    document.location.assign("index.html?newgame");
+    //let newURL = document.location.href
+    document.location.assign(`${document.location.href}?newgame`);
 });
 
 if (window.location.search == '?newgame') {
@@ -257,6 +258,18 @@ function playAudio(audio, pic, QI) {
     false
   );
 
+audioQ.addEventListener("ended", () => {
+    audioQ.currentTime = 0;
+    birdPlay.innerHTML = '<i class="material-icons">play_circle_outline</i>';
+    isPlayQ = false;
+});
+
+audioI.addEventListener("ended", () => {
+    audioI.currentTime = 0;
+    birdPlayInfo.innerHTML = '<i class="material-icons">play_circle_outline</i>';
+    isPlayI = false;
+});
+
 volumeSliderQ.addEventListener("input", function(){
     if (this.value == 0) {
         volumeQ.innerHTML = "volume_off_outline";
@@ -313,6 +326,7 @@ volumeI.addEventListener("click", () => {
         volumeSliderI.style.background = 'white';
     }
 })
+
 
 
 
@@ -433,6 +447,7 @@ function drawInfo (nameBird) {
     audioI.pause();
     audioI.currentTime = 0;
     isPlayI = false;
+    birdPlayInfo.innerHTML = '<i class="material-icons">play_circle_outline</i>';
 }
 
 //drawInfo('Козодой');

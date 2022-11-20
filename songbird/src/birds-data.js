@@ -45,7 +45,7 @@ const birdsData = [
         name: 'Синица',
         species: 'Parus major',
         description: 'В щебетании синиц различают более 40 различных звуковых сочетаний. Поют они практически круглый год, немного затихая только зимой. Синицы настоящие санитары леса. Одна пара синиц в период гнездования оберегает от вредителей десятки деревьев.',
-        image: 'http://pravda-chto.ru/wp-content/uploads/sinitsa-foto-ptitsa_009.jpg',
+        image: 'https://s9.travelask.ru/system/images/files/001/464/091/wysiwyg_jpg/%D1%84%D0%BE%D1%82%D0%BE_1.jpg',
         audio: 'https://www.xeno-canto.org/sounds/uploaded/RFGQDPLDEC/XC518417-Kj%C3%B8ttmeis%20XC%20Helg%C3%B8ya%20Elias%20A.%20Ryberg20200108133922_079.mp3'
       }
     ],
