@@ -35,7 +35,8 @@ const levelsMenu = document.querySelector('.levels__menu');
 const textAnswers = document.querySelectorAll('.answers__item');
 const textAnswersBlock = document.querySelector('.answers__list');
 const scoreField = document.querySelector('.score');
-const btnNext = document.querySelector(".btn-next");
+let btnNextAll = document.querySelectorAll(".btn-next");
+//const btnNext = document.querySelector(".btn-next");
 const gameInfo = document.querySelector(".game-info");
 const birdTextInfo = document.querySelector(".bird__text-info");
 const resultOut = document.querySelector(".congratulation__result");
@@ -53,6 +54,40 @@ const volumeSliderI = document.querySelector(".player__range-info");
 const volumeQ = document.querySelector(".volumeQ");
 const volumeI = document.querySelector(".volumeI");
 
+
+
+//console.log(btnNextAll[0]);
+
+//let num = 0;
+let btnNext;
+
+function findNextBtn () {
+    /*btnNextAll = document.querySelectorAll(".btn-next");
+    btnNextAll.forEach((elem) => {
+        let k = window.getComputedStyle(elem).display;
+        if (k == 'flex') {
+           btnNext = btnNextAll[num];
+           num = 0;
+        } else {
+            num++;
+        }
+    });*/
+
+    if (document.documentElement.clientWidth <=700) {
+        btnNext = btnNextAll[0];
+    } else {
+        btnNext = btnNextAll[1];
+    }
+}
+
+findNextBtn();
+
+window.addEventListener("resize", () => {
+
+    findNextBtn();
+
+
+})
 
 let errorSound = new Audio(errSound);
 let rightSound = new Audio(rigSound);
@@ -411,10 +446,11 @@ textAnswersBlock.addEventListener('click', (elem) => {
                     scoreField.innerHTML = score;
                 } else {
                     btnNext.innerHTML = "Следующий блок";
+                    levelsMenu.children[currentBlock + 1].classList.remove("inactive");
+                    btnNext.classList.add("btn");
                 }
 
-                levelsMenu.children[currentBlock + 1].classList.remove("inactive");
-                btnNext.classList.add("btn");
+
 
             }
 
@@ -438,7 +474,7 @@ textAnswersBlock.addEventListener('click', (elem) => {
 
 
 
-btnNext.addEventListener("click", () => {
+function btnNextFunc () {
     if (finishRound == true) {
         if (currentStage == 5) {
             levelsMenu.children[currentBlock].classList.remove("active");
@@ -476,6 +512,15 @@ btnNext.addEventListener("click", () => {
     } else {
         alert("Для перехода к следующему заданию необходимо завершить текущее");
     }
+}
+
+
+btnNextAll[0].addEventListener("click", () => {
+    btnNextFunc();
+})
+
+btnNextAll[1].addEventListener("click", () => {
+    btnNextFunc();
 })
 
 btnCongratulate.addEventListener("click", () => {
