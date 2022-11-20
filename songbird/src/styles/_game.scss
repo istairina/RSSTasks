@@ -61,14 +61,7 @@
 
 }
 
-.btn {
-    transition: $transition;
-}
 
-.btn:hover {
-    background-color: $btnHover;
-    cursor: pointer;
-}
 
 .levels__active {
     background-color: $activeColor;
@@ -294,6 +287,10 @@
     display: none;
 }
 
+main {
+    display: none;
+}
+
 
 @media screen and (max-width: 1000px) {
 
@@ -386,6 +383,12 @@
     .levels__item {
         word-wrap: break-word;
     }
+
+    .answers__item:hover {
+        background-color: $block-bg-color;
+        color: #FFFF66;
+        transition: color 0.3s linear;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -400,6 +403,7 @@
     .levels__item {
         box-sizing: content-box;
         width: 100%;
+        font-size: 1.2rem;
     }
 
     .bird__name {
@@ -418,6 +422,7 @@
 
     .birds_name-pic-info {
         flex-direction: column;
+        align-items: center;
         //justify-content: flex-start;
     }
 
@@ -446,6 +451,8 @@
     .answers__item::before {
         padding: 10px;
     }
+
+
 
     .imgQ {
         width: 195px;

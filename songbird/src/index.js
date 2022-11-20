@@ -5,6 +5,10 @@ import congrSound from './audio/congratulation.mp3';
 import { birdsData } from './birds-data.js';
 
 
+
+
+
+
 let helpMode = false;
 const helpME = document.querySelector(".helpme");
 
@@ -13,7 +17,7 @@ helpME.addEventListener('click', () => {
     if (helpMode) {
         helpMode = false;
         for (let i = 0; i < 6; i++) {
-           textAnswers[i].classList.remove("help");
+            textAnswers[i].classList.remove("help");
         }
     } else {
         helpMode = true;
@@ -24,6 +28,19 @@ helpME.addEventListener('click', () => {
         }
     }
 })
+
+function helpMeClean () {
+    if (helpMode) {
+        for (let i = 0; i < 6; i++) {
+            console.log(currentBird['name']);
+            if (textAnswers[i].innerHTML == currentBird['name']) {
+                textAnswers[i].classList.add("help");
+            } else {
+                textAnswers[i].classList.remove("help");
+            }
+        }
+    }
+}
 
 
 const birdsPic = document.querySelector('.bird__pic');
@@ -53,6 +70,49 @@ const volumeSliderQ = document.querySelector(".player__range");
 const volumeSliderI = document.querySelector(".player__range-info");
 const volumeQ = document.querySelector(".volumeQ");
 const volumeI = document.querySelector(".volumeI");
+const startNewGame = document.querySelector(".to-start-new");
+const contGame = document.querySelector(".to-continue");
+const welcomeBlock = document.querySelector(".welcome");
+const mainBtn = document.querySelector(".menu-main");
+const gameBtn = document.querySelector(".menu-game");
+
+
+
+startNewGame.addEventListener("click", ()=> {
+    document.location.assign("index.html?newgame");
+});
+
+if (window.location.search == '?newgame') {
+    welcomeBlock.style = "display: none";
+    mainBlock.style = "display: block";
+    mainBtn.classList.remove("active");
+    gameBtn.classList.add("active");
+    history.pushState(null, '', 'index.html');
+};
+
+contGame.addEventListener("click", () => {
+    welcomeBlock.style = "display: none";
+    mainBlock.style = "display: block";
+    mainBtn.classList.remove("active");
+    gameBtn.classList.add("active");
+});
+
+mainBtn.addEventListener("click", () => {
+    welcomeBlock.style = "display: flex";
+    mainBlock.style = "display: none";
+    mainBtn.classList.add("active");
+    gameBtn.classList.remove("active");
+    mainBlock.style = "display: none";
+});
+
+gameBtn.addEventListener("click", () => {
+    gameBtn.classList.add("active");
+    mainBtn.classList.remove("active");
+    mainBlock.style = "display: block";
+    welcomeBlock.style = "display: none";
+});
+
+
 
 
 
@@ -380,6 +440,7 @@ function drawInfo (nameBird) {
 
 
 levelsMenu.addEventListener('click', (elem) => {
+
     if (!elem.target.classList.contains("inactive")) {
         gameInfo.style = "display: block";
         birdTextInfo.style = "display: none";
@@ -394,6 +455,7 @@ levelsMenu.addEventListener('click', (elem) => {
                 currentStage = 0;
                 //scoreLevels();
                 drawStage();
+                helpMeClean();
             }
         }
 
@@ -418,7 +480,7 @@ function stopAllSounds () {
 textAnswersBlock.addEventListener('click', (elem) => {
     //console.log(elem.target.innerHTML);
     gameInfo.style = "display: none";
-
+    contGame.style = "display: flex";
     drawInfo(elem.target.innerHTML);
     if (!(elem.target.classList.contains("right") || elem.target.classList.contains("wrong")) && finishRound == false) {
         if (elem.target.innerHTML == currentBird['name']) {
