@@ -6,6 +6,13 @@ import { birdsData } from './birds-data.js';
 
 
 
+let birdDataGal = [];
+for (let i = 0; i < 6; i++) {
+    birdDataGal.push([]);
+    for (let k = 0; k <6; k++) {
+        birdDataGal[i].push(birdsData[i][k]);
+    }
+}
 
 
 
@@ -75,8 +82,11 @@ const contGame = document.querySelector(".to-continue");
 const welcomeBlock = document.querySelector(".welcome");
 const mainBtn = document.querySelector(".menu-main");
 const gameBtn = document.querySelector(".menu-game");
+const btnMenuGallery = document.querySelector(".menu-gallery");
+const galleryPlace = document.querySelector("gallery");
 
 let bestResult = false;
+let isBtnGalActive = true;
 
 startNewGame.addEventListener("click", ()=> {
     //let newURL = document.location.href
@@ -89,6 +99,9 @@ if (window.location.search == '?newgame') {
     mainBtn.classList.remove("active");
     gameBtn.classList.add("active");
     history.pushState(null, '', 'index.html');
+    btnMenuGallery.style = "display: none";
+    btnMenuGallery.classList.add("active");
+    isBtnGalActive = false;
 };
 
 contGame.addEventListener("click", () => {
@@ -104,7 +117,17 @@ mainBtn.addEventListener("click", () => {
     congratBlock.style = "display: none";
     mainBtn.classList.add("active");
     gameBtn.classList.remove("active");
+    btnMenuGallery.classList.remove("active");
     mainBlock.style = "display: none";
+    galleryPlace.style = "display: none";
+    if (audioGal[1]) {
+        stopGallerySounds()
+    }
+
+    btnMenuGallery.style = "display: flex";
+    btnMenuGallery.classList.remove("inactive");
+    isBtnGalActive = true;
+
 });
 
 gameBtn.addEventListener("click", () => {
@@ -118,8 +141,17 @@ gameBtn.addEventListener("click", () => {
     }
     gameBtn.classList.add("active");
     mainBtn.classList.remove("active");
-
+    btnMenuGallery.classList.remove("active");
+    //console.log(galleryPlace.style.display);
+    if (audioGal[1]) {
+        stopGallerySounds()
+    }
+    galleryPlace.style = "display: none";
+    btnMenuGallery.style = "display: none";
+    btnMenuGallery.classList.add("inactive");
+    isBtnGalActive = false;
 });
+
 
 
 
@@ -614,6 +646,157 @@ btnCongratulate.addEventListener("click", () => {
 })
 
 
+
+
+let galleryID = 0;
+
+let levelsGallery = document.createElement('div');
+levelsGallery.classList.add("levels");
+levelsGallery.classList.add("levels-gallery");
+galleryPlace.appendChild(levelsGallery);
+
+let menuGallery = document.createElement('ul');
+menuGallery.classList.add("levels__menu");
+menuGallery.classList.add("menu__gallery");
+levelsGallery.appendChild(menuGallery);
+
+let menuGalleryTitles = ['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы'];
+for (let i = 0; i < 6; i++) {
+    let li = document.createElement('li');
+    li.innerHTML = menuGalleryTitles[i];
+    li.classList.add("levels__item");
+    li.classList.add("btn");
+    menuGallery.appendChild(li);
+}
+
+menuGallery.children[0].classList.add("active");
+
+const galleryLevels = document.querySelector(".levels-gallery");
+//const menuGallery = document.querySelector(".menu__gallery");
+//console.log(menuGallery);
+
+
+
+galleryPlace.addEventListener('click', (elem) => {
+    //console.log(elem.target.classList[0]);
+    if (elem.target.classList[0] == "levels__item") {
+
+        for (let i = 0; i < menuGallery.childElementCount; i++) {
+            //console.log("remove");
+            menuGallery.children[i].classList.remove("active");
+
+            if (menuGallery.children[i].innerHTML == elem.target.innerHTML) {
+                //console.log("here");
+                galleryID = i;
+                drawGallery();
+                menuGallery.children[i].classList.add("active");
+                //console.log(menuGallery.children[i].classList);
+                break;
+            }
+        }
+
+        //console.log(galleryID);
+
+        elem.target.classList.add("active");
+
+    }
+});
+
+
+
+for (let i = 1; i < 4; i++) {
+    galleryPlace.innerHTML += `<div class="row row${i}"></div>`
+    for (let k = 1; k < 3; k++) {
+        let rowPlace = document.querySelector(`.row${i}`);
+        rowPlace.innerHTML += `<div class="birds__gallery block">
+        <div class="bird__name bird__name-info bird__name-gallery"></div>
+        <div class="birds_name-pic-info">
+            <div class="bird__pic bird__pic-info bird__pic-gallery"></div>
+            <div class="bird__text bird__text-info">
+                <div class="bird__player bird__player-info">
+                    <div class="bird__playback bird__playback-gallery"><i class="material-icons">play_circle_outline</i></div>
+                    <div class="timeline timeline-info">
+                        <div class="progress progress-info"></div>
+
+                        </div>
+                    </div>
+                <div class="bird__description bird__description-info bird__description-gallery"></div>
+            </div>
+        </div>
+    </div>`;
+    }
+}
+
+let birdNameGal = document.querySelectorAll(".bird__name-gallery");
+let birdPicGal = document.querySelectorAll(".bird__pic-gallery");
+let birdDescrGal = document.querySelectorAll(".bird__description-gallery");
+
+function fillinGallery (birdID) {
+    birdNameGal[birdID].innerHTML = `${birdDataGal[galleryID][birdID]['name']} | ${birdDataGal[0][birdID]['species']}`;
+    birdPicGal[birdID].innerHTML = `<img src="${birdDataGal[galleryID][birdID]['image']}" class="img-gall" alt="">`;
+    birdDescrGal[birdID].innerHTML = birdDataGal[galleryID][birdID]['description'];
+    audioGal[birdID].src = birdDataGal[galleryID][birdID]['audio'];
+}
+
+let audioGal = [];
+let birdPlayG = document.querySelectorAll(".bird__playback-gallery");
+let currDurationG = document.querySelectorAll(".timeline__curr-duration-gallery");
+let totalDurationG = document.querySelectorAll(".timeline__duration-gallery");
+
+
+for (let m = 0; m < 6; m++) {
+birdPlayG[m].addEventListener("click", (elem) => {
+
+  if (elem.target.innerHTML.includes('pause_circle_outline')) {
+    stopGallerySounds();
+  } else {
+    stopGallerySounds();
+    audioGal[m].play();
+    birdPlayG[m].innerHTML = '<i class="material-icons">pause_circle_outline</i>';
+  }
+
+});
+}
+
+function stopGallerySounds () {
+    for (let i = 0; i < 6; i++) {
+        birdPlayG[i].innerHTML = '<i class="material-icons">play_circle_outline</i>';
+        audioGal[i].pause();
+    }
+}
+
+
+function drawGallery () {
+    for (let i = 0; i < 6; i++) {
+    let audioTemp = new Audio ();
+    audioGal[i] = audioTemp;
+    fillinGallery(i);
+
+}
+}
+
+
+//console.log(birdsDataGal[0][0]['name'])
+
+
+
+btnMenuGallery.addEventListener("click", () => {
+    if (isBtnGalActive) {
+    stopAllSounds();
+    btnMenuGallery.classList.add("active");
+    mainBtn.classList.remove("active");
+    gameBtn.classList.remove("active");
+    galleryPlace.style = "display: block";
+    drawGallery();
+    welcomeBlock.style = "display: none";
+    congratBlock.style = "display: none";
+    mainBlock.style = "display: none";
+
+    }
+});
+
+
+
 //console.log(birdsData[0][0]['name']);
 
-console.log('Самооценка: 255 баллов.\nВыполенны все пункты кроме Extra scopе (нет локализации и нет галереи всех птиц).\n+5 баллов добавила за кнопку Help в футере - подсвечивает правильные ответы.');
+console.log('Самооценка: 265 баллов.\nВыполенны все пункты кроме локализации.\n+5 баллов добавила за кнопку Help в футере - подсвечивает правильные ответы.');
