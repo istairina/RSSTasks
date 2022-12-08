@@ -2,10 +2,9 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const EslingPlugin = require('eslint-webpack-plugin');
 
 const baseConfig = {
-    entry: path.resolve(__dirname, './src/index'),
+    entry: path.resolve(__dirname, './src/index.js'),
     mode: 'development',
     module: {
         rules: [
@@ -13,14 +12,10 @@ const baseConfig = {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
-            {
-                test: /\.ts$/i,
-                use: 'ts-loader'
-            },
         ],
     },
     resolve: {
-        extensions: ['.ts', '.js'],
+        extensions: ['.js'],
     },
     output: {
         filename: 'index.js',
@@ -32,7 +27,6 @@ const baseConfig = {
             filename: 'index.html',
         }),
         new CleanWebpackPlugin(),
-        new EslingPlugin({ extensions: 'ts' }),
     ],
 };
 
