@@ -1,6 +1,12 @@
 export interface ISource {
-  id: number,
+  id: string,
   name: string,
+  description?: string,
+  url?: string,
+  category?: string,
+  language?: string,
+  country?: string,
+
 }
 
 export interface IArticle {
@@ -12,4 +18,14 @@ export interface IArticle {
   urlToImage: string,
   publishedAt: string,
   content: string,
+}
+
+export interface IResponse {
+  status: string,
+  sources: Array<ISource>,
+  key?: string
+}
+
+export interface IKey {
+  [key: string]: number | string;
 }
