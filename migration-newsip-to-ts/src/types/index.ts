@@ -1,3 +1,6 @@
+import News from "../components/view/news/news";
+import Sources from "../components/view/sources/sources";
+
 export interface ISource {
   id: string,
   name: string,
@@ -6,6 +9,7 @@ export interface ISource {
   category?: string,
   language?: string,
   country?: string,
+  sources?: ISource,
 
 }
 
@@ -18,14 +22,15 @@ export interface IArticle {
   urlToImage: string,
   publishedAt: string,
   content: string,
+  articles?: Array<IArticle>,
 }
 
-export interface IResponse {
+
+/* export interface IResponse {
   status: string,
   sources: Array<ISource>,
-  key?: string
-}
+} */
 
-export interface IKey {
+/* export interface IKey {
   [key: string]: number | string;
-}
+} */

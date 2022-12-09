@@ -1,14 +1,14 @@
-import { IResponse, ISource } from '../../../types/index';
+import { ISource } from '../../../types/index';
 import './sources.css';
 class Sources {
-    draw(data: IResponse) {
+    draw(data: ISource) {
         const fragment = document.createDocumentFragment() as DocumentFragment;
         const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
         const tempArr: Array<string> = Object.keys(data);
         const arrLength: number = tempArr.length;
         for (let i = 0; i < arrLength; i++) {
             const str = String(i);
-            const item: string | ISource[] | undefined = data[str as keyof typeof data];
+            const item: string | ISource | undefined = data[str as keyof typeof data];
             let itemName = '';
             let itemId = '';
             if (item) {
