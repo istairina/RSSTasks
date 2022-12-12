@@ -25,6 +25,13 @@ export interface IArticle {
   articles?: Array<IArticle>,
 }
 
+export interface IOptions {
+  apiKey?: string;
+  sources?: string;
+}
+
+export type loaderCallback = (data: ISource[] | IArticle[]) => void | (() => void);
+
 
 /* export interface IResponse {
   status: string,
