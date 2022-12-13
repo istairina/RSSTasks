@@ -1,4 +1,4 @@
-import { IArticle, IOptions, ISource, loaderCallback } from '../../types/index';
+import { IOptions } from '../../types/index';
 
 type resp = {
     endpoint: string;
@@ -14,13 +14,13 @@ class Loader {
         this.options = options;
     }
 
-    getResp(
+    getResp<T>(
         { endpoint, options = {} }: resp,
-        callback: loaderCallback = () => {
+        callback: (data: T) => void = () => {
             console.error('No callback for GET response');
         }
     ) {
-        this.load('GET', endpoint, callback, options);
+        this.load<T>('GET', endpoint, callback, options);
     }
 
     errorHandler(res: Response): Response {
@@ -44,11 +44,11 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load(method: string, endpoint: string, callback: loaderCallback, options: IOptions = {}): void {
+    load<T>(method: string, endpoint: string, callback: (data: T) => void, options: IOptions = {}): void {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
-            .then((data: IArticle[] | ISource[]) => callback(data))
+            .then((data: T) => callback(data))
             .catch((err) => console.error(err));
     }
 }

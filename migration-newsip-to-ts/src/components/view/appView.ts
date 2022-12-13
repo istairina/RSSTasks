@@ -1,4 +1,4 @@
-import { IArticle, ISource } from '../../types/index';
+import { IArticle, IDrawArticle, ISource, IDrawSource } from '../../types/index';
 import News from './news/news';
 import Sources from './sources/sources';
 
@@ -11,15 +11,15 @@ export class AppView {
         this.sources = new Sources();
     }
 
-    drawNews(data: IArticle) {
-        const values = data?.articles ? data?.articles : undefined;
+    drawNews(data: IDrawArticle): void {
+        const values: IArticle[] = data?.articles ? data?.articles : [];
         if (values != undefined) {
             this.news.draw(values);
         }
     }
 
-    drawSources(data: ISource) {
-        const values = data?.sources ? data?.sources : undefined;
+    drawSources(data: IDrawSource): void {
+        const values: ISource[] = data?.sources ? data?.sources : [];
         if (values != undefined) {
             this.sources.draw(values);
         }
