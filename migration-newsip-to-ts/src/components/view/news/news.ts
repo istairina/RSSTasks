@@ -14,7 +14,22 @@ class News {
             if (idx % 2) newsItem.classList.add('alt');
 
             const newsMetaPhoto = newsClone.querySelector('.news__meta-photo') as HTMLElement;
-            newsMetaPhoto.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
+
+            const bgImage: HTMLImageElement = new Image();
+            bgImage.src = item.urlToImage;
+
+            if (bgImage !== null) {
+                bgImage.onerror = (): void => {
+                    bgImage.src = 'src/img/news_placeholder.jpg';
+                    newsMetaPhoto.style.backgroundImage = 'src/img/news_placeholder.jpg';
+                };
+
+                bgImage.onload = (): void => {
+                    newsMetaPhoto.style.backgroundImage = `url(${item.urlToImage})`;
+                };
+            }
+
+            newsMetaPhoto.style.backgroundImage = `url(${item.urlToImage || 'src/img/news_placeholder.jpg'})`;
 
             const newsMetaAuthor = newsClone.querySelector('.news__meta-author') as HTMLElement;
             newsMetaAuthor.textContent = item.author || item.source.name;
