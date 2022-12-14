@@ -4,6 +4,7 @@ body {
     color: #333333;
     background: #eeeeee;
     font-family: Roboto;
+    margin: 0;
 }
 
 header {
@@ -13,7 +14,7 @@ header {
 }
 
 header h1 {
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: 900;
     color: white;
     text-shadow: red 2px 5px;
@@ -69,6 +70,7 @@ footer .copyright:before {
 
 .rss-logo {
     background-image: url(../src/img/rs_school_js.svg);
+    background-repeat: no-repeat;
     width: 95px;
     height: 35px;
 }
@@ -79,4 +81,32 @@ footer .copyright:before {
     background-size: contain;
     width: 45px;
     height: 45px;
+}
+
+
+@media (max-width: 640px) {
+
+    header {
+        padding: 5px 15px;
+    }
+
+    header h1 {
+        height: 30px;
+    }
+
+}
+
+@media (max-width: 390px) {
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .git-logo {
+        width: 25px;
+    }
+
+    .rss-logo {
+        width: 100px;
+    }
 }
