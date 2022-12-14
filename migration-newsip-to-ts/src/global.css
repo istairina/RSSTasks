@@ -41,3 +41,42 @@ footer .copyright a:hover {
 footer .copyright:before {
     content: '©';
 }
+
+
+
+.menu__footer {
+    display: inline-flex;
+    flex: auto;
+    list-style: none;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+.menu__item {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.rss-logo {
+    background-image: url(../src/img/rs_school_js.svg);
+    width: 95px;
+    height: 35px;
+}
+
+.git-logo {
+    background-image: url(../src/img/git-logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 45px;
+    height: 45px;
+}
