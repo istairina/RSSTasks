@@ -19,17 +19,10 @@ class News {
             bgImage.src = item.urlToImage;
 
             if (bgImage !== null) {
-                bgImage.onerror = (): void => {
-                    bgImage.src = 'src/img/news_placeholder.jpg';
-                    newsMetaPhoto.style.backgroundImage = 'src/img/news_placeholder.jpg';
-                };
-
                 bgImage.onload = (): void => {
                     newsMetaPhoto.style.backgroundImage = `url(${item.urlToImage})`;
                 };
             }
-
-            newsMetaPhoto.style.backgroundImage = `url(${item.urlToImage || 'src/img/news_placeholder.jpg'})`;
 
             const newsMetaAuthor = newsClone.querySelector('.news__meta-author') as HTMLElement;
             newsMetaAuthor.textContent = item.author || item.source.name;
