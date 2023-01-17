@@ -126,6 +126,11 @@ hr {
   animation-name: movecar;
 }
 
+.start:active > .car__car {
+  animation-duration: 3s;
+  animation-name: movecar;
+}
+
 @keyframes movecar {
   from {
     left: 0px;
