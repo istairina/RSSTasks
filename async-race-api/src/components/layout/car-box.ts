@@ -41,12 +41,12 @@ function CarBox(name: string, color: string, id: number) {
   const btn_start = document.createElement('div');
   btn_start.classList.add('car__start-stop');
   btn_start.classList.add('start');
-  btn_start.innerText = 'A';
+  btn_start.innerText = '⏵';
 
   const btn_stop = document.createElement('div');
   btn_stop.classList.add('car__start-stop');
   btn_stop.classList.add('stop');
-  btn_stop.innerText = 'B';
+  btn_stop.innerText = '⏹';
 
   rule_buttons.appendChild(btn_start);
   rule_buttons.appendChild(btn_stop);

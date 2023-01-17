@@ -5,7 +5,7 @@ export default function GarageMainView() {
 
   const h1 = document.createElement('h1');
   h1.classList.add('main__title');
-  h1.innerText = `Garage (0)`;
+  h1.innerText = `Garage ()`;
   main.appendChild(h1);
 
   const pageName = document.createElement('p');
