@@ -1,7 +1,7 @@
 import DrawCars from './drawCars';
-import CarsNumber from './getCarsNumber';
-import { getPageNum, setPageNum } from './pageNumberValue';
-import setActiveInactiveBtn from './setStateBtnPrevNext';
+import CarsNumber from './getTotalCarsAmount';
+import { getPageNum, setPageNum } from './valuePageNumber';
+import setActiveInactiveBtn from './setStateBtnPages';
 
 // import carTotal from './getTotal';
 

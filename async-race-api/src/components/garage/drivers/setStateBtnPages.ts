@@ -1,5 +1,5 @@
-import CarsNumber from './getCarsNumber';
-import { getPageNum } from './pageNumberValue';
+import CarsNumber from './getTotalCarsAmount';
+import { getPageNum } from './valuePageNumber';
 
 export default async function setActiveInactiveBtn() {
   const currPage = getPageNum();

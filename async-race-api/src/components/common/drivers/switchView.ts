@@ -1,13 +1,12 @@
 import GarageHTML from '../../garage/layout/garage';
 import WinnersHTML from '../../winners/winners';
-import { getPageNum } from '../../garage/drivers/pageNumberValue';
+import { getPageNum } from '../../garage/drivers/valuePageNumber';
 
 let saveStateInputs: string[] = [];
 
 function SwitchView(app: HTMLElement, buttonToGarage: HTMLButtonElement, buttonToWinners: HTMLButtonElement) {
   buttonToGarage.addEventListener('click', () => {
     console.log('switch to garage ' + getPageNum());
-    // console.log('garage');
     if (app) {
       const master: HTMLElement | null = document.querySelector('.master');
       if (master) {

@@ -1,5 +1,4 @@
-import CarBox from '../layout/car-box';
-
+import CarBox from '../layout/car_box';
 interface Car {
   color: string;
   name: string;
@@ -12,7 +11,6 @@ export default function DrawCars(cars: Car[]) {
   if (allCarsBox) {
     allCarsBox.replaceChildren();
     cars.forEach((elem: Car) => {
-      // console.log(elem.color);
       allCarsBox.appendChild(CarBox(elem.name, elem.color, elem.id));
     });
   }

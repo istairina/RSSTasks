@@ -1,5 +1,4 @@
-// import carTotal from './getTotal';
-import { getPageNum } from './pageNumberValue';
+import { getPageNum } from './valuePageNumber';
 import Pagination from './pagination';
 
 export default async function addCar(name: string, color: string) {
@@ -12,15 +11,13 @@ export default async function addCar(name: string, color: string) {
       name: name,
       color: color,
     };
-    const response = await fetch(url, {
+    await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(car),
     });
-    console.log(response);
-    // carTotal();
     Pagination(getPageNum());
   } else {
     alert('Ошибка HTTP: ' + response.status);

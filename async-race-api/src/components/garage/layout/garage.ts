@@ -1,10 +1,10 @@
-import { getPageNum } from '../drivers/pageNumberValue';
+import { getPageNum } from '../drivers/valuePageNumber';
 import Pagination from '../drivers/pagination';
-import CreateCar from './createCar';
-import GarageMainView from './garageMainView';
-import GenerateCars from './generateCars';
+import CreateCar from './btn_createCar';
+import GarageMainView from './garageCars';
+import GenerateCars from './btn_generateCars';
 import RaceResetBtn from './raceResetBtn';
-import UpdateCar from './updateCar';
+import UpdateCar from './btn_updateCar';
 
 function GarageHTML(saveStateInputs: string[]) {
   let saveStateInpCreate: string[] = [];

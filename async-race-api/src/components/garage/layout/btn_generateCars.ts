@@ -1,4 +1,4 @@
-import GenerateCarsServer from '../drivers/generateCarsServer';
+import GenerateCarsServer from '../drivers/generateCars';
 
 export default function GenerateCars() {
   const box = document.createElement('div');

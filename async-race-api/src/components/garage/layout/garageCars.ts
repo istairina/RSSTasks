@@ -1,6 +1,5 @@
-// import DrawCars from '../drawCars';
 import carTotal from '../drivers/getTotal';
-import { getPageNum } from '../drivers/pageNumberValue';
+import { getPageNum } from '../drivers/valuePageNumber';
 import Footer from './footer';
 
 export default function GarageMainView() {
@@ -20,10 +19,8 @@ export default function GarageMainView() {
   const allCarsBox = document.createElement('div');
   allCarsBox.setAttribute('id', 'allCarsBox');
   main.appendChild(allCarsBox);
-  // allCarsBox.appendChild(CarBox());
+
   carTotal();
-
   main.appendChild(Footer());
-
   return main;
 }

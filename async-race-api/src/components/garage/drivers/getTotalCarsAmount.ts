@@ -1,4 +1,4 @@
-export default async function CarsNumber() {
+export default async function TotalCarsAmount() {
   const url = `http://127.0.0.1:3000/garage/?${new URLSearchParams({
     _limit: '7',
   })}`;

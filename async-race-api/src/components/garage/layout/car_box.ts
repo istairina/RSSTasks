@@ -1,6 +1,6 @@
 import removeCar from '../drivers/removeCar';
 import updateCarServer from '../drivers/updateCar';
-import CarSvg from './car-svg';
+import CarSvg from './car_svg';
 
 function CarBox(name: string, color: string, id: number) {
   const car_box = document.createElement('div');

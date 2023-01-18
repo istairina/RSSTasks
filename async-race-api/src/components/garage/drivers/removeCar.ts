@@ -1,4 +1,4 @@
-import { getPageNum } from './pageNumberValue';
+import { getPageNum } from './valuePageNumber';
 import Pagination from './pagination';
 
 export default async function removeCar(id: number) {
