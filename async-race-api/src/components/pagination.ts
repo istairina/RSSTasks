@@ -1,6 +1,8 @@
 import DrawCars from './drawCars';
 import CarsNumber from './getCarsNumber';
 import { getPageNum, setPageNum } from './pageNumberValue';
+import setActiveInactiveBtn from './setStateBtnPrevNext';
+
 // import carTotal from './getTotal';
 
 async function getCarsByPage(pageNum: number) {
@@ -42,6 +44,8 @@ export default async function Pagination(pageNum: number) {
   if (pageName) {
     pageName.innerText = `Page #${currPageNum}`;
   }
+
+  setActiveInactiveBtn();
 
   // console.log(cars);
 

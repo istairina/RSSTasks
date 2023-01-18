@@ -35,6 +35,16 @@ header {
   box-shadow: -2px -2px 2px 3px rgba(34, 60, 80, 0.44) inset;
 }
 
+.btn_inactive {
+  margin: 5px;
+  width: 140px;
+  height: 30px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: default;
+  background-color: grey;
+}
+
 main {
   padding: 10px;
 }
@@ -81,7 +91,7 @@ main {
 }
 
 .car__start-stop:hover,
-:focus {
+.car__start-stop:hover {
   filter: saturate(3);
   cursor: pointer;
 }
