@@ -1,4 +1,4 @@
-import CarBox from './layout/car-box';
+import CarBox from '../layout/car-box';
 
 interface Car {
   color: string;

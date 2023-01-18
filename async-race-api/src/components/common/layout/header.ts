@@ -1,4 +1,4 @@
-import SwitchView from './switchView';
+import SwitchView from '../drivers/switchView';
 
 function Header(app: HTMLElement) {
   const header = document.createElement('header');

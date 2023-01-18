@@ -1,5 +1,5 @@
-import GarageHTML from './components/layout/garage';
-import Header from './components/layout/header';
+import GarageHTML from './components/garage/layout/garage';
+import Header from './components/common/layout/header';
 import './sass/global.scss';
 
 const app = document.getElementById('app');

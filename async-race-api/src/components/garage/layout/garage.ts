@@ -1,5 +1,5 @@
-import { getPageNum } from '../pageNumberValue';
-import Pagination from '../pagination';
+import { getPageNum } from '../drivers/pageNumberValue';
+import Pagination from '../drivers/pagination';
 import CreateCar from './createCar';
 import GarageMainView from './garageMainView';
 import GenerateCars from './generateCars';

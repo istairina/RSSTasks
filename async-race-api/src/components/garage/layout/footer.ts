@@ -1,6 +1,6 @@
-import CarsNumber from '../getCarsNumber';
-import { getPageNum, setPageNum } from '../pageNumberValue';
-import Pagination from '../pagination';
+import CarsNumber from '../drivers/getCarsNumber';
+import { getPageNum, setPageNum } from '../drivers/pageNumberValue';
+import Pagination from '../drivers/pagination';
 
 export default function Footer() {
   const footer = document.createElement('div');

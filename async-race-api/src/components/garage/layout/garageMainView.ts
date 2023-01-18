@@ -1,6 +1,6 @@
 // import DrawCars from '../drawCars';
-import carTotal from '../getTotal';
-import { getPageNum } from '../pageNumberValue';
+import carTotal from '../drivers/getTotal';
+import { getPageNum } from '../drivers/pageNumberValue';
 import Footer from './footer';
 
 export default function GarageMainView() {

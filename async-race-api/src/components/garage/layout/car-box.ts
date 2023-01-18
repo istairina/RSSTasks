@@ -1,5 +1,5 @@
-import removeCar from '../removeCar';
-import updateCarServer from '../updateCar';
+import removeCar from '../drivers/removeCar';
+import updateCarServer from '../drivers/updateCar';
 import CarSvg from './car-svg';
 
 function CarBox(name: string, color: string, id: number) {

@@ -1,5 +1,5 @@
-import { allBrands } from './db/carBrands';
-import { allModels } from './db/carModels';
+import { allBrands } from '../db/carBrands';
+import { allModels } from '../db/carModels';
 import addCar from './addCar';
 
 export default function GenerateCarsServer() {

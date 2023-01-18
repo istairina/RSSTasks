@@ -1,6 +1,6 @@
-import GarageHTML from './garage';
-import WinnersHTML from './/winners';
-import { getPageNum } from '../pageNumberValue';
+import GarageHTML from '../../garage/layout/garage';
+import WinnersHTML from '../../winners/winners';
+import { getPageNum } from '../../garage/drivers/pageNumberValue';
 
 let saveStateInputs: string[] = [];
 
