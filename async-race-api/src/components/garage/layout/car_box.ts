@@ -1,3 +1,5 @@
+import EngineStart from '../drivers/engineStart';
+import EngineStop from '../drivers/engineStop';
 import removeCar from '../drivers/removeCar';
 import updateCarServer from '../drivers/updateCar';
 import CarSvg from './car_svg';
@@ -42,14 +44,22 @@ function CarBox(name: string, color: string, id: number) {
   btn_start.classList.add('car__start-stop');
   btn_start.classList.add('start');
   btn_start.innerText = '⏵';
+  btn_start.setAttribute('id', `start${id}`);
+  rule_buttons.appendChild(btn_start);
+
+  btn_start.addEventListener('click', () => {
+    EngineStart(id);
+  });
 
   const btn_stop = document.createElement('div');
   btn_stop.classList.add('car__start-stop');
-  btn_stop.classList.add('stop');
   btn_stop.innerText = '⏹';
-
-  rule_buttons.appendChild(btn_start);
+  btn_stop.setAttribute('id', `stop${id}`);
   rule_buttons.appendChild(btn_stop);
+
+  btn_stop.addEventListener('click', async () => {
+    EngineStop(id);
+  });
 
   const images = document.createElement('div');
   images.classList.add('car__images');
@@ -66,6 +76,7 @@ function CarBox(name: string, color: string, id: number) {
 
   const car = document.createElement('div');
   car.classList.add('car__car');
+  car.setAttribute('id', `car${id}`);
   car.innerHTML = CarSvg(color);
 
   images.appendChild(road);
@@ -75,6 +86,10 @@ function CarBox(name: string, color: string, id: number) {
   car_box.appendChild(header);
   car_box.appendChild(rule_buttons);
   car_box.appendChild(images);
+
+  car.addEventListener('animationend', async () => {
+    EngineStop(id, true);
+  });
 
   return car_box;
 }

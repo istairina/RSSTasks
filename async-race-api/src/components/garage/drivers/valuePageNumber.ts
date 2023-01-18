@@ -5,6 +5,5 @@ export function setPageNum(pageNum: number) {
 }
 
 export function getPageNum() {
-  console.log(pageNumCurr + ' getPageNum');
   return pageNumCurr;
 }

@@ -78,16 +78,19 @@ main {
   color: grey;
   border-radius: 5px;
   margin: 5px;
+  cursor: default;
 }
 
 .start {
   border-color: green;
   color: green;
+  cursor: pointer;
 }
 
 .stop {
   border-color: red;
   color: red;
+  cursor: pointer;
 }
 
 .car__start-stop:hover,
@@ -131,14 +134,10 @@ hr {
   width: 100%;
 }
 
-.car__car:active {
+.car__car-active {
   animation-duration: 3s;
   animation-name: movecar;
-}
-
-.start:active > .car__car {
-  animation-duration: 3s;
-  animation-name: movecar;
+  animation-fill-mode: forwards;
 }
 
 @keyframes movecar {

@@ -1,3 +1,8 @@
+import EngineStart from '../drivers/engineStart';
+import EngineStop from '../drivers/engineStop';
+import { getCarsByPage } from '../drivers/getCarsByPage';
+import { Car } from '../db/interface';
+
 export default function RaceResetBtn() {
   const box = document.createElement('div');
 
@@ -11,8 +16,18 @@ export default function RaceResetBtn() {
   btn_reset.innerText = 'reset';
   box.appendChild(btn_reset);
 
-  btn_race.addEventListener('click', () => {
-    console.log('race');
+  btn_race.addEventListener('click', async () => {
+    const cars = await getCarsByPage();
+    cars.forEach((elem: Car) => {
+      EngineStart(elem.id);
+    });
+  });
+
+  btn_reset.addEventListener('click', async () => {
+    const cars = await getCarsByPage();
+    cars.forEach((elem: Car) => {
+      EngineStop(elem.id);
+    });
   });
 
   return box;

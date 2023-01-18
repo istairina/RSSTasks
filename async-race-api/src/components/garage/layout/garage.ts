@@ -3,7 +3,7 @@ import Pagination from '../drivers/pagination';
 import CreateCar from './btn_createCar';
 import GarageMainView from './garageCars';
 import GenerateCars from './btn_generateCars';
-import RaceResetBtn from './raceResetBtn';
+import RaceResetBtn from './btn_RaceReset';
 import UpdateCar from './btn_updateCar';
 
 function GarageHTML(saveStateInputs: string[]) {
@@ -21,7 +21,6 @@ function GarageHTML(saveStateInputs: string[]) {
   garage.appendChild(GenerateCars());
   garage.appendChild(RaceResetBtn());
   garage.appendChild(GarageMainView());
-  console.log(`garage ${getPageNum()}`);
   Pagination(getPageNum());
   return garage;
 }
