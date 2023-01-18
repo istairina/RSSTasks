@@ -6,5 +6,5 @@ const app = document.getElementById('app');
 
 if (app) {
   app.appendChild(Header(app));
-  app.appendChild(GarageHTML());
+  app.appendChild(GarageHTML([]));
 }
