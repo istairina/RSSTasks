@@ -1,4 +1,6 @@
-import carTotal from './getTotal';
+// import carTotal from './getTotal';
+import { getPageNum } from './pageNumberValue';
+import Pagination from './pagination';
 
 export default async function addCar(name: string, color: string) {
   const url = 'http://127.0.0.1:3000/garage';
@@ -18,7 +20,8 @@ export default async function addCar(name: string, color: string) {
       body: JSON.stringify(car),
     });
     console.log(response);
-    carTotal();
+    // carTotal();
+    Pagination(getPageNum());
   } else {
     alert('Ошибка HTTP: ' + response.status);
   }

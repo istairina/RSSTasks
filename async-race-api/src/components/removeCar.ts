@@ -1,4 +1,6 @@
-import carTotal from './getTotal';
+// import carTotal from './getTotal';
+import { getPageNum } from './pageNumberValue';
+import Pagination from './pagination';
 
 export default async function removeCar(id: number) {
   const url = `http://127.0.0.1:3000/garage/${id}`;
@@ -7,5 +9,6 @@ export default async function removeCar(id: number) {
     method: 'DELETE',
   });
   console.log(response);
-  carTotal();
+  // carTotal();
+  Pagination(getPageNum());
 }

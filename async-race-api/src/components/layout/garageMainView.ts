@@ -1,4 +1,7 @@
+// import DrawCars from '../drawCars';
 import carTotal from '../getTotal';
+import { getPageNum } from '../pageNumberValue';
+import Footer from './footer';
 
 export default function GarageMainView() {
   const main = document.createElement('main');
@@ -10,7 +13,8 @@ export default function GarageMainView() {
 
   const pageName = document.createElement('p');
   pageName.classList.add('main__page');
-  pageName.innerText = `Page #1`;
+  pageName.setAttribute('id', 'pageName');
+  pageName.innerText = `Page #${getPageNum()}`;
   main.appendChild(pageName);
 
   const allCarsBox = document.createElement('div');
@@ -19,18 +23,7 @@ export default function GarageMainView() {
   // allCarsBox.appendChild(CarBox());
   carTotal();
 
-  const footer = document.createElement('div');
-  footer.classList.add('main__footer');
-
-  const btn_prev = document.createElement('button');
-  btn_prev.classList.add('btn');
-  btn_prev.classList.add('second');
-  footer.appendChild(btn_prev);
-
-  const btn_next = document.createElement('button');
-  btn_next.classList.add('btn');
-  btn_next.classList.add('second');
-  footer.appendChild(btn_next);
+  main.appendChild(Footer());
 
   return main;
 }

@@ -1,4 +1,6 @@
 import addCar from '../addCar';
+// import { getPageNum } from '../pageNumberValue';
+// import Pagination from '../pagination';
 
 export default function CreateCar() {
   const box = document.createElement('div');
@@ -27,6 +29,7 @@ export default function CreateCar() {
   btn_create.addEventListener('click', () => {
     if (inp_name.value) {
       addCar(inp_name.value, inp_color.value);
+      // Pagination(getPageNum());
     } else {
       alert('Give name to a new car');
     }

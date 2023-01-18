@@ -1,3 +1,5 @@
+import { getPageNum } from '../pageNumberValue';
+import Pagination from '../pagination';
 import CreateCar from './createCar';
 import GarageMainView from './garageMainView';
 import GenerateCars from './generateCars';
@@ -12,7 +14,8 @@ function GarageHTML() {
   garage.appendChild(GenerateCars());
   garage.appendChild(RaceResetBtn());
   garage.appendChild(GarageMainView());
-
+  console.log(`garage ${getPageNum()}`);
+  Pagination(getPageNum());
   return garage;
 }
 

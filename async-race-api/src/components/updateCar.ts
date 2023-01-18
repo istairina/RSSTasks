@@ -1,4 +1,6 @@
-import carTotal from './getTotal';
+// import carTotal from './getTotal';
+import { getPageNum } from './pageNumberValue';
+import Pagination from './pagination';
 
 export default async function updateCarServer(name: string, color: string, id: number) {
   const text = document.getElementById('inp__update-text') as HTMLInputElement;
@@ -28,7 +30,8 @@ export default async function updateCarServer(name: string, color: string, id: n
     console.log(response);
     text.value = '';
     colorText.value = '';
-    carTotal();
+    // carTotal();
+    Pagination(getPageNum());
     btn_update.removeEventListener('click', handleBtnClick);
   }
 

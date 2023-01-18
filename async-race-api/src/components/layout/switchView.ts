@@ -1,9 +1,11 @@
 import GarageHTML from './garage';
 import WinnersHTML from './/winners';
+import { getPageNum } from '../pageNumberValue';
 
 function SwitchView(app: HTMLElement, buttonToGarage: HTMLButtonElement, buttonToWinners: HTMLButtonElement) {
   buttonToGarage.addEventListener('click', () => {
-    console.log('garage');
+    console.log('switch to garage ' + getPageNum());
+    // console.log('garage');
     if (app) {
       const master: HTMLElement | null = document.querySelector('.master');
       if (master) {
