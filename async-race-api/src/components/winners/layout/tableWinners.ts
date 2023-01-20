@@ -1,3 +1,6 @@
+import { getPageWinNum } from '../drivers/valueCurrPageWinners';
+import winnerCars from '../drivers/getWinners';
+
 export default function tableWinners() {
   const table = document.createElement('table');
   table.classList.add('table');
@@ -26,10 +29,22 @@ export default function tableWinners() {
   winsHead.innerText = 'Wins';
   tableHead.appendChild(winsHead);
 
+  let winsOrder = 'ASC';
+  winsHead.addEventListener('click', () => {
+    winsOrder = winsOrder === 'ASC' ? 'DESC' : 'ASC';
+    winnerCars(getPageWinNum(), 'wins', winsOrder);
+  });
+
   const timeHead = document.createElement('th');
   timeHead.setAttribute('id', 'timeWinners');
   timeHead.innerText = 'Best time (sec)';
   tableHead.appendChild(timeHead);
+
+  let timeOrder = 'DESC';
+  timeHead.addEventListener('click', () => {
+    timeOrder = timeOrder === 'ASC' ? 'DESC' : 'ASC';
+    winnerCars(getPageWinNum(), 'time', timeOrder);
+  });
 
   const tbody = document.createElement('tbody');
   tbody.setAttribute('id', 'tableWinners');

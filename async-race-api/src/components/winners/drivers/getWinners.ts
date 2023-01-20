@@ -2,15 +2,16 @@ import createRow from '../layout/winnersRow';
 import { Car, winnerCars } from '../../common/interface';
 import GetSpecNameCar from '../../garage/drivers/getSpecCar';
 
-export default async function winnerCars(page = 1) {
+export default async function winnerCars(page = 1, sortBy = 'id', sortOrder = 'ASC') {
   const url = `http://127.0.0.1:3000/winners/?${new URLSearchParams({
     _page: String(page),
     _limit: '10',
-    _sort: 'id',
-    _order: 'ASC',
+    _sort: sortBy,
+    _order: sortOrder,
   })}`;
   const response = await fetch(url);
   const cars = await response.json();
+  // const totalAmount = await response.headers.get('X-Total-Count');
 
   const table = document.getElementById('tableWinners');
   if (table) {
@@ -18,6 +19,9 @@ export default async function winnerCars(page = 1) {
   }
 
   let count = 0;
+  if (page != 1) {
+    count = (page - 1) * 10;
+  }
   cars.forEach(async (car: winnerCars) => {
     const content: Car = await GetSpecNameCar(car.id);
     const carInfo = {
