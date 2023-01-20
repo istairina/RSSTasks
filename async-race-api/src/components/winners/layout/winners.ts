@@ -1,40 +1,38 @@
 import TotalWinnersAmount from '../drivers/getTotalWinners';
-import winnerCars from '../drivers/getWinners';
+import PaginationWin from '../drivers/paginationWin';
 import setTotalWinners from '../drivers/setTotalAmount';
-// import createRow from './winnersRow';
+import { getPageWinNum } from '../drivers/valueCurrPageWinners';
+import buttonsWinners from './buttonsPaginWinners';
+import tableWinners from './tableWinners';
 
 function WinnersHTML() {
   const winners = document.createElement('div');
   winners.classList.add('master');
 
-  const pageWinners = 1;
+  const main = document.createElement('main');
+  winners.appendChild(main);
 
-  winners.innerHTML = `<main>
-      <h1 class="main__title">Winners (${TotalWinnersAmount()})</h1>
-      <p class="main__page">Page #${pageWinners}</p>
-      <div class="table__box">
-      <table class="table">
-        <thead>
-          <tr>
-            <th id="idWinners">#</td>
-            <th>Car</td>
-            <th>Name</td>
-            <th id="winsWinners">Wins</td>
-            <th id="timeWinners">Best time (sec)</td>
-          </tr>
-        </thead>
-        <tbody id="tableWinners">
-        </tbody>
-      </table>
-      </div>
-      <div class="main__footer">
-        <button class="btn_inactive">Prev</button>
-        <button class="btn_inactive">Next</button>
-      </div>
-    </main>`;
+  const h1 = document.createElement('h1');
+  h1.classList.add('main__title');
+  h1.innerText = `Winners (${TotalWinnersAmount()})`;
+  main.appendChild(h1);
+
+  const pageNum = document.createElement('p');
+  pageNum.classList.add('main__page');
+  pageNum.setAttribute('id', 'pageNum');
+  pageNum.innerText = `Page #${getPageWinNum()}`;
+  main.appendChild(pageNum);
+
+  const tableBox = document.createElement('div');
+  tableBox.classList.add('table__box');
+  main.appendChild(tableBox);
+
+  tableBox.appendChild(tableWinners());
+
+  main.appendChild(buttonsWinners());
 
   setTotalWinners();
-  winnerCars();
+  PaginationWin();
   return winners;
 }
 

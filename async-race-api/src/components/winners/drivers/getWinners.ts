@@ -2,9 +2,9 @@ import createRow from '../layout/winnersRow';
 import { Car, winnerCars } from '../../common/interface';
 import GetSpecNameCar from '../../garage/drivers/getSpecCar';
 
-export default async function winnerCars() {
+export default async function winnerCars(page = 1) {
   const url = `http://127.0.0.1:3000/winners/?${new URLSearchParams({
-    _page: '1',
+    _page: String(page),
     _limit: '10',
     _sort: 'id',
     _order: 'ASC',
