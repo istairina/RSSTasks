@@ -1,5 +1,5 @@
 import CarBox from '../layout/car_box';
-import { Car } from '../db/interface';
+import { Car } from '../../common/interface';
 
 export default function DrawCars(cars: Car[]) {
   const allCarsBox = document.getElementById('allCarsBox');

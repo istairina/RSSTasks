@@ -1,0 +1,46 @@
+@import 'values';
+
+body {
+  background-color: black;
+  color: $color;
+}
+
+header {
+  padding: 10px;
+}
+
+.btn {
+  margin: 5px;
+  width: 140px;
+  height: 30px;
+  background-color: $bg-main-btn;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.second {
+  background-color: $bg-second-btn;
+}
+
+.btn:hover {
+  filter: saturate(3);
+  cursor: pointer;
+}
+
+.btn:active {
+  box-shadow: -2px -2px 2px 3px rgba(34, 60, 80, 0.44) inset;
+}
+
+.btn_inactive {
+  margin: 5px;
+  width: 140px;
+  height: 30px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: default;
+  background-color: grey;
+}
+
+main {
+  padding: 10px;
+}

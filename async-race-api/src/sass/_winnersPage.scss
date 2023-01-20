@@ -1,0 +1,21 @@
+@import 'values';
+
+.table {
+  border: 1px solid $color;
+  width: 450px;
+}
+
+th,
+td {
+  border: 1px solid $inner-border;
+}
+
+th {
+  background-color: $bg-main-btn;
+  color: $dark-color;
+  text-transform: uppercase;
+}
+
+tr {
+  height: 30px;
+}

@@ -1,9 +1,9 @@
 import EngineStart from '../drivers/engineStart';
 import EngineStop from '../drivers/engineStop';
 import { getCarsByPage } from '../drivers/getCarsByPage';
-import { Car } from '../db/interface';
+import { Car } from '../../common/interface';
 import DriveMode from '../drivers/driveMode';
-import { startCars } from '../db/interface';
+import { startCars } from '../../common/interface';
 import AnimatioStart from '../drivers/animationStart';
 import { setCurrWinner } from '../drivers/valueCurrWinner';
 

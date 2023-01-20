@@ -1,4 +1,4 @@
-export default function CarSvg(color: string) {
+export default function CarSvg(color: string, width = '100', height = '50') {
   let stroke_color = 'none';
   if (color === '#000000') {
     stroke_color = '#ffffff';
@@ -7,8 +7,8 @@ export default function CarSvg(color: string) {
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="1.1"
-  width="100"
-  height="50"
+  width= ${width}
+  height= ${height}
   viewBox="0 0 100 50"
   xml:space="preserve"
 >

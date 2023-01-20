@@ -6,7 +6,8 @@ export async function setCurrWinner(id: number) {
   if (id === 0) {
     currWinner = '';
   } else {
-    currWinner = await GetSpecNameCar(id);
+    const content = await GetSpecNameCar(id);
+    currWinner = content.name;
   }
 }
 

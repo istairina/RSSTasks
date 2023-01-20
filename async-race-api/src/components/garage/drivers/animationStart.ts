@@ -1,4 +1,4 @@
-import { startCars } from '../db/interface';
+import { startCars } from '../../common/interface';
 
 export default function AnimatioStart(id: number, content: startCars) {
   const car = document.getElementById(`car${id}`);

@@ -3,6 +3,6 @@ export default async function GetSpecNameCar(id: number) {
   const response = await fetch(url);
   if (response.ok) {
     const content = await response.json();
-    return content.name;
+    return content;
   }
 }
