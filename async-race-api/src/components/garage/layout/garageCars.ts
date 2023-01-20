@@ -1,5 +1,5 @@
 import carTotal from '../drivers/getTotal';
-import { getPageNum } from '../drivers/valuePageNumber';
+import { getPageNum } from '../drivers/valueCurrPageNumber';
 import Footer from './footer';
 
 export default function GarageMainView() {

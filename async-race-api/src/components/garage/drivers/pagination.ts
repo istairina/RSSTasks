@@ -1,6 +1,6 @@
 import DrawCars from './drawCars';
 import CarsNumber from './getTotalCarsAmount';
-import { setPageNum } from './valuePageNumber';
+import { setPageNum } from './valueCurrPageNumber';
 import setActiveInactiveBtn from './setStateBtnPages';
 import { getCarsByPage } from './getCarsByPage';
 

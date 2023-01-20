@@ -1,5 +1,5 @@
 // import carTotal from './getTotal';
-import { getPageNum } from './valuePageNumber';
+import { getPageNum } from './valueCurrPageNumber';
 import Pagination from './pagination';
 
 export default async function updateCarServer(name: string, color: string, id: number) {

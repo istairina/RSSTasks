@@ -1,4 +1,6 @@
+// import DriveMode from './driveMode';
 import SetStateStartStopBtn from './setStateStartStopBtn';
+import { startCars } from '../db/interface';
 
 export default async function EngineStart(id: number) {
   const url = `http://127.0.0.1:3000/engine/?${new URLSearchParams({
@@ -8,8 +10,13 @@ export default async function EngineStart(id: number) {
   const response = await fetch(url, {
     method: 'PATCH',
   });
+  let content: startCars = {
+    velocity: 0,
+    distance: 0,
+  };
   if (response.ok) {
-    const content = await response.json();
-    SetStateStartStopBtn(id, content);
+    content = await response.json();
+    SetStateStartStopBtn(id);
   }
+  return content;
 }

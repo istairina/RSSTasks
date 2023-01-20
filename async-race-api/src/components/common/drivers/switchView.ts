@@ -1,6 +1,6 @@
 import GarageHTML from '../../garage/layout/garage';
 import WinnersHTML from '../../winners/winners';
-import { getPageNum } from '../../garage/drivers/valuePageNumber';
+import { getPageNum } from '../../garage/drivers/valueCurrPageNumber';
 
 let saveStateInputs: string[] = [];
 

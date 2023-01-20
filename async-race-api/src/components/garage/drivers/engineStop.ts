@@ -9,6 +9,6 @@ export default async function EngineStop(id: number, keepStateBtn = false) {
     method: 'PATCH',
   });
   if (!keepStateBtn) {
-    SetStateStartStopBtn(id);
+    SetStateStartStopBtn(id, true);
   }
 }

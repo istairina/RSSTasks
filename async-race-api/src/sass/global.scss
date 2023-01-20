@@ -138,6 +138,7 @@ hr {
   animation-duration: 3s;
   animation-name: movecar;
   animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.38, 0.45, 0.97, 0.9);
 }
 
 @keyframes movecar {
@@ -148,4 +149,19 @@ hr {
   to {
     left: calc(100% - 150px);
   }
+}
+
+.winner__box {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 150px);
+  width: 200px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
 }
