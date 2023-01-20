@@ -11,13 +11,20 @@ export default function SetStateStartStopBtn(id: number, toStart = false) {
         car.removeChild(car.lastChild);
       }
     }
-  }
+    if (btn_stop) {
+      btn_stop.classList.remove('stop');
+    }
 
-  if (btn_stop) {
-    btn_stop.classList.toggle('stop');
-  }
+    if (btn_start) {
+      btn_start.classList.add('start');
+    }
+  } else {
+    if (btn_stop) {
+      btn_stop.classList.toggle('stop');
+    }
 
-  if (btn_start) {
-    btn_start.classList.toggle('start');
+    if (btn_start) {
+      btn_start.classList.toggle('start');
+    }
   }
 }

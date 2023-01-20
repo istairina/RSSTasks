@@ -1,3 +1,6 @@
+import { startCars } from '../../common/interface';
+import AnimatioStart from '../drivers/animationStart';
+import DriveMode from '../drivers/driveMode';
 import EngineStart from '../drivers/engineStart';
 import EngineStop from '../drivers/engineStop';
 import removeCar from '../drivers/removeCar';
@@ -47,8 +50,10 @@ function CarBox(name: string, color: string, id: number) {
   btn_start.setAttribute('id', `start${id}`);
   rule_buttons.appendChild(btn_start);
 
-  btn_start.addEventListener('click', () => {
-    EngineStart(id);
+  btn_start.addEventListener('click', async () => {
+    const content: startCars = await EngineStart(id);
+    DriveMode(id, false);
+    AnimatioStart(id, content);
   });
 
   const btn_stop = document.createElement('div');
