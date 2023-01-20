@@ -1,13 +1,7 @@
 import { IFullInfo } from '../../common/interface';
 import CarSvg from '../../garage/layout/car_svg';
 
-export default function createRow(car: IFullInfo) {
-  // const id = '';
-  // const car = '';
-  // const name = '';
-  // const wins = '';
-  // const time = '';
-
+export default function createRow(car: IFullInfo, count: number) {
   const table = document.getElementById('tableWinners');
   const tr = document.createElement('tr');
 
@@ -15,8 +9,8 @@ export default function createRow(car: IFullInfo) {
     table.appendChild(tr);
   }
 
-  const idCell = document.createElement('td');
-  idCell.innerText = String(car.id);
+  const countCell = document.createElement('td');
+  countCell.innerText = String(count);
 
   const carCell = document.createElement('td');
   carCell.innerHTML = CarSvg(car.color, '50', '25');
@@ -29,7 +23,7 @@ export default function createRow(car: IFullInfo) {
   const timeCell = document.createElement('td');
   timeCell.innerText = String(car.time);
 
-  tr.appendChild(idCell);
+  tr.appendChild(countCell);
   tr.appendChild(carCell);
   tr.appendChild(nameCell);
   tr.appendChild(winsCell);

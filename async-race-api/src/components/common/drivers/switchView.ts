@@ -1,5 +1,6 @@
 import GarageHTML from '../../garage/layout/garage';
 import WinnersHTML from '../../winners/layout/winners';
+// import winnerCars from '../../winners/drivers/getWinners';
 // import { getPageNum } from '../../garage/drivers/valueCurrPageNumber';
 
 let saveStateInputs: string[] = [];
@@ -30,6 +31,7 @@ function SwitchView(app: HTMLElement, buttonToGarage: HTMLButtonElement, buttonT
         app.removeChild(master);
       }
       app.appendChild(WinnersHTML());
+      // winnerCars();
     }
   });
 }

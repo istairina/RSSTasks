@@ -1,4 +1,4 @@
-import GetSpecNameCar from './getSpecNameCar';
+import GetSpecNameCar from './getSpecCar';
 
 let currWinner = '';
 

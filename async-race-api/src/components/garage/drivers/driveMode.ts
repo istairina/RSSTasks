@@ -1,5 +1,6 @@
-// import { startCars } from '../db/interface';
-
+import createWinner from '../../winners/drivers/createWinner';
+import GetSpecWinCar from '../../winners/drivers/getSpecWinner';
+import updateWinner from '../../winners/drivers/updateWinner';
 import winnerTitle from '../layout/winnerTitle';
 import { getCurrWinner, setCurrWinner } from './valueCurrWinner';
 
@@ -9,9 +10,6 @@ export default async function DriveMode(id: number) {
     status: 'drive',
   })}`;
 
-  // const response = await fetch(url, {
-  //   method: 'PATCH',
-  // });
   const car = document.getElementById(`car${id}`);
   return fetch(url, {
     method: 'PATCH',
@@ -23,22 +21,32 @@ export default async function DriveMode(id: number) {
       throw new Error(String(response.status));
     })
     .then(async () => {
-      if (getCurrWinner()) {
-        console.log(getCurrWinner());
-      } else {
+      if (!getCurrWinner()) {
+        //   console.log(getCurrWinner());
+        // } else {
         await setCurrWinner(id);
-        // console.log('curr winner is ' + getCurrWinner());
+        let numTime = 0;
         let time = '';
         if (car) {
-          // let numTime = +car.style.animationDuration.slice(0, -2);
-          time = String(Math.trunc(+car.style.animationDuration.slice(0, -2)) / 1000);
+          numTime = +car.style.animationDuration.slice(0, -2);
+          time = String(Math.trunc(numTime) / 1000);
         }
         winnerTitle(getCurrWinner(), time);
+        const winCar = await GetSpecWinCar(id);
+        console.log('obj length ' + Object.keys(winCar).length);
+        if (Object.keys(winCar).length === 0) {
+          createWinner(id, 1, +time);
+        } else {
+          console.log('time now: ' + +time + ' before time: ' + winCar.time + ' wincar id: ' + winCar.id);
+          console.log('new time better? ' + (+time < winCar.time));
+          const bestTime = +time < winCar.time ? +time : winCar.time;
+          console.log('best time is ' + bestTime);
+          updateWinner(id, ++winCar.wins, bestTime);
+        }
       }
       return id;
     })
     .catch((error) => {
-      // console.log(String(error));
       if (String(error) === 'Error: 500') {
         if (car) {
           car.style.animationPlayState = 'paused';
@@ -49,31 +57,4 @@ export default async function DriveMode(id: number) {
       }
       return 0;
     });
-
-  // if (!response.ok) {
-  //   console.log('erroroo ' + response.status);
-  //   return Promise.reject(response);
-  // }
-
-  // if (response.ok) {
-  //   //   const content = await response.json();
-  //   console.log('finish');
-  //   //   // const content = await response.json();
-  //   //   // console.log('ok ' + content);
-  //   //   // SetStateStartStopBtn(id, content);
-  // }
-  // // } else {
-  // if (response.status === 500) {
-  //   const car = document.getElementById(`car${id}`);
-  //   // console.log(`stop engine ${id}!`);
-  //   // const car = document.getElementById(`car${id}`);
-  //   if (car) {
-  //     car.style.animationPlayState = 'paused';
-  //     const carBroken = document.createElement('span');
-  //     carBroken.innerText = 'BROKEN!';
-  //     car.appendChild(carBroken);
-  //   }
-  // }
-  // console.log('error ' + response.status);
-  // }
 }

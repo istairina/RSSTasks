@@ -1,6 +1,6 @@
 import createRow from '../layout/winnersRow';
 import { Car, winnerCars } from '../../common/interface';
-import GetSpecNameCar from '../../garage/drivers/getSpecNameCar';
+import GetSpecNameCar from '../../garage/drivers/getSpecCar';
 
 export default async function winnerCars() {
   const url = `http://127.0.0.1:3000/winners/?${new URLSearchParams({
@@ -12,6 +12,12 @@ export default async function winnerCars() {
   const response = await fetch(url);
   const cars = await response.json();
 
+  const table = document.getElementById('tableWinners');
+  if (table) {
+    table.replaceChildren();
+  }
+
+  let count = 0;
   cars.forEach(async (car: winnerCars) => {
     const content: Car = await GetSpecNameCar(car.id);
     const carInfo = {
@@ -21,7 +27,7 @@ export default async function winnerCars() {
       wins: car.wins,
       time: car.time,
     };
-    createRow(carInfo);
+    createRow(carInfo, ++count);
     // console.log(car);
   });
 

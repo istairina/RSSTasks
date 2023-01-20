@@ -1,10 +1,11 @@
-export default async function addCar(name: string, color: string) {
-  const url = 'http://127.0.0.1:3000/garage';
+export default async function createWinner(id: number, wins: number, time: number) {
+  const url = 'http://127.0.0.1:3000/winners';
   const response = await fetch(url);
   if (response.ok) {
     const car = {
-      name: name,
-      color: color,
+      id: id,
+      wins: wins,
+      time: time,
     };
     await fetch(url, {
       method: 'POST',

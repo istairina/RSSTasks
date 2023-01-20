@@ -1,4 +1,3 @@
-// import carTotal from './getTotal';
 import { getPageNum } from './valueCurrPageNumber';
 import Pagination from './pagination';
 
@@ -30,31 +29,10 @@ export default async function updateCarServer(name: string, color: string, id: n
     console.log(response);
     text.value = '';
     colorText.value = '';
-    // carTotal();
     Pagination(getPageNum());
     btn_update.removeEventListener('click', handleBtnClick);
   }
 
   const btn_update = document.getElementById('btn__update-car') as HTMLBodyElement;
   btn_update.addEventListener('click', handleBtnClick);
-
-  // if (response.ok) {
-  //   // если HTTP-статус в диапазоне 200-299
-  //   // получаем тело ответа (см. про этот метод ниже)
-  //   const car = {
-  //     name: name,
-  //     color: color,
-  //   };
-  //   const response = await fetch(url, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(car),
-  //   });
-  //   console.log(response);
-  //   carTotal();
-  // } else {
-  //   alert('Ошибка HTTP: ' + response.status);
-  // }
 }
