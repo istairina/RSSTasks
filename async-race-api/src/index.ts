@@ -1,6 +1,10 @@
-import Test from "../src/comonents/test";
-import "./sass/global.scss";
+import GarageHTML from './components/garage/layout/garage';
+import Header from './components/common/layout/header';
+import './sass/global.scss';
 
-const dr = new Test();
-dr.print();
-// console.log("test");
+const app = document.getElementById('app');
+
+if (app) {
+  app.appendChild(Header(app));
+  app.appendChild(GarageHTML([]));
+}

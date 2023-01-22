@@ -1,0 +1,6 @@
+export default async function deleteWinner(id: number) {
+  const url = `http://127.0.0.1:3000/winners/${id}`;
+  await fetch(url, {
+    method: 'DELETE',
+  });
+}

@@ -1,4 +1,6 @@
-$color: #1f9638;
-body {
-  color: $color;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+@import 'common';
+
+@import 'garagePage';
+@import 'winnersPage';
