@@ -1,8 +1,9 @@
 @import 'values';
 
 body {
-  background-color: black;
+  background-color: $bg;
   color: $color;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -11,7 +12,7 @@ header {
 
 .btn {
   margin: 5px;
-  width: 140px;
+  width: 159px;
   height: 30px;
   background-color: $bg-main-btn;
   text-transform: uppercase;
@@ -20,6 +21,7 @@ header {
 
 .second {
   background-color: $bg-second-btn;
+  width: 140px;
 }
 
 .btn:hover {
@@ -33,14 +35,24 @@ header {
 
 .btn_inactive {
   margin: 5px;
-  width: 140px;
-  height: 30px;
+  // width: 140px;
+  // height: 30px;
   text-transform: uppercase;
   border-radius: 5px;
   cursor: default;
   background-color: grey;
 }
 
+.btn_inactive:hover {
+  cursor: default;
+  filter: none;
+  box-shadow: none;
+}
+
 main {
   padding: 10px;
+}
+
+.main__footer {
+  margin-top: 20px;
 }

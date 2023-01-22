@@ -4,7 +4,7 @@ import addCar from '../drivers/addCar';
 
 export default function CreateCar(stateInp: string[]) {
   let textVal = '';
-  let colorVal = '#000000';
+  let colorVal = '#e15b64';
 
   if (stateInp.length > 0) {
     textVal = stateInp[0];

@@ -1,48 +1,25 @@
-export default function CarSvg(color: string, width = '100', height = '50') {
-  let stroke_color = 'none';
-  if (color === '#000000') {
-    stroke_color = '#ffffff';
-  }
-  return `<svg
-  xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  version="1.1"
-  width= ${width}
-  height= ${height}
-  viewBox="0 0 100 50"
-  xml:space="preserve"
->
-  <defs></defs>
-  <g
-    style="
-      stroke: none;
-      stroke-width: 0;
-      stroke-dasharray: none;
-      stroke-linecap: butt;
-      stroke-linejoin: miter;
-      stroke-miterlimit: 10;
-      fill: none;
-      fill-rule: nonzero;
-      opacity: 1;
-    "
-    transform="translate(0 0) scale(0.7 0.7)"
-  >
-    <path
-      d="M 84.99 37.498 l -16.835 -2.571 c -0.428 -0.065 -0.824 -0.277 -1.115 -0.597 l -8.952 -9.805 c -1.115 -1.222 -2.703 -1.922 -4.357 -1.922 H 25.005 c -1.991 0 -3.833 0.993 -4.928 2.656 l -5.862 8.905 c -0.234 0.356 -0.586 0.625 -0.992 0.759 l -9.169 3.022 C 1.629 38.744 0 40.996 0 43.548 v 9.404 c 0 3.254 2.647 5.9 5.9 5.9 h 3.451 c 0.969 4.866 5.269 8.545 10.416 8.545 s 9.447 -3.679 10.416 -8.545 h 30.139 c 0.969 4.866 5.27 8.545 10.416 8.545 s 9.446 -3.679 10.415 -8.545 H 84.1 c 3.254 0 5.9 -2.646 5.9 -5.9 v -9.622 C 90 40.394 87.893 37.941 84.99 37.498 z M 19.767 63.397 c -3.652 0 -6.623 -2.971 -6.623 -6.622 c 0 -3.652 2.971 -6.623 6.623 -6.623 s 6.623 2.971 6.623 6.623 C 26.39 60.427 23.419 63.397 19.767 63.397 z M 70.738 63.397 c -3.652 0 -6.623 -2.971 -6.623 -6.622 c 0 -3.652 2.971 -6.623 6.623 -6.623 c 3.651 0 6.622 2.971 6.622 6.623 C 77.36 60.427 74.39 63.397 70.738 63.397 z"
-      style="
-        stroke: ${stroke_color};
-        stroke-width: 1;
-        stroke-dasharray: none;
-        stroke-linecap: butt;
-        stroke-linejoin: miter;
-        stroke-miterlimit: 10;
-        fill: ${color};
-        fill-rule: nonzero;
-        opacity: 1;
-      "
-      transform=" matrix(1 0 0 1 0 0) "
-      stroke-linecap="round"
-    />
-  </g>
-</svg>`;
+export default function CarSvg(color: string, width = '200', height = '100', viewBoxX = '20') {
+  return `<?xml version="1.0" encoding="utf-8"?>
+  <svg  viewBox="${viewBoxX} 0 100 65" y="0" x="0" xmlns="http://www.w3.org/2000/svg" id="圖層_1" version="1.1" width="${width}px" height="${height}px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:100%;height:100%;" >
+  <g class="ldl-scale" style="transform-origin:50% 50%;transform:rotate(0deg) scale(1, 1);" >
+  <path fill=${color} d="M66 47.5c-.4-.5-5.1 0-5.7 0H22.9c-1.8 0-4.9.6-6.5 0 .8-2.5 3.4-3.9 5.7-5 6.5-3.1 13.3-5.7 20.3-7.6 10-2.8 16.1 2 22.5 11.1l1.1 1.5z" style="fill:${color};" ></path>
+  <path fill="#333" d="M62.3 46.2c-5.6-7.9-10.9-12.1-19.6-9.7-1.5.4-3 .9-4.5 1.4-.9.3-1.5 1.1-1.5 2l-.3 5.2c-.1 1.3 1 2.4 2.3 2.4h19.7c.5 0 4.7-.4 5 0l-1.1-1.3z" style="fill:rgb(51, 51, 51);" ></path>
+  <path fill="#333" d="M25 43.2c-1.6.8-3.4 1.7-4.4 3.1-.4.6 0 1.4.7 1.4 1.4.1 3.1-.2 4.3-.2h8c.5 0 .9-.4.9-.9l.4-6.3c0-.7-.6-1.1-1.2-.9-3 1.2-5.9 2.4-8.7 3.8z" style="fill:rgb(51, 51, 51);" ></path>
+  <path fill=${color} d="M89.4 54.1c-2.3-3.5-5.9-6.2-9.8-7.6-1.2-.4-2.5-.8-3.8-.9-11.8-.6-23.9 0-35.7 0h-23c-3 0-5.6 2.2-6.1 5.1 0 .1-.1.2-.1.3l-.5 3.8-.8 3.4c0 2.2 1.8 4 4 4H62.7c5.6 0 11.2.2 16.8 0 .6 0 1.2 0 1.8-.1 1.1 0 2.2-.1 3.2-.1 2.1-.1 6.5-.1 6.8-3 .1-.9-.2-1.8-.6-2.6-.4-.8-.8-1.6-1.3-2.3z" style="fill:${color};" ></path>
+  <path fill="#e15b64" d="M14.2 50.7H11c-.2 0-.3.1-.3.3l-.4 3.3c0 .2.1.5.3.5h3.6c.9 0 1.6-.8 1.6-1.8v-.5c-.1-1-.8-1.8-1.6-1.8z" style="fill:rgb(225, 91, 100);" ></path>
+  <path fill="#e0e0e0" d="M87.9 51c-.2-.2-.5-.4-.8-.4h-3c-.8 0-1.4.5-1.4 1.1v1.5c0 .8.8 1.6 1.8 1.6h5c.6 0 .7-.5.4-1l-2-2.8z" style="fill:rgb(224, 224, 224);" ></path>
+  <path fill=${color} d="M90.3 57.8H9.6s-.4 0-.4.4c0 2.4 1.7 4 4.1 4h77c1.2 0 2.2-1 2.2-2.2 0-1.2-1-2.2-2.2-2.2z" style="fill:${color};" ></path>
+  <g style="" ><circle fill="#fff" r="7.3" cy="57.2" cx="25.3" style="fill:rgb(255, 255, 255);" ></circle>
+  <path fill="#333" d="M25.3 51.3c3.2 0 5.8 2.6 5.8 5.8S28.5 63 25.3 63s-5.8-2.6-5.8-5.8 2.6-5.9 5.8-5.9m0-3c-4.9 0-8.8 3.9-8.8 8.8s3.9 8.8 8.8 8.8 8.8-3.9 8.8-8.8-4-8.8-8.8-8.8z" style="fill:rgb(51, 51, 51);" ></path></g>
+  <g style="" ><circle fill="#e6e6e6" r="4" cy="57.2" cx="25.3" style="fill:rgb(230, 230, 230);" ></circle></g>
+  <g style="" ><circle fill="#fff" r="7.3" cy="57.2" cx="71.9" style="fill:rgb(255, 255, 255);" ></circle>
+  <path fill="#333" d="M71.9 51.3c3.2 0 5.8 2.6 5.8 5.8S75.1 63 71.9 63s-5.8-2.6-5.8-5.8 2.6-5.9 5.8-5.9m0-3c-4.9 0-8.8 3.9-8.8 8.8s3.9 8.8 8.8 8.8 8.8-3.9 8.8-8.8-3.9-8.8-8.8-8.8z" style="fill:rgb(51, 51, 51);" ></path></g>
+  <g style="" ><circle fill="#e6e6e6" r="4" cy="57.2" cx="71.9" style="fill:rgb(230, 230, 230);" ></circle></g>
+  <path fill=${color} d="M59.1 55.9H41c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5h18c.8 0 1.5.7 1.5 1.5.1.8-.6 1.5-1.4 1.5z" style="fill:${color};" ></path>
+  <path fill=${color} d="M17 43l-7.2-.7c-1.1-.1-2-1-2.1-2.2l-.1-1.5c-.1-1 .9-1.8 1.9-1.5l10.2 3.3c0 1.5-1.3 2.7-2.7 2.6z" style="fill:${color};" ></path>
+  <path d="M18.7 46.2l-2.9 2.5-4.9-8.1 1.9-1.6z" fill=${color} style="fill:${color};" ></path>
+  <metadata xmlns:d="https://loading.io/stock/" style="" ><d:name style="" >sports car</d:name>
+  <d:tags style="" >racer,coupe,supercar,vehicle,cab,auto,sports car,transportation</d:tags>
+  <d:license style="" >by</d:license>
+  <d:slug style="" >swsirj</d:slug></metadata></g></svg>`;
 }

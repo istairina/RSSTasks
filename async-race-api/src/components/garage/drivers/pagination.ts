@@ -18,7 +18,18 @@ export default async function Pagination(pageNum: number) {
   const carNum = await CarsNumber();
   const arrH1 = document.getElementsByTagName('h1');
   const h1 = arrH1[0];
-  h1.innerText = `Garage (${carNum})`;
+  switch (carNum) {
+    case 0:
+      h1.innerText = 'No car in the garage';
+      break;
+    case 1:
+      h1.innerText = '1 car in the garage';
+      break;
+    default:
+      h1.innerText = `${carNum} cars in the garage`;
+      break;
+  }
+  // h1.innerText = `Garage (${carNum})`;
 
   const pageName = document.getElementById('pageName');
   if (pageName) {

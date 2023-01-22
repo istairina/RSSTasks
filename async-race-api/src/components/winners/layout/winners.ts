@@ -5,8 +5,24 @@ import { getPageWinNum } from '../drivers/valueCurrPageWinners';
 import buttonsWinners from './buttonsPaginWinners';
 import tableWinners from './tableWinners';
 
+async function totalWinners(h1: HTMLDivElement) {
+  await TotalWinnersAmount();
+  switch (await TotalWinnersAmount()) {
+    case 0:
+      h1.innerText = `Let's race!`;
+      break;
+    case 1:
+      h1.innerText = '1 winner';
+      break;
+    default:
+      h1.innerText = `${await TotalWinnersAmount()} winners`;
+      break;
+  }
+}
+
 function WinnersHTML() {
   const winners = document.createElement('div');
+  winners.setAttribute('id', 'winners');
   winners.classList.add('master');
 
   const main = document.createElement('main');
@@ -14,7 +30,11 @@ function WinnersHTML() {
 
   const h1 = document.createElement('h1');
   h1.classList.add('main__title');
-  h1.innerText = `Winners (${TotalWinnersAmount()})`;
+  h1.innerText = 'calculating...';
+  totalWinners(h1);
+  // const totalWinners = ;
+
+  // h1.innerText = `Winners (${TotalWinnersAmount()})`;
   main.appendChild(h1);
 
   const pageNum = document.createElement('p');

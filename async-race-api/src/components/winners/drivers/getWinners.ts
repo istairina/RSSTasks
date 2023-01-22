@@ -32,9 +32,26 @@ export default async function winnerCars(page = 1, sortBy = 'id', sortOrder = 'A
       time: car.time,
     };
     createRow(carInfo, ++count);
-    // console.log(car);
   });
+  const winsHead = document.getElementById('winsWinners');
+  const timeHead = document.getElementById('timeWinners');
+  if (winsHead && timeHead) {
+    switch (sortBy) {
+      case 'wins':
+        sortOrder === 'ASC' ? (winsHead.innerHTML = 'Wins) ↓') : (winsHead.innerHTML = 'Wins ↑');
+        timeHead.innerHTML = 'Best time (sec)';
+        break;
+      case 'time':
+        sortOrder === 'ASC' ? (timeHead.innerHTML = 'Best time (sec) ↓') : (timeHead.innerHTML = 'Best time (sec) ↑');
+        winsHead.innerHTML = 'Wins';
+        break;
+      default:
+        winsHead.innerHTML = 'Wins';
+        timeHead.innerHTML = 'Best time (sec)';
+        break;
+    }
+  }
 
-  console.log(cars.length);
+  // console.log(cars.length);
   return cars;
 }

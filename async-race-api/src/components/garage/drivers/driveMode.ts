@@ -22,6 +22,7 @@ export default async function DriveMode(id: number, race = true) {
     })
     .then(async () => {
       if (race) {
+        console.log(getCurrWinner());
         if (!getCurrWinner()) {
           await setCurrWinner(id);
           let numTime = 0;
@@ -30,6 +31,7 @@ export default async function DriveMode(id: number, race = true) {
             numTime = +car.style.animationDuration.slice(0, -2);
             time = String(Math.trunc(numTime) / 1000);
           }
+          console.log(id);
           winnerTitle(getCurrWinner(), time);
           const winCar = await GetSpecWinCar(id);
           if (Object.keys(winCar).length === 0) {
@@ -47,6 +49,7 @@ export default async function DriveMode(id: number, race = true) {
         if (car) {
           car.style.animationPlayState = 'paused';
           const carBroken = document.createElement('span');
+          carBroken.classList.add('car__broken');
           carBroken.innerText = 'BROKEN!';
           car.appendChild(carBroken);
         }

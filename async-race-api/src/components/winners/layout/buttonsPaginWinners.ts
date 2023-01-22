@@ -7,9 +7,10 @@ export default function buttonsWinners() {
   footer.classList.add('main__footer');
 
   const btnPrev = document.createElement('button');
+  btnPrev.classList.add('btn');
   btnPrev.classList.add('btn_inactive');
   btnPrev.setAttribute('id', 'btnPrevWin');
-  btnPrev.innerText = 'Prev';
+  btnPrev.innerText = 'Previous page';
   footer.appendChild(btnPrev);
 
   btnPrev.addEventListener('click', () => {
@@ -22,9 +23,10 @@ export default function buttonsWinners() {
   });
 
   const btnNext = document.createElement('button');
+  btnNext.classList.add('btn');
   btnNext.classList.add('btn_inactive');
   btnNext.setAttribute('id', 'btnNextWin');
-  btnNext.innerText = 'Next';
+  btnNext.innerText = 'Next page';
   footer.appendChild(btnNext);
 
   btnNext.addEventListener('click', async () => {

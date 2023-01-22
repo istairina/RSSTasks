@@ -2,12 +2,14 @@
 
 .table {
   border: 1px solid $color;
+  border-collapse: collapse;
   width: 450px;
 }
 
 th,
 td {
   border: 1px solid $inner-border;
+  padding: 10px;
 }
 
 th {
@@ -17,5 +19,5 @@ th {
 }
 
 tr {
-  height: 30px;
+  height: 40px;
 }

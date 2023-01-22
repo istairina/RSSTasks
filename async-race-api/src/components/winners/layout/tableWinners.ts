@@ -27,6 +27,8 @@ export default function tableWinners() {
   const winsHead = document.createElement('th');
   winsHead.setAttribute('id', 'winsWinners');
   winsHead.innerText = 'Wins';
+  winsHead.style.cursor = 'pointer';
+  winsHead.setAttribute('title', 'Click to sort by wins amount');
   tableHead.appendChild(winsHead);
 
   let winsOrder = 'ASC';
@@ -37,6 +39,8 @@ export default function tableWinners() {
 
   const timeHead = document.createElement('th');
   timeHead.setAttribute('id', 'timeWinners');
+  timeHead.setAttribute('title', 'Click to sort by time');
+  timeHead.style.cursor = 'pointer';
   timeHead.innerText = 'Best time (sec)';
   tableHead.appendChild(timeHead);
 

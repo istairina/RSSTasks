@@ -15,6 +15,7 @@ function GarageHTML(saveStateInputs: string[]) {
     saveStateInpUpdate = [saveStateInputs[2], saveStateInputs[3]];
   }
   const garage = document.createElement('div');
+  garage.setAttribute('id', 'garage');
   garage.classList.add('master');
   garage.appendChild(CreateCar(saveStateInpCreate));
   garage.appendChild(UpdateCar(saveStateInpUpdate));

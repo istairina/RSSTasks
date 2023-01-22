@@ -13,7 +13,7 @@ export default function createRow(car: IFullInfo, count: number) {
   countCell.innerText = String(count);
 
   const carCell = document.createElement('td');
-  carCell.innerHTML = CarSvg(car.color, '50', '25');
+  carCell.innerHTML = CarSvg(car.color, '70', '50', '0');
   const nameCell = document.createElement('td');
   nameCell.innerText = car.name;
 

@@ -12,10 +12,10 @@ export default async function setActiveInactiveBtn() {
   if (btn_next) {
     if (maxPage) {
       if (Math.ceil(maxPage) === currPage) {
-        btn_next.classList.remove('btn');
+        // btn_next.classList.remove('btn');
         btn_next.classList.add('btn_inactive');
       } else {
-        btn_next.classList.add('btn');
+        // btn_next.classList.add('btn');
         btn_next.classList.remove('btn_inactive');
       }
     }
@@ -23,10 +23,10 @@ export default async function setActiveInactiveBtn() {
 
   if (btn_prev) {
     if (currPage === 1) {
-      btn_prev.classList.remove('btn');
+      // btn_prev.classList.remove('btn');
       btn_prev.classList.add('btn_inactive');
     } else {
-      btn_prev.classList.add('btn');
+      // btn_prev.classList.add('btn');
       btn_prev.classList.remove('btn_inactive');
     }
   }

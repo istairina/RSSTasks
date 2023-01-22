@@ -5,6 +5,7 @@ import EngineStart from '../drivers/engineStart';
 import EngineStop from '../drivers/engineStop';
 import removeCar from '../drivers/removeCar';
 import updateCarServer from '../drivers/updateCar';
+import { setSelectedCar } from '../drivers/valueSelectedCar';
 import CarSvg from './car_svg';
 
 function CarBox(name: string, color: string, id: number) {
@@ -22,7 +23,16 @@ function CarBox(name: string, color: string, id: number) {
   header.appendChild(btn_select);
 
   btn_select.addEventListener('click', () => {
-    updateCarServer(name, color, id);
+    const btnUpdate = document.getElementById('btn__update-car');
+    if (btnUpdate) {
+      btnUpdate.classList.add('btn');
+      btnUpdate.classList.add('second');
+      btnUpdate.classList.remove('btn_inactive');
+    }
+    setSelectedCar(name, color, id);
+    // console.log(getSelectedCar());
+    updateCarServer();
+    // updateCarServer(name, color, id);
   });
 
   const btn_remove = document.createElement('button');
@@ -45,25 +55,32 @@ function CarBox(name: string, color: string, id: number) {
 
   const btn_start = document.createElement('div');
   btn_start.classList.add('car__start-stop');
+  // btn_start.classList.add('inactiveStartStop');
   btn_start.classList.add('start');
   btn_start.innerText = '⏵';
   btn_start.setAttribute('id', `start${id}`);
   rule_buttons.appendChild(btn_start);
 
-  btn_start.addEventListener('click', async () => {
-    const content: startCars = await EngineStart(id);
-    DriveMode(id, false);
-    AnimatioStart(id, content);
+  btn_start.addEventListener('click', async function () {
+    if (!this.hasAttribute('disabled')) {
+      const content: startCars = await EngineStart(id);
+      DriveMode(id, false);
+      AnimatioStart(id, content);
+    }
   });
 
   const btn_stop = document.createElement('div');
   btn_stop.classList.add('car__start-stop');
+  // btn_stop.classList.add('inactiveStartStop');
+  btn_stop.setAttribute('disabled', '');
   btn_stop.innerText = '⏹';
   btn_stop.setAttribute('id', `stop${id}`);
   rule_buttons.appendChild(btn_stop);
 
-  btn_stop.addEventListener('click', async () => {
-    EngineStop(id);
+  btn_stop.addEventListener('click', async function (this: HTMLDivElement) {
+    if (!this.hasAttribute('disabled')) {
+      EngineStop(id);
+    }
   });
 
   const images = document.createElement('div');
