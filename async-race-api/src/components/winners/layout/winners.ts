@@ -25,8 +25,8 @@ function WinnersHTML() {
   winners.setAttribute('id', 'winners');
   winners.classList.add('master');
 
-  const main = document.createElement('main');
-  winners.appendChild(main);
+  // const mainWin = document.createElement('main');
+  // winners.appendChild(mainWin);
 
   const h1 = document.createElement('h1');
   h1.classList.add('main__title');
@@ -35,21 +35,21 @@ function WinnersHTML() {
   // const totalWinners = ;
 
   // h1.innerText = `Winners (${TotalWinnersAmount()})`;
-  main.appendChild(h1);
+  winners.appendChild(h1);
 
   const pageNum = document.createElement('p');
   pageNum.classList.add('main__page');
   pageNum.setAttribute('id', 'pageNum');
   pageNum.innerText = `Page #${getPageWinNum()}`;
-  main.appendChild(pageNum);
+  winners.appendChild(pageNum);
 
   const tableBox = document.createElement('div');
   tableBox.classList.add('table__box');
-  main.appendChild(tableBox);
+  winners.appendChild(tableBox);
 
   tableBox.appendChild(tableWinners());
 
-  main.appendChild(buttonsWinners());
+  winners.appendChild(buttonsWinners());
 
   setTotalWinners();
   PaginationWin();
