@@ -37,11 +37,11 @@ function WinnersHTML() {
   // h1.innerText = `Winners (${TotalWinnersAmount()})`;
   winners.appendChild(h1);
 
-  const pageNum = document.createElement('p');
-  pageNum.classList.add('main__page');
-  pageNum.setAttribute('id', 'pageNum');
-  pageNum.innerText = `Page #${getPageWinNum()}`;
-  winners.appendChild(pageNum);
+  // const pageNum = document.createElement('p');
+  // pageNum.classList.add('main__page');
+  // pageNum.setAttribute('id', 'pageNum');
+  // pageNum.innerText = `Page #${getPageWinNum()}`;
+  // winners.appendChild(pageNum);
 
   const tableBox = document.createElement('div');
   tableBox.classList.add('table__box');
