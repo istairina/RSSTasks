@@ -12,6 +12,12 @@ export default function Footer() {
   btn_prev.innerText = 'Previous page';
   footer.appendChild(btn_prev);
 
+  const pageName = document.createElement('p');
+  pageName.classList.add('main__page');
+  pageName.setAttribute('id', 'pageName');
+  pageName.innerText = `Page #${getPageNum()}`;
+  footer.appendChild(pageName);
+
   const btn_next = document.createElement('button');
   btn_next.classList.add('btn');
   btn_next.setAttribute('id', 'nextPage');

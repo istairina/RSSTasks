@@ -13,20 +13,24 @@ export default function tableWinners() {
 
   const idHead = document.createElement('th');
   idHead.setAttribute('id', 'idWinners');
+  idHead.style.width = '32px';
   idHead.innerText = '#';
   tableHead.appendChild(idHead);
 
   const carHead = document.createElement('th');
   carHead.innerText = 'Car';
+  carHead.style.width = '85px';
   tableHead.appendChild(carHead);
 
   const nameHead = document.createElement('th');
   nameHead.innerText = 'Name';
+  nameHead.style.width = '150px';
   tableHead.appendChild(nameHead);
 
   const winsHead = document.createElement('th');
   winsHead.setAttribute('id', 'winsWinners');
   winsHead.innerText = 'Wins';
+  winsHead.style.width = '68px';
   winsHead.style.cursor = 'pointer';
   winsHead.setAttribute('title', 'Click to sort by wins amount');
   tableHead.appendChild(winsHead);
@@ -40,6 +44,7 @@ export default function tableWinners() {
   const timeHead = document.createElement('th');
   timeHead.setAttribute('id', 'timeWinners');
   timeHead.setAttribute('title', 'Click to sort by time');
+  timeHead.style.width = '122px';
   timeHead.style.cursor = 'pointer';
   timeHead.innerText = 'Best time (sec)';
   tableHead.appendChild(timeHead);

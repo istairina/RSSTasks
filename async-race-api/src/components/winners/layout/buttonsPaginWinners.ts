@@ -22,6 +22,12 @@ export default function buttonsWinners() {
     }
   });
 
+  const pageNum = document.createElement('p');
+  pageNum.classList.add('main__page');
+  pageNum.setAttribute('id', 'pageNum');
+  pageNum.innerText = `Page #${getPageWinNum()}`;
+  footer.appendChild(pageNum);
+
   const btnNext = document.createElement('button');
   btnNext.classList.add('btn');
   btnNext.classList.add('btn_inactive');

@@ -3,6 +3,7 @@ import CarsNumber from './getTotalCarsAmount';
 import { setPageNum } from './valueCurrPageNumber';
 import setActiveInactiveBtn from './setStateBtnPages';
 import { getCarsByPage } from './getCarsByPage';
+import checkCarPosition from './checkCarPosition';
 
 export default async function Pagination(pageNum: number) {
   let currPageNum = pageNum;
@@ -36,5 +37,11 @@ export default async function Pagination(pageNum: number) {
     pageName.innerText = `Page #${currPageNum}`;
   }
 
+  checkCarPosition();
+
+  const winnerBox = document.getElementById('winnerBox');
+  if (winnerBox) {
+    winnerBox.remove();
+  }
   setActiveInactiveBtn();
 }

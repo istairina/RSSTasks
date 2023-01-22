@@ -6,9 +6,9 @@ export default function winnerTitle(winner: string, time: string) {
   winnerTitle.setAttribute('id', 'winnerBox');
   winnerTitle.innerText = `The winner is ${winner}
     Time: ${time}s`;
-  const app = document.getElementById('app');
-  if (app) {
-    app.appendChild(winnerTitle);
+  const garage = document.getElementById('garage');
+  if (garage) {
+    garage.appendChild(winnerTitle);
   }
   // }
 }

@@ -4,6 +4,7 @@ function Header(app: HTMLElement) {
   const header = document.createElement('header');
   const buttonToGarage = document.createElement('button');
   buttonToGarage.classList.add('btn');
+  buttonToGarage.classList.add('btn_inactive');
   buttonToGarage.innerText = 'to garage';
   const buttonToWinners = document.createElement('button');
   buttonToWinners.classList.add('btn');
