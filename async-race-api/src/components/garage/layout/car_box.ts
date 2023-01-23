@@ -1,5 +1,4 @@
 import { startCars } from '../../common/interface';
-// import AnimatioStart from '../drivers/animationStart';
 import DriveMode from '../drivers/driveMode';
 import EngineStart from '../drivers/engineStart';
 import EngineStop from '../drivers/engineStop';
@@ -26,7 +25,6 @@ function CarBox(name: string, color: string, id: number) {
 
   const btn_start = document.createElement('div');
   btn_start.classList.add('car__start-stop');
-  // btn_start.classList.add('inactiveStartStop');
   btn_start.classList.add('start');
   btn_start.innerText = '⏵';
   btn_start.setAttribute('id', `start${id}`);
@@ -36,13 +34,11 @@ function CarBox(name: string, color: string, id: number) {
     if (!this.hasAttribute('disabled')) {
       const content: startCars = await EngineStart(id);
       DriveMode(id, false, content);
-      // AnimatioStart(id, content);
     }
   });
 
   const btn_stop = document.createElement('div');
   btn_stop.classList.add('car__start-stop');
-  // btn_stop.classList.add('inactiveStartStop');
   btn_stop.setAttribute('disabled', '');
   btn_stop.innerText = '⏹';
   btn_stop.setAttribute('id', `stop${id}`);

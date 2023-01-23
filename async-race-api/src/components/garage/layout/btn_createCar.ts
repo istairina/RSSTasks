@@ -1,6 +1,4 @@
 import addCar from '../drivers/addCar';
-// import { getPageNum } from '../pageNumberValue';
-// import Pagination from '../pagination';
 
 export default function CreateCar(stateInp: string[]) {
   let textVal = '';
@@ -40,7 +38,6 @@ export default function CreateCar(stateInp: string[]) {
     if (!btn_create.classList.contains('btn_inactive')) {
       if (inp_name.value) {
         addCar(inp_name.value, inp_color.value);
-        // Pagination(getPageNum());
       } else {
         alert('Give name to a new car');
       }

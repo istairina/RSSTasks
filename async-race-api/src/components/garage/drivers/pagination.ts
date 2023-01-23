@@ -30,7 +30,6 @@ export default async function Pagination(pageNum: number) {
       h1.innerText = `${carNum} cars in the garage`;
       break;
   }
-  // h1.innerText = `Garage (${carNum})`;
 
   const pageName = document.getElementById('pageName');
   if (pageName) {

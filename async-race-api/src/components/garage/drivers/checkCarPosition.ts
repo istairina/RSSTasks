@@ -1,7 +1,6 @@
 export default function checkCarPosition() {
   const allCarDivs = [...document.querySelectorAll('.car__car')];
   const allAtStartPosition = allCarDivs.every((elem) => !elem.classList.contains('car__car-active'));
-  // console.log(allAtStartPosition);
 
   if (allAtStartPosition) {
     const btnRace = document.getElementById('btnRace');

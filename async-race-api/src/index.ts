@@ -2,9 +2,9 @@ import GarageHTML from './components/garage/layout/garage';
 import Header from './components/common/layout/header';
 import './sass/global.scss';
 
-const app = document.getElementById('app');
+const body = document.querySelector('body');
 
-if (app) {
-  app.appendChild(Header(app));
-  app.appendChild(GarageHTML([]));
+if (body) {
+  body.appendChild(Header(body));
+  body.appendChild(GarageHTML([]));
 }

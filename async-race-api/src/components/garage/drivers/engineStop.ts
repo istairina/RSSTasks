@@ -1,4 +1,3 @@
-// import checkCarPosition from './checkCarPosition';
 import SetStateStartStopBtn from './setStateStartStopBtn';
 
 export default async function EngineStop(id: number, keepStateBtn = false) {
@@ -12,6 +11,4 @@ export default async function EngineStop(id: number, keepStateBtn = false) {
   if (!keepStateBtn) {
     SetStateStartStopBtn(id, true);
   }
-
-  // checkCarPosition();
 }

@@ -1,11 +1,9 @@
-// import DriveMode from './driveMode';
 import SetStateStartStopBtn from './setStateStartStopBtn';
 import { startCars } from '../../common/interface';
 
 export default async function EngineStart(id: number) {
   const btnRace = document.getElementById('btnRace');
   if (btnRace) {
-    // btnRace.classList.remove('btn');
     btnRace.classList.add('btn_inactive');
   }
   const btnGenerate = document.getElementById('btn__generate-cars');

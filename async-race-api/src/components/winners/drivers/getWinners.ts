@@ -11,7 +11,6 @@ export default async function winnerCars(page = 1, sortBy = 'id', sortOrder = 'A
   })}`;
   const response = await fetch(url);
   const cars = await response.json();
-  // const totalAmount = await response.headers.get('X-Total-Count');
 
   const table = document.getElementById('tableWinners');
   if (table) {
@@ -55,6 +54,5 @@ export default async function winnerCars(page = 1, sortBy = 'id', sortOrder = 'A
     }
   }
 
-  // console.log(cars.length);
   return cars;
 }

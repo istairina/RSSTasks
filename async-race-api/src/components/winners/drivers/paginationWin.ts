@@ -13,21 +13,17 @@ export default async function PaginationWin() {
   if (btnNext) {
     if (maxPageNum > currPageNum) {
       btnNext.classList.remove('btn_inactive');
-      // btnNext.classList.add('btn');
     }
     if (maxPageNum === currPageNum) {
       btnNext.classList.add('btn_inactive');
-      // btnNext.classList.remove('btn');
     }
   }
 
   if (btnPrev) {
     if (currPageNum === 1) {
       btnPrev.classList.add('btn_inactive');
-      // btnPrev.classList.remove('btn');
     } else {
       btnPrev.classList.remove('btn_inactive');
-      // btnPrev.classList.add('btn');
     }
   }
 

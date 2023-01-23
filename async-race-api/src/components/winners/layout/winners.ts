@@ -1,7 +1,6 @@
 import TotalWinnersAmount from '../drivers/getTotalWinners';
 import PaginationWin from '../drivers/paginationWin';
 import setTotalWinners from '../drivers/setTotalAmount';
-// import { getPageWinNum } from '../drivers/valueCurrPageWinners';
 import buttonsWinners from './buttonsPaginWinners';
 import tableWinners from './tableWinners';
 
@@ -25,23 +24,12 @@ function WinnersHTML() {
   winners.setAttribute('id', 'winners');
   winners.classList.add('master');
 
-  // const mainWin = document.createElement('main');
-  // winners.appendChild(mainWin);
-
   const h1 = document.createElement('h1');
   h1.classList.add('main__title');
   h1.innerText = 'calculating...';
   totalWinners(h1);
-  // const totalWinners = ;
 
-  // h1.innerText = `Winners (${TotalWinnersAmount()})`;
   winners.appendChild(h1);
-
-  // const pageNum = document.createElement('p');
-  // pageNum.classList.add('main__page');
-  // pageNum.setAttribute('id', 'pageNum');
-  // pageNum.innerText = `Page #${getPageWinNum()}`;
-  // winners.appendChild(pageNum);
 
   const tableBox = document.createElement('div');
   tableBox.classList.add('table__box');
