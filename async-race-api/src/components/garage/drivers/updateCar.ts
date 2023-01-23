@@ -1,4 +1,3 @@
-// import Pagination from './pagination';
 import isActive from '../../common/drivers/btnCheckIsActive';
 import { Car } from '../../common/interface';
 import updateCarImage from './updateCarImage';
@@ -38,7 +37,6 @@ export default async function updateCarServer() {
       updateCarImage(car.id, nameNew, colorNew);
       text.value = '';
       colorText.value = '#000000';
-      // Pagination();
       btn_update.classList.add('btn_inactive');
       text.setAttribute('disabled', '');
       colorText.setAttribute('disabled', '');

@@ -1,6 +1,6 @@
-import CarsNumber from '../drivers/getTotalCarsAmount';
 import { getPageNum, setPageNum } from '../drivers/values/valueCurrPageNumber';
 import Pagination from '../drivers/pagination';
+import isActive from '../../common/drivers/btnCheckIsActive';
 
 export default function Footer() {
   const footer = document.createElement('div');
@@ -11,6 +11,13 @@ export default function Footer() {
   btn_prev.setAttribute('id', 'prevPage');
   btn_prev.innerText = 'Previous page';
   footer.appendChild(btn_prev);
+
+  btn_prev.addEventListener('click', async () => {
+    if (isActive(btn_prev)) {
+      setPageNum(getPageNum() - 1);
+      Pagination();
+    }
+  });
 
   const pageName = document.createElement('p');
   pageName.classList.add('main__page');
@@ -25,26 +32,9 @@ export default function Footer() {
   footer.appendChild(btn_next);
 
   btn_next.addEventListener('click', async () => {
-    if (!btn_next.classList.contains('btn_inactive')) {
-      const cars: number = await CarsNumber();
-      const maxPage = cars / 7;
-      let currPage = getPageNum();
-      if (maxPage > currPage) {
-        currPage += 1;
-        setPageNum(currPage);
-        Pagination();
-      }
-    }
-  });
-
-  btn_prev.addEventListener('click', async () => {
-    if (!btn_prev.classList.contains('btn_inactive')) {
-      let currPage = getPageNum();
-      if (currPage > 1) {
-        currPage -= 1;
-        setPageNum(currPage);
-        Pagination();
-      }
+    if (isActive(btn_next)) {
+      setPageNum(getPageNum() + 1);
+      Pagination();
     }
   });
 
