@@ -19,32 +19,34 @@ export default async function updateCarServer() {
   }
 
   async function handleBtnClick() {
-    const car: Car = getSelectedCar();
-    const nameNew = text.value;
-    const colorNew = colorText.value;
-    // console.log(car.id);
-    const url = `http://127.0.0.1:3000/garage/${car.id}`;
-    const carNew = {
-      name: nameNew,
-      color: colorNew,
-    };
-    await fetch(url, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(carNew),
-    });
-    // console.log(response);
-    text.value = '';
-    colorText.value = '#000000';
-    Pagination(getPageNum());
-    btn_update.classList.add('btn_inactive');
-    // btn_update.classList.remove('btn');
-    // btn_update.classList.remove('second');
-    text.setAttribute('disabled', '');
-    colorText.setAttribute('disabled', '');
-    btn_update.removeEventListener('click', handleBtnClick);
+    if (!btn_update.classList.contains('btn_inactive')) {
+      const car: Car = getSelectedCar();
+      const nameNew = text.value;
+      const colorNew = colorText.value;
+      // console.log(car.id);
+      const url = `http://127.0.0.1:3000/garage/${car.id}`;
+      const carNew = {
+        name: nameNew,
+        color: colorNew,
+      };
+      await fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(carNew),
+      });
+      // console.log(response);
+      text.value = '';
+      colorText.value = '#000000';
+      Pagination(getPageNum());
+      btn_update.classList.add('btn_inactive');
+      // btn_update.classList.remove('btn');
+      // btn_update.classList.remove('second');
+      text.setAttribute('disabled', '');
+      colorText.setAttribute('disabled', '');
+      btn_update.removeEventListener('click', handleBtnClick);
+    }
   }
 
   const btn_update = document.getElementById('btn__update-car') as HTMLBodyElement;

@@ -37,11 +37,13 @@ export default function CreateCar(stateInp: string[]) {
   box.appendChild(btn_create);
 
   btn_create.addEventListener('click', () => {
-    if (inp_name.value) {
-      addCar(inp_name.value, inp_color.value);
-      // Pagination(getPageNum());
-    } else {
-      alert('Give name to a new car');
+    if (!btn_create.classList.contains('btn_inactive')) {
+      if (inp_name.value) {
+        addCar(inp_name.value, inp_color.value);
+        // Pagination(getPageNum());
+      } else {
+        alert('Give name to a new car');
+      }
     }
   });
 

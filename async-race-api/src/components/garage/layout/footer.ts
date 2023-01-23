@@ -25,22 +25,26 @@ export default function Footer() {
   footer.appendChild(btn_next);
 
   btn_next.addEventListener('click', async () => {
-    const cars: number = await CarsNumber();
-    const maxPage = cars / 7;
-    let currPage = getPageNum();
-    if (maxPage > currPage) {
-      currPage += 1;
-      setPageNum(currPage);
-      Pagination(currPage);
+    if (!btn_next.classList.contains('btn_inactive')) {
+      const cars: number = await CarsNumber();
+      const maxPage = cars / 7;
+      let currPage = getPageNum();
+      if (maxPage > currPage) {
+        currPage += 1;
+        setPageNum(currPage);
+        Pagination(currPage);
+      }
     }
   });
 
   btn_prev.addEventListener('click', async () => {
-    let currPage = getPageNum();
-    if (currPage > 1) {
-      currPage -= 1;
-      setPageNum(currPage);
-      Pagination(currPage);
+    if (!btn_prev.classList.contains('btn_inactive')) {
+      let currPage = getPageNum();
+      if (currPage > 1) {
+        currPage -= 1;
+        setPageNum(currPage);
+        Pagination(currPage);
+      }
     }
   });
 

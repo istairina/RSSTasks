@@ -1,15 +1,17 @@
+import { startCars } from '../../common/interface';
 import createWinner from '../../winners/drivers/createWinner';
 import GetSpecWinCar from '../../winners/drivers/getSpecWinner';
 import updateWinner from '../../winners/drivers/updateWinner';
 import winnerTitle from '../layout/winnerTitle';
+import AnimatioStart from './animationStart';
 import { getCurrWinner, setCurrWinner } from './values/valueCurrWinner';
 
-export default async function DriveMode(id: number, race = true) {
+export default async function DriveMode(id: number, race = true, content: startCars) {
   const url = `http://127.0.0.1:3000/engine/?${new URLSearchParams({
     id: String(id),
     status: 'drive',
   })}`;
-
+  AnimatioStart(id, content);
   const car = document.getElementById(`car${id}`);
   return fetch(url, {
     method: 'PATCH',
@@ -41,6 +43,7 @@ export default async function DriveMode(id: number, race = true) {
         }
         return id;
       }
+      return 0;
     })
     .catch((error) => {
       if (String(error) === 'Error: 500') {

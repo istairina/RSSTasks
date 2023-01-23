@@ -1,5 +1,5 @@
 import { startCars } from '../../common/interface';
-import AnimatioStart from '../drivers/animationStart';
+// import AnimatioStart from '../drivers/animationStart';
 import DriveMode from '../drivers/driveMode';
 import EngineStart from '../drivers/engineStart';
 import EngineStop from '../drivers/engineStop';
@@ -35,8 +35,8 @@ function CarBox(name: string, color: string, id: number) {
   btn_start.addEventListener('click', async function () {
     if (!this.hasAttribute('disabled')) {
       const content: startCars = await EngineStart(id);
-      DriveMode(id, false);
-      AnimatioStart(id, content);
+      DriveMode(id, false, content);
+      // AnimatioStart(id, content);
     }
   });
 
@@ -71,14 +71,16 @@ function CarBox(name: string, color: string, id: number) {
   rule_buttons.appendChild(btn_select);
 
   btn_select.addEventListener('click', () => {
-    const btnUpdate = document.getElementById('btn__update-car');
-    if (btnUpdate) {
-      btnUpdate.classList.add('btn');
-      btnUpdate.classList.add('second');
-      btnUpdate.classList.remove('btn_inactive');
+    if (!btn_select.classList.contains('btn.inactive')) {
+      const btnUpdate = document.getElementById('btn__update-car');
+      if (btnUpdate) {
+        btnUpdate.classList.add('btn');
+        btnUpdate.classList.add('second');
+        btnUpdate.classList.remove('btn_inactive');
+      }
+      setSelectedCar(name, color, id);
+      updateCarServer();
     }
-    setSelectedCar(name, color, id);
-    updateCarServer();
   });
 
   const btn_remove = document.createElement('button');
@@ -89,7 +91,9 @@ function CarBox(name: string, color: string, id: number) {
   rule_buttons.appendChild(btn_remove);
 
   btn_remove.addEventListener('click', () => {
-    removeCar(id);
+    if (!btn_remove.classList.contains('btn_inactive')) {
+      removeCar(id);
+    }
   });
 
   const images = document.createElement('div');
