@@ -22,7 +22,8 @@ export default async function winnerCars(page = 1, sortBy = 'id', sortOrder = 'A
   if (page != 1) {
     count = (page - 1) * 10;
   }
-  if (cars.length > 0) {
+  if ((await cars.length) > 0) {
+    console.log(cars.length);
     cars.forEach(async (car: winnerCars) => {
       const content: Car = await GetSpecNameCar(car.id);
       const carInfo = {
