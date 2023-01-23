@@ -5,7 +5,7 @@ import { Car } from '../../common/interface';
 import DriveMode from '../drivers/driveMode';
 import { startCars } from '../../common/interface';
 import AnimatioStart from '../drivers/animationStart';
-import { setCurrWinner } from '../drivers/valueCurrWinner';
+import { setCurrWinner } from '../drivers/values/valueCurrWinner';
 
 export default function RaceResetBtn() {
   const box = document.createElement('div');
@@ -24,6 +24,10 @@ export default function RaceResetBtn() {
 
   btn_race.addEventListener('click', async () => {
     if (!btn_race.classList.contains('btn_inactive')) {
+      const winnerWindow = document.getElementById('winnerBox');
+      if (winnerWindow) {
+        winnerWindow.remove();
+      }
       setCurrWinner(0);
       const cars = await getCarsByPage();
       const allProm: Promise<startCars>[] = [];
@@ -44,6 +48,10 @@ export default function RaceResetBtn() {
     if (btn_race.classList.contains('btn_inactive')) {
       btn_race.classList.remove('btn_inactive');
       // btn_race.classList.add('btn');
+    }
+    const btnGenerate = document.getElementById('btn__generate-cars');
+    if (btnGenerate) {
+      btnGenerate.classList.remove('btn_inactive');
     }
     const cars = await getCarsByPage();
     cars.forEach((elem: Car) => {

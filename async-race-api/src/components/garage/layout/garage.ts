@@ -1,4 +1,4 @@
-import { getPageNum } from '../drivers/valueCurrPageNumber';
+import { getPageNum } from '../drivers/values/valueCurrPageNumber';
 import Pagination from '../drivers/pagination';
 import CreateCar from './btn_createCar';
 import GarageMainView from './garageCars';

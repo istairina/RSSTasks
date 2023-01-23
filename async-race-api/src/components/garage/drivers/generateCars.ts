@@ -2,7 +2,7 @@ import { allBrands } from '../db/carBrands';
 import { allModels } from '../db/carModels';
 import addCar from './addCar';
 
-export default function GenerateCarsServer() {
+export default function GenerateCars() {
   for (let i = 0; i < 100; i++) {
     const randomIndexBrands = Math.floor(Math.random() * (allBrands.length - 1));
     const randomIndexModels = Math.floor(Math.random() * (allModels.length - 1));

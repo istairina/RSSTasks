@@ -5,7 +5,7 @@ import EngineStart from '../drivers/engineStart';
 import EngineStop from '../drivers/engineStop';
 import removeCar from '../drivers/removeCar';
 import updateCarServer from '../drivers/updateCar';
-import { setSelectedCar } from '../drivers/valueSelectedCar';
+import { setSelectedCar } from '../drivers/values/valueSelectedCar';
 import CarSvg from './car_svg';
 
 function CarBox(name: string, color: string, id: number) {
@@ -79,6 +79,14 @@ function CarBox(name: string, color: string, id: number) {
 
   btn_stop.addEventListener('click', async function (this: HTMLDivElement) {
     if (!this.hasAttribute('disabled')) {
+      const winnerWindow = document.getElementById('winnerBox');
+      if (winnerWindow) {
+        winnerWindow.remove();
+      }
+      const btnGenerate = document.getElementById('btn__generate-cars');
+      if (btnGenerate) {
+        btnGenerate.classList.remove('btn_inactive');
+      }
       EngineStop(id);
     }
   });

@@ -1,4 +1,4 @@
-import { getPageNum } from './valueCurrPageNumber';
+import { getPageNum } from './values/valueCurrPageNumber';
 import Pagination from './pagination';
 import deleteWinner from '../../winners/drivers/deleteWinner';
 

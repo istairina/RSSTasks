@@ -1,7 +1,7 @@
 import TotalWinnersAmount from '../drivers/getTotalWinners';
 import PaginationWin from '../drivers/paginationWin';
 import setTotalWinners from '../drivers/setTotalAmount';
-import { getPageWinNum } from '../drivers/valueCurrPageWinners';
+// import { getPageWinNum } from '../drivers/valueCurrPageWinners';
 import buttonsWinners from './buttonsPaginWinners';
 import tableWinners from './tableWinners';
 

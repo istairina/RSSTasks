@@ -22,17 +22,19 @@ export default async function winnerCars(page = 1, sortBy = 'id', sortOrder = 'A
   if (page != 1) {
     count = (page - 1) * 10;
   }
-  cars.forEach(async (car: winnerCars) => {
-    const content: Car = await GetSpecNameCar(car.id);
-    const carInfo = {
-      id: car.id,
-      color: content.color,
-      name: content.name,
-      wins: car.wins,
-      time: car.time,
-    };
-    createRow(carInfo, ++count);
-  });
+  if (cars.length > 0) {
+    cars.forEach(async (car: winnerCars) => {
+      const content: Car = await GetSpecNameCar(car.id);
+      const carInfo = {
+        id: car.id,
+        color: content.color,
+        name: content.name,
+        wins: car.wins,
+        time: car.time,
+      };
+      createRow(carInfo, ++count);
+    });
+  }
   const winsHead = document.getElementById('winsWinners');
   const timeHead = document.getElementById('timeWinners');
   if (winsHead && timeHead) {

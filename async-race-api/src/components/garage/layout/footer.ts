@@ -1,5 +1,5 @@
 import CarsNumber from '../drivers/getTotalCarsAmount';
-import { getPageNum, setPageNum } from '../drivers/valueCurrPageNumber';
+import { getPageNum, setPageNum } from '../drivers/values/valueCurrPageNumber';
 import Pagination from '../drivers/pagination';
 
 export default function Footer() {

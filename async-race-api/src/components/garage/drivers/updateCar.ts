@@ -1,7 +1,7 @@
-import { getPageNum } from './valueCurrPageNumber';
+import { getPageNum } from './values/valueCurrPageNumber';
 import Pagination from './pagination';
 import { Car } from '../../common/interface';
-import { getSelectedCar } from './valueSelectedCar';
+import { getSelectedCar } from './values/valueSelectedCar';
 
 export default async function updateCarServer() {
   const car: Car = getSelectedCar();

@@ -1,4 +1,4 @@
-import { getPageNum } from './valueCurrPageNumber';
+import { getPageNum } from './values/valueCurrPageNumber';
 
 export async function getCarsByPage() {
   const pageNum = getPageNum();

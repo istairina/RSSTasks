@@ -8,6 +8,10 @@ export default async function EngineStart(id: number) {
     // btnRace.classList.remove('btn');
     btnRace.classList.add('btn_inactive');
   }
+  const btnGenerate = document.getElementById('btn__generate-cars');
+  if (btnGenerate) {
+    btnGenerate.classList.add('btn_inactive');
+  }
   const url = `http://127.0.0.1:3000/engine/?${new URLSearchParams({
     id: String(id),
     status: 'started',

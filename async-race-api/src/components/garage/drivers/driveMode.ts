@@ -2,7 +2,7 @@ import createWinner from '../../winners/drivers/createWinner';
 import GetSpecWinCar from '../../winners/drivers/getSpecWinner';
 import updateWinner from '../../winners/drivers/updateWinner';
 import winnerTitle from '../layout/winnerTitle';
-import { getCurrWinner, setCurrWinner } from './valueCurrWinner';
+import { getCurrWinner, setCurrWinner } from './values/valueCurrWinner';
 
 export default async function DriveMode(id: number, race = true) {
   const url = `http://127.0.0.1:3000/engine/?${new URLSearchParams({

@@ -1,6 +1,6 @@
 import GenerateCarsServer from '../drivers/generateCars';
 
-export default function GenerateCars() {
+export default function btnGenerateCars() {
   const box = document.createElement('div');
 
   const btn_generate = document.createElement('button');
@@ -12,7 +12,9 @@ export default function GenerateCars() {
   box.appendChild(btn_generate);
 
   btn_generate.addEventListener('click', () => {
-    GenerateCarsServer();
+    if (!btn_generate.classList.contains('btn_inactive')) {
+      GenerateCarsServer();
+    }
   });
 
   return box;
