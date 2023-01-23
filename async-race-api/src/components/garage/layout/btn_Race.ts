@@ -5,6 +5,7 @@ import DriveMode from '../drivers/driveMode';
 import { startCars } from '../../common/interface';
 import { setCurrWinner } from '../drivers/values/valueCurrWinner';
 import isActive from '../../common/drivers/btnCheckIsActive';
+import btnSetInactive from '../drivers/btnSetInactive';
 
 export default function RaceBtn() {
   const btn_race = document.createElement('button');
@@ -14,12 +15,7 @@ export default function RaceBtn() {
 
   btn_race.addEventListener('click', async () => {
     if (isActive(btn_race)) {
-      const winnerWindow = document.getElementById('winnerBox');
-      if (winnerWindow) {
-        winnerWindow.remove();
-      }
-      const allBtns = document.querySelectorAll('.btn');
-      allBtns.forEach((btn) => btn.classList.add('btn_inactive'));
+      btnSetInactive();
       setCurrWinner(0);
       const cars = await getCarsByPage();
       const allProm: Promise<startCars>[] = [];
