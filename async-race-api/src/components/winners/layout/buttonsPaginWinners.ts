@@ -1,4 +1,4 @@
-import TotalWinnersAmount from '../drivers/getTotalWinners';
+import isActive from '../../common/drivers/btnCheckIsActive';
 import PaginationWin from '../drivers/paginationWin';
 import { getPageWinNum, setPageWinNum } from '../drivers/valueCurrPageWinners';
 
@@ -14,10 +14,8 @@ export default function buttonsWinners() {
   footer.appendChild(btnPrev);
 
   btnPrev.addEventListener('click', () => {
-    let currPage = getPageWinNum();
-    if (currPage > 1) {
-      currPage -= 1;
-      setPageWinNum(currPage);
+    if (isActive(btnPrev)) {
+      setPageWinNum(getPageWinNum() - 1);
       PaginationWin();
     }
   });
@@ -36,12 +34,8 @@ export default function buttonsWinners() {
   footer.appendChild(btnNext);
 
   btnNext.addEventListener('click', async () => {
-    const totalWinners = await TotalWinnersAmount();
-    const maxPage = Math.ceil(totalWinners / 10);
-    let currPage = getPageWinNum();
-    if (maxPage > currPage) {
-      currPage += 1;
-      setPageWinNum(currPage);
+    if (isActive(btnNext)) {
+      setPageWinNum(getPageWinNum() + 1);
       PaginationWin();
     }
   });
