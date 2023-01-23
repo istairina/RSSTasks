@@ -19,6 +19,7 @@
 
 .car__rule-button {
   display: inline-flex;
+  margin: 12px 0;
 }
 
 .car__start-stop {
@@ -33,6 +34,10 @@
   border-radius: 5px;
   margin: 5px;
   cursor: default;
+}
+
+.car__start-stop:first-child {
+  margin-left: 0px;
 }
 
 // .car__start-stop:hover,

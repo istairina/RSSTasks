@@ -16,35 +16,6 @@ function CarBox(name: string, color: string, id: number) {
   const header = document.createElement('div');
   header.classList.add('car__header');
 
-  const btn_select = document.createElement('button');
-  btn_select.classList.add('btn');
-  btn_select.classList.add('second');
-  btn_select.innerText = 'select';
-  header.appendChild(btn_select);
-
-  btn_select.addEventListener('click', () => {
-    const btnUpdate = document.getElementById('btn__update-car');
-    if (btnUpdate) {
-      btnUpdate.classList.add('btn');
-      btnUpdate.classList.add('second');
-      btnUpdate.classList.remove('btn_inactive');
-    }
-    setSelectedCar(name, color, id);
-    // console.log(getSelectedCar());
-    updateCarServer();
-    // updateCarServer(name, color, id);
-  });
-
-  const btn_remove = document.createElement('button');
-  btn_remove.classList.add('btn');
-  btn_remove.classList.add('second');
-  btn_remove.innerText = 'remove';
-  header.appendChild(btn_remove);
-
-  btn_remove.addEventListener('click', () => {
-    removeCar(id);
-  });
-
   const brand = document.createElement('span');
   brand.classList.add('car__brand');
   brand.innerText = name;
@@ -89,6 +60,36 @@ function CarBox(name: string, color: string, id: number) {
       }
       EngineStop(id);
     }
+  });
+
+  const btn_select = document.createElement('button');
+  btn_select.classList.add('btn');
+  btn_select.classList.add('second');
+  btn_select.style.width = '118px';
+  btn_select.style.marginLeft = '15px';
+  btn_select.innerText = 'select';
+  rule_buttons.appendChild(btn_select);
+
+  btn_select.addEventListener('click', () => {
+    const btnUpdate = document.getElementById('btn__update-car');
+    if (btnUpdate) {
+      btnUpdate.classList.add('btn');
+      btnUpdate.classList.add('second');
+      btnUpdate.classList.remove('btn_inactive');
+    }
+    setSelectedCar(name, color, id);
+    updateCarServer();
+  });
+
+  const btn_remove = document.createElement('button');
+  btn_remove.classList.add('btn');
+  btn_remove.classList.add('second');
+  btn_remove.style.width = '118px';
+  btn_remove.innerText = 'remove';
+  rule_buttons.appendChild(btn_remove);
+
+  btn_remove.addEventListener('click', () => {
+    removeCar(id);
   });
 
   const images = document.createElement('div');
