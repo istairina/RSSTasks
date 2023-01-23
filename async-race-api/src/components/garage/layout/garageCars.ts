@@ -1,5 +1,4 @@
 import carTotal from '../drivers/getTotal';
-// import { getPageNum } from '../drivers/valueCurrPageNumber';
 import Footer from './footer';
 
 export default function GarageMainView() {
@@ -9,12 +8,6 @@ export default function GarageMainView() {
   h1.classList.add('main__title');
   h1.innerText = '';
   main.appendChild(h1);
-
-  // const pageName = document.createElement('p');
-  // pageName.classList.add('main__page');
-  // pageName.setAttribute('id', 'pageName');
-  // pageName.innerText = `Page #${getPageNum()}`;
-  // main.appendChild(pageName);
 
   const allCarsBox = document.createElement('div');
   allCarsBox.setAttribute('id', 'allCarsBox');
