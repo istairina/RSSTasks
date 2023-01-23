@@ -32,7 +32,7 @@ export default function Footer() {
       if (maxPage > currPage) {
         currPage += 1;
         setPageNum(currPage);
-        Pagination(currPage);
+        Pagination();
       }
     }
   });
@@ -43,7 +43,7 @@ export default function Footer() {
       if (currPage > 1) {
         currPage -= 1;
         setPageNum(currPage);
-        Pagination(currPage);
+        Pagination();
       }
     }
   });

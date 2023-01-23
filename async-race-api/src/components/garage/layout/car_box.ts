@@ -14,6 +14,7 @@ function CarBox(name: string, color: string, id: number) {
 
   const brand = document.createElement('span');
   brand.classList.add('car__brand');
+  brand.setAttribute('id', `brandTitle${id}`);
   brand.innerText = name;
   header.appendChild(brand);
 

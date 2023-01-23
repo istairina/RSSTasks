@@ -1,4 +1,3 @@
-import { getPageNum } from './values/valueCurrPageNumber';
 import Pagination from './pagination';
 import deleteWinner from '../../winners/drivers/deleteWinner';
 
@@ -8,5 +7,5 @@ export default async function removeCar(id: number) {
   await fetch(url, {
     method: 'DELETE',
   });
-  Pagination(getPageNum());
+  Pagination();
 }

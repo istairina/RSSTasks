@@ -1,20 +1,20 @@
 import DrawCars from './drawCars';
 import CarsNumber from './getTotalCarsAmount';
-import { setPageNum } from './values/valueCurrPageNumber';
+import { getPageNum, setPageNum } from './values/valueCurrPageNumber';
 import setActiveInactiveBtn from './setStateBtnPages';
 import { getCarsByPage } from './getCarsByPage';
 import checkCarPosition from './checkCarPosition';
 
-export default async function Pagination(pageNum: number) {
-  let currPageNum = pageNum;
+export default async function Pagination() {
+  let currPageNum = getPageNum();
   let cars = await getCarsByPage();
   if (cars.length === 0) {
     if (currPageNum > 1) {
       currPageNum -= 1;
       setPageNum(currPageNum);
+      cars = await getCarsByPage();
     }
   }
-  cars = await getCarsByPage();
   DrawCars(await cars);
   const carNum = await CarsNumber();
   const arrH1 = document.getElementsByTagName('h1');

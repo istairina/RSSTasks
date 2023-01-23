@@ -1,4 +1,3 @@
-import { getPageNum } from '../drivers/values/valueCurrPageNumber';
 import Pagination from '../drivers/pagination';
 import CreateCar from './btn_createCar';
 import GarageMainView from './garageCars';
@@ -22,7 +21,7 @@ function GarageHTML() {
   raceResetBox.appendChild(ResetBtn());
 
   garage.appendChild(GarageMainView());
-  Pagination(getPageNum());
+  Pagination();
   return garage;
 }
 

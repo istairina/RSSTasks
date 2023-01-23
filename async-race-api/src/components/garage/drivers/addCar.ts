@@ -1,4 +1,3 @@
-import { getPageNum } from './values/valueCurrPageNumber';
 import Pagination from './pagination';
 
 export default async function addCar(name: string, color: string) {
@@ -16,7 +15,7 @@ export default async function addCar(name: string, color: string) {
       },
       body: JSON.stringify(car),
     });
-    Pagination(getPageNum());
+    Pagination();
   } else {
     alert('Ошибка HTTP: ' + response.status);
   }

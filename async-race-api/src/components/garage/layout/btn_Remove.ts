@@ -1,3 +1,4 @@
+import isActive from '../../common/drivers/btnCheckIsActive';
 import removeCar from '../drivers/removeCar';
 
 export default function btnRemove(id: number) {
@@ -8,7 +9,7 @@ export default function btnRemove(id: number) {
   btn_remove.innerText = 'remove';
 
   btn_remove.addEventListener('click', () => {
-    if (!btn_remove.classList.contains('btn_inactive')) {
+    if (isActive(btn_remove)) {
       removeCar(id);
     }
   });

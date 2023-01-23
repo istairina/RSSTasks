@@ -1,6 +1,7 @@
-import { getPageNum } from './values/valueCurrPageNumber';
-import Pagination from './pagination';
+// import Pagination from './pagination';
+import isActive from '../../common/drivers/btnCheckIsActive';
 import { Car } from '../../common/interface';
+import updateCarImage from './updateCarImage';
 import { getSelectedCar } from './values/valueSelectedCar';
 
 export default async function updateCarServer() {
@@ -18,7 +19,7 @@ export default async function updateCarServer() {
   }
 
   async function handleBtnClick() {
-    if (!btn_update.classList.contains('btn_inactive')) {
+    if (isActive(btn_update)) {
       const car: Car = getSelectedCar();
       const nameNew = text.value;
       const colorNew = colorText.value;
@@ -34,9 +35,10 @@ export default async function updateCarServer() {
         },
         body: JSON.stringify(carNew),
       });
+      updateCarImage(car.id, nameNew, colorNew);
       text.value = '';
       colorText.value = '#000000';
-      Pagination(getPageNum());
+      // Pagination();
       btn_update.classList.add('btn_inactive');
       text.setAttribute('disabled', '');
       colorText.setAttribute('disabled', '');
