@@ -1,11 +1,6 @@
-export default function UpdateCar(stateInp: string[]) {
-  let textVal = '';
-  let colorVal = '#000000';
-
-  if (stateInp.length > 0) {
-    textVal = stateInp[0];
-    colorVal = stateInp[1];
-  }
+export default function UpdateCar() {
+  const textVal = '';
+  const colorVal = '#000000';
 
   const box = document.createElement('div');
   box.classList.add('master__line');

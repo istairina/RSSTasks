@@ -6,5 +6,5 @@ const body = document.querySelector('body');
 
 if (body) {
   body.appendChild(Header(body));
-  body.appendChild(GarageHTML([]));
+  body.appendChild(GarageHTML());
 }

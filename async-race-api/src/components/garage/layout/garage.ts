@@ -3,24 +3,24 @@ import Pagination from '../drivers/pagination';
 import CreateCar from './btn_createCar';
 import GarageMainView from './garageCars';
 import GenerateCars from './btn_generateCars';
-import RaceResetBtn from './btn_RaceReset';
+import RaceBtn from './btn_Race';
+import ResetBtn from './btn_Reset';
 import UpdateCar from './btn_updateCar';
 
-function GarageHTML(saveStateInputs: string[]) {
-  let saveStateInpCreate: string[] = [];
-  let saveStateInpUpdate: string[] = [];
-
-  if (saveStateInputs.length > 0) {
-    saveStateInpCreate = [saveStateInputs[0], saveStateInputs[1]];
-    saveStateInpUpdate = [saveStateInputs[2], saveStateInputs[3]];
-  }
+function GarageHTML() {
   const garage = document.createElement('div');
   garage.setAttribute('id', 'garage');
   garage.classList.add('master');
-  garage.appendChild(CreateCar(saveStateInpCreate));
-  garage.appendChild(UpdateCar(saveStateInpUpdate));
+  garage.appendChild(CreateCar());
+  garage.appendChild(UpdateCar());
   garage.appendChild(GenerateCars());
-  garage.appendChild(RaceResetBtn());
+
+  const raceResetBox = document.createElement('div');
+  garage.appendChild(raceResetBox);
+
+  raceResetBox.appendChild(RaceBtn());
+  raceResetBox.appendChild(ResetBtn());
+
   garage.appendChild(GarageMainView());
   Pagination(getPageNum());
   return garage;

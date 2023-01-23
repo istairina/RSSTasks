@@ -1,13 +1,9 @@
+import isActive from '../../common/drivers/btnCheckIsActive';
 import addCar from '../drivers/addCar';
 
-export default function CreateCar(stateInp: string[]) {
-  let textVal = '';
-  let colorVal = '#e15b64';
-
-  if (stateInp.length > 0) {
-    textVal = stateInp[0];
-    colorVal = stateInp[1];
-  }
+export default function CreateCarHTML() {
+  const textVal = '';
+  const colorVal = '#e15b64';
 
   const box = document.createElement('div');
   box.classList.add('master__line');
@@ -35,7 +31,7 @@ export default function CreateCar(stateInp: string[]) {
   box.appendChild(btn_create);
 
   btn_create.addEventListener('click', () => {
-    if (!btn_create.classList.contains('btn_inactive')) {
+    if (isActive(btn_create)) {
       if (inp_name.value) {
         addCar(inp_name.value, inp_color.value);
       } else {

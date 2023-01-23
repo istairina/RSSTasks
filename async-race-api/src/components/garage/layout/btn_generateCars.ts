@@ -1,3 +1,4 @@
+import isActive from '../../common/drivers/btnCheckIsActive';
 import GenerateCarsServer from '../drivers/generateCars';
 
 export default function btnGenerateCars() {
@@ -12,7 +13,7 @@ export default function btnGenerateCars() {
   box.appendChild(btn_generate);
 
   btn_generate.addEventListener('click', () => {
-    if (!btn_generate.classList.contains('btn_inactive')) {
+    if (isActive(btn_generate)) {
       GenerateCarsServer();
     }
   });

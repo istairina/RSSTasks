@@ -6,7 +6,6 @@ export default async function GetSpecWinCar(id: number) {
     return content;
   } else {
     if (response.status === 404) {
-      // console.log('status 404 got');
       return {};
     }
   }

@@ -1,8 +1,9 @@
 import WinnersHTML from '../../winners/layout/winners';
+import isActive from './btnCheckIsActive';
 
 function SwitchView(app: HTMLElement, buttonToGarage: HTMLButtonElement, buttonToWinners: HTMLButtonElement) {
   buttonToGarage.addEventListener('click', () => {
-    if (!buttonToGarage.classList.contains('btn_inactive')) {
+    if (isActive(buttonToGarage)) {
       buttonToGarage.classList.add('btn_inactive');
       buttonToWinners.classList.remove('btn_inactive');
       const garage = document.getElementById('garage');
@@ -19,7 +20,7 @@ function SwitchView(app: HTMLElement, buttonToGarage: HTMLButtonElement, buttonT
   });
 
   buttonToWinners.addEventListener('click', () => {
-    if (!buttonToWinners.classList.contains('btn_inactive')) {
+    if (isActive(buttonToWinners)) {
       buttonToWinners.classList.add('btn_inactive');
       buttonToGarage.classList.remove('btn_inactive');
       const garage = document.getElementById('garage');
