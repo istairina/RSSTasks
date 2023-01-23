@@ -13,11 +13,12 @@ export default function ResetBtn() {
 
   btn_reset.addEventListener('click', async () => {
     if (isActive(btn_reset)) {
-      btnSetActive();
       const cars = await getCarsByPage();
+      const engineStopPromise: Promise<void>[] = [];
       cars.forEach((elem: Car) => {
-        EngineStop(elem.id);
+        engineStopPromise.push(Promise.resolve(EngineStop(elem.id)));
       });
+      Promise.all(engineStopPromise).then(() => btnSetActive());
       const winnerWindow = document.querySelectorAll('#winnerBox');
       winnerWindow.forEach((popup) => popup.remove());
       setCurrWinner(0);
