@@ -1,15 +1,9 @@
 import SetStateStartStopBtn from './setStateStartStopBtn';
 import { startCars } from '../../common/interface';
+import btnSetInactive from './btnSetInactive';
 
 export default async function EngineStart(id: number) {
-  const btnRace = document.getElementById('btnRace');
-  if (btnRace) {
-    btnRace.classList.add('btn_inactive');
-  }
-  const btnGenerate = document.getElementById('btn__generate-cars');
-  if (btnGenerate) {
-    btnGenerate.classList.add('btn_inactive');
-  }
+  btnSetInactive();
   const url = `http://127.0.0.1:3000/engine/?${new URLSearchParams({
     id: String(id),
     status: 'started',

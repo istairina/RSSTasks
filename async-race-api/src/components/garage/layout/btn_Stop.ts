@@ -13,10 +13,6 @@ export default function btnStop(id: number) {
       if (winnerWindow) {
         winnerWindow.remove();
       }
-      const btnGenerate = document.getElementById('btn__generate-cars');
-      if (btnGenerate) {
-        btnGenerate.classList.remove('btn_inactive');
-      }
       EngineStop(id);
     }
   });
