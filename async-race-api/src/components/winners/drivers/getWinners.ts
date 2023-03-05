@@ -3,7 +3,7 @@ import { Car, winnerCars } from '../../common/interface';
 import GetSpecNameCar from '../../garage/drivers/getSpecCar';
 
 export default async function winnerCars(page = 1, sortBy = 'id', sortOrder = 'ASC') {
-  const url = `http://127.0.0.1:3000/winners/?${new URLSearchParams({
+  const url = `https://race-api-7yt1.onrender.com/winners/?${new URLSearchParams({
     _page: String(page),
     _limit: '10',
     _sort: sortBy,

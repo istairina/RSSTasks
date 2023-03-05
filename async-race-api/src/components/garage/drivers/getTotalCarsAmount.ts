@@ -1,5 +1,5 @@
 export default async function TotalCarsAmount() {
-  const url = `http://127.0.0.1:3000/garage/?${new URLSearchParams({
+  const url = `https://race-api-7yt1.onrender.com/garage/?${new URLSearchParams({
     _limit: '7',
   })}`;
   const response = await fetch(url);

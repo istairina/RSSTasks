@@ -1,5 +1,5 @@
 export default async function createWinner(id: number, wins: number, time: number) {
-  const url = 'http://127.0.0.1:3000/winners';
+  const url = `https://race-api-7yt1.onrender.com/winners`;
   const response = await fetch(url);
   if (response.ok) {
     const car = {

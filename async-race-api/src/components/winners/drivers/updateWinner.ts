@@ -1,5 +1,5 @@
 export default async function updateWinner(id: number, wins: number, time: number) {
-  const url = `http://127.0.0.1:3000/winners/${id}`;
+  const url = `https://race-api-7yt1.onrender.com/winners/${id}`;
   const car = {
     wins: wins,
     time: time,

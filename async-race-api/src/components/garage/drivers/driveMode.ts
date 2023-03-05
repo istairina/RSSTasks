@@ -8,7 +8,7 @@ import AnimatioStart from './animationStart';
 import { getCurrWinner, setCurrWinner } from './values/valueCurrWinner';
 
 export default async function DriveMode(id: number, race = true, content: startCars) {
-  const url = `http://127.0.0.1:3000/engine/?${new URLSearchParams({
+  const url = `https://race-api-7yt1.onrender.com/engine/?${new URLSearchParams({
     id: String(id),
     status: 'drive',
   })}`;

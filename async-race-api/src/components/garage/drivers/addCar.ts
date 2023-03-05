@@ -1,7 +1,8 @@
 import Pagination from './pagination';
 
 export default async function addCar(name: string, color: string) {
-  const url = 'http://127.0.0.1:3000/garage';
+  const url = `https://race-api-7yt1.onrender.com/garage`;
+  console.log('test url ' + url);
   const response = await fetch(url);
   if (response.ok) {
     const car = {

@@ -22,7 +22,7 @@ export default async function updateCarServer() {
       const car: Car = getSelectedCar();
       const nameNew = text.value;
       const colorNew = colorText.value;
-      const url = `http://127.0.0.1:3000/garage/${car.id}`;
+      const url = `https://race-api-7yt1.onrender.com/garage/${car.id}`;
       const carNew = {
         name: nameNew,
         color: colorNew,

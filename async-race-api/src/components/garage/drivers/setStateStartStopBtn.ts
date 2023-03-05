@@ -9,10 +9,14 @@ export default function SetStateStartStopBtn(id: number, toStart = false) {
     if (car) {
       car.classList.remove('car__car-active');
       car.style.animationPlayState = 'running';
-
-      if (car.children.length > 1 && car.lastChild) {
-        car.removeChild(car.lastChild);
-      }
+      car.childNodes.forEach((elem) => {
+        if (elem.nodeName === 'SPAN') {
+          elem.remove();
+        }
+      });
+      // if (car.children.length > 1 && car.lastChild) {
+      //   car.removeChild(car.lastChild);
+      // }
     }
     if (btn_stop) {
       btn_stop.classList.remove('stop');

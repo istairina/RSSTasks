@@ -9,11 +9,11 @@ export default function btnStop(id: number) {
 
   btn_stop.addEventListener('click', async function (this: HTMLDivElement) {
     if (!this.hasAttribute('disabled')) {
+      await EngineStop(id);
       const winnerWindow = document.getElementById('winnerBox');
       if (winnerWindow) {
         winnerWindow.remove();
       }
-      EngineStop(id);
     }
   });
   return btn_stop;
